@@ -75,7 +75,7 @@ namespace BookHaven.Presentation
 
                 if (user != null)
                 {
-                    MessageBox.Show($"Welcome, {user.Username}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Welcome, {user.FirstName}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     if (user.RoleID == 1)
                     {
