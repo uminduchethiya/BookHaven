@@ -33,7 +33,9 @@ namespace BookHaven.Data.Repositories
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                string query = "SELECT UserID, FirstName, LastName, Email, Phone, RoleID,IsDeleted, CreatedAt,Id FROM Users WHERE Email = @Email AND Password = @Password";
+
+                string query = "SELECT  FirstName, LastName, Email, Phone, RoleID,IsDeleted,CreatedAt,Id,Address FROM Users WHERE Email = @Email AND Password = @Password";
+
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -47,7 +49,7 @@ namespace BookHaven.Data.Repositories
                         {
                             user = new UserModel
                             {
-                              UserID = reader["UserID"] != DBNull.Value ? (Guid)reader["UserID"] : Guid.Empty,
+                            
                                 FirstName = reader["FirstName"].ToString(),
                                 LastName = reader["LastName"].ToString(),
                                 Email = reader["Email"].ToString(),
