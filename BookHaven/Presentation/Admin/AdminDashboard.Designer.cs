@@ -90,7 +90,7 @@
             // 
             // menupicbox
             // 
-            menupicbox.Image = Properties.Resources.menu;
+            menupicbox.Image = Properties.Resources.menu1;
             menupicbox.Location = new Point(23, 27);
             menupicbox.Name = "menupicbox";
             menupicbox.Size = new Size(36, 39);
