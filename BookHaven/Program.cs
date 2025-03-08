@@ -1,3 +1,10 @@
+using BookHaven.Presentation;
+
+using BookHaven.Presentation.Admin;
+
+using BookHaven.Presentation.Comman;
+
+
 namespace BookHaven
 {
     internal static class Program
@@ -11,7 +18,7 @@ namespace BookHaven
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new AddnewUser());
         }
     }
 }
