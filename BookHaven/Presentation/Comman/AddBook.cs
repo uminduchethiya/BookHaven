@@ -132,5 +132,10 @@ namespace BookHaven.Presentation.Comman
         {
 
         }
+
+        private void txtStock_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

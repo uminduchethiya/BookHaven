@@ -127,6 +127,10 @@
   <data name="142-1429304_library-management-library-management-system-png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\142-1429304_library-management-library-management-system-png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+
+  <data name="4288270" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4288270.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+
   <data name="20945504" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\20945504.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -135,5 +139,6 @@
   </data>
   <data name="menu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+
   </data>
 </root>

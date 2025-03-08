@@ -73,6 +73,11 @@ namespace BookHaven.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
+        internal static System.Drawing.Bitmap _4288270 {
+            get {
+                object obj = ResourceManager.GetObject("4288270", resourceCulture);
+
         internal static System.Drawing.Bitmap _20945504 {
             get {
                 object obj = ResourceManager.GetObject("20945504", resourceCulture);
@@ -106,6 +111,7 @@ namespace BookHaven.Properties {
         internal static System.Drawing.Bitmap menu1 {
             get {
                 object obj = ResourceManager.GetObject("menu1", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
