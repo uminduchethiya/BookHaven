@@ -33,7 +33,9 @@ namespace BookHaven.Data.Repositories
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
+
                 string query = "SELECT  FirstName, LastName, Email, Phone, RoleID,IsDeleted,CreatedAt,Id,Address FROM Users WHERE Email = @Email AND Password = @Password";
+
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
