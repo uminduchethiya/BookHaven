@@ -156,6 +156,7 @@
             txtStock.Name = "txtStock";
             txtStock.Size = new Size(309, 23);
             txtStock.TabIndex = 12;
+            txtStock.TextChanged += txtStock_TextChanged;
             // 
             // btnSave
             // 
