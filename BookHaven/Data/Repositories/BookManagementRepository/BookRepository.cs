@@ -187,5 +187,39 @@ namespace BookHaven.Data.Repositories.BookManagementRepository
             return isDeleted;
         }
 
+        public bool UpdateStock(int bookId, int quantity)
+        {
+            bool isUpdated = false;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_connectionString))
+                {
+                    string query = @"
+                        UPDATE Book 
+                        SET StockQuantity = @Stock, UpdatedAt = @UpdatedAt
+                        WHERE BookId = @BookId;";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Stock", quantity);
+                        cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@BookId", bookId);
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        isUpdated = rowsAffected > 0;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                throw new Exception("An error occurred while updating the stock quantity in the database.", ex);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("General Error: " + ex.Message);
+                throw new Exception("An unexpected error occurred while updating the stock quantity.", ex);
+            }
+            return isUpdated;
+        }
     }
 }
