@@ -14,5 +14,7 @@ namespace BookHaven.Data.Repositories.BookManagementRepository
         bool EditBook(Book book);
         List<Book> GetAllBooks(string searchparam);
         //Book GetBookById(int bookId);
+
+        bool UpdateStock(int bookId, int quantity);
     }
 }
