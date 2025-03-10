@@ -140,6 +140,7 @@
             btnusers.Text = "                     Users";
             btnusers.TextAlign = ContentAlignment.MiddleLeft;
             btnusers.UseVisualStyleBackColor = false;
+            btnusers.Click += btnusers_Click;
             // 
             // btncustomers
             // 

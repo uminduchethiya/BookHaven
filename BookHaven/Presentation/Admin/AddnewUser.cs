@@ -24,7 +24,7 @@ namespace BookHaven.Presentation.Admin
             LoadUserRoles();
         }
 
-  
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -38,7 +38,7 @@ namespace BookHaven.Presentation.Admin
             cmbuserrole.ValueMember = "Key";
         }
 
-      
+
 
         private void btnadd_Click_1(object sender, EventArgs e)
         {
@@ -58,6 +58,25 @@ namespace BookHaven.Presentation.Admin
             _userService.AddUser(newUser);
             MessageBox.Show("User added successfully!");
         }
+
+        private void btnclear_Click(object sender, EventArgs e)
+        {
+            txtfirstname.Text = string.Empty;
+            txtname.Text = string.Empty;
+            txtemail.Text = string.Empty;
+            txtaddress.Text = string.Empty;
+            txtphone.Text = string.Empty;
+            txtidnum.Text = string.Empty;
+            cmbuserrole.SelectedIndex = -1;
+            cmbgender.SelectedIndex = -1;
+            dobpicker.Value = DateTime.Now;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserManagement userManagementForm = new UserManagement(_userService); // Pass _userService
+            userManagementForm.Show(); // Opens the form
+        }
     }
-    
+
 }

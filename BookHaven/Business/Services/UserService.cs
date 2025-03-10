@@ -92,9 +92,28 @@ namespace BookHaven.Business.Services
                 Console.WriteLine($"Error sending email: {ex.Message}");
             }
         }
-   
 
+        public List<UserModel> GetAllUsers()
+        {
+            return _userRepo.GetAllUsers();
+        }
+        public void UpdateUser(UserModel user)
+        {
+            _userRepo.UpdateUser(user);
+        }
 
-    
+        public void DeleteUser(int userId)
+        {
+            try
+            {
+                // Assuming the repository handles the actual database operation
+                _userRepo.DeleteUser(userId);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting user: {ex.Message}");
+            }
+        }
+
     }
 }
