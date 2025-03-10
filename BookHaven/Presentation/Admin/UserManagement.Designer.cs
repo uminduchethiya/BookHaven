@@ -32,30 +32,33 @@
             label1 = new Label();
             datagridviewuser = new DataGridView();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btndelete = new Button();
+            btnupdate = new Button();
             button4 = new Button();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtfirstname = new TextBox();
+            txtlastname = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            txtphone = new TextBox();
             label4 = new Label();
-            textBox4 = new TextBox();
+            txtidnum = new TextBox();
             label5 = new Label();
-            textBox5 = new TextBox();
+            txtaddress = new TextBox();
             label6 = new Label();
             label7 = new Label();
-            comboBox1 = new ComboBox();
+            cmbgender = new ComboBox();
             label8 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dobpicker = new DateTimePicker();
+            backpic = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)datagridviewuser).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)backpic).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.MenuHighlight;
+            panel1.Controls.Add(backpic);
             panel1.Controls.Add(label1);
             panel1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             panel1.ForeColor = Color.White;
@@ -90,24 +93,27 @@
             button1.TabIndex = 2;
             button1.Text = "Add New";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // button2
+            // btndelete
             // 
-            button2.Location = new Point(881, 645);
-            button2.Name = "button2";
-            button2.Size = new Size(115, 44);
-            button2.TabIndex = 3;
-            button2.Text = "Delete";
-            button2.UseVisualStyleBackColor = true;
+            btndelete.Location = new Point(881, 645);
+            btndelete.Name = "btndelete";
+            btndelete.Size = new Size(115, 44);
+            btndelete.TabIndex = 3;
+            btndelete.Text = "Delete";
+            btndelete.UseVisualStyleBackColor = true;
+            btndelete.Click += btndelete_Click;
             // 
-            // button3
+            // btnupdate
             // 
-            button3.Location = new Point(634, 645);
-            button3.Name = "button3";
-            button3.Size = new Size(115, 44);
-            button3.TabIndex = 4;
-            button3.Text = "Edit";
-            button3.UseVisualStyleBackColor = true;
+            btnupdate.Location = new Point(634, 645);
+            btnupdate.Name = "btnupdate";
+            btnupdate.Size = new Size(115, 44);
+            btnupdate.TabIndex = 4;
+            btnupdate.Text = "Update";
+            btnupdate.UseVisualStyleBackColor = true;
+            btnupdate.Click += btnupdate_Click;
             // 
             // button4
             // 
@@ -128,19 +134,19 @@
             label2.TabIndex = 6;
             label2.Text = "First Name:";
             // 
-            // textBox1
+            // txtfirstname
             // 
-            textBox1.Location = new Point(12, 147);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(284, 23);
-            textBox1.TabIndex = 7;
+            txtfirstname.Location = new Point(12, 147);
+            txtfirstname.Name = "txtfirstname";
+            txtfirstname.Size = new Size(284, 23);
+            txtfirstname.TabIndex = 7;
             // 
-            // textBox2
+            // txtlastname
             // 
-            textBox2.Location = new Point(12, 222);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(284, 23);
-            textBox2.TabIndex = 9;
+            txtlastname.Location = new Point(12, 222);
+            txtlastname.Name = "txtlastname";
+            txtlastname.Size = new Size(284, 23);
+            txtlastname.TabIndex = 9;
             // 
             // label3
             // 
@@ -152,12 +158,12 @@
             label3.TabIndex = 8;
             label3.Text = "Last Name:";
             // 
-            // textBox3
+            // txtphone
             // 
-            textBox3.Location = new Point(12, 302);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(284, 23);
-            textBox3.TabIndex = 11;
+            txtphone.Location = new Point(12, 302);
+            txtphone.Name = "txtphone";
+            txtphone.Size = new Size(284, 23);
+            txtphone.TabIndex = 11;
             // 
             // label4
             // 
@@ -169,12 +175,12 @@
             label4.TabIndex = 10;
             label4.Text = "Phone Number:";
             // 
-            // textBox4
+            // txtidnum
             // 
-            textBox4.Location = new Point(12, 377);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(284, 23);
-            textBox4.TabIndex = 13;
+            txtidnum.Location = new Point(12, 377);
+            txtidnum.Name = "txtidnum";
+            txtidnum.Size = new Size(284, 23);
+            txtidnum.TabIndex = 13;
             // 
             // label5
             // 
@@ -186,12 +192,12 @@
             label5.TabIndex = 12;
             label5.Text = "Identity Number:";
             // 
-            // textBox5
+            // txtaddress
             // 
-            textBox5.Location = new Point(12, 454);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(284, 23);
-            textBox5.TabIndex = 15;
+            txtaddress.Location = new Point(12, 454);
+            txtaddress.Name = "txtaddress";
+            txtaddress.Size = new Size(284, 23);
+            txtaddress.TabIndex = 15;
             // 
             // label6
             // 
@@ -213,13 +219,14 @@
             label7.TabIndex = 16;
             label7.Text = "Gender:";
             // 
-            // comboBox1
+            // cmbgender
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 523);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(284, 23);
-            comboBox1.TabIndex = 17;
+            cmbgender.FormattingEnabled = true;
+            cmbgender.Items.AddRange(new object[] { "Male", "Female" });
+            cmbgender.Location = new Point(12, 523);
+            cmbgender.Name = "cmbgender";
+            cmbgender.Size = new Size(284, 23);
+            cmbgender.TabIndex = 17;
             // 
             // label8
             // 
@@ -231,43 +238,56 @@
             label8.TabIndex = 18;
             label8.Text = "DOB:";
             // 
-            // dateTimePicker1
+            // dobpicker
             // 
-            dateTimePicker1.Location = new Point(12, 596);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(284, 23);
-            dateTimePicker1.TabIndex = 19;
+            dobpicker.Location = new Point(12, 596);
+            dobpicker.Name = "dobpicker";
+            dobpicker.Size = new Size(284, 23);
+            dobpicker.TabIndex = 19;
+            // 
+            // backpic
+            // 
+            backpic.Image = Properties.Resources.left_arrow_10117838;
+            backpic.Location = new Point(11, 23);
+            backpic.Name = "backpic";
+            backpic.Size = new Size(72, 33);
+            backpic.SizeMode = PictureBoxSizeMode.Zoom;
+            backpic.TabIndex = 1;
+            backpic.TabStop = false;
+            backpic.Click += backpic_Click;
             // 
             // UserManagement
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 729);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dobpicker);
             Controls.Add(label8);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbgender);
             Controls.Add(label7);
-            Controls.Add(textBox5);
+            Controls.Add(txtaddress);
             Controls.Add(label6);
-            Controls.Add(textBox4);
+            Controls.Add(txtidnum);
             Controls.Add(label5);
-            Controls.Add(textBox3);
+            Controls.Add(txtphone);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(txtlastname);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtfirstname);
             Controls.Add(label2);
             Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnupdate);
+            Controls.Add(btndelete);
             Controls.Add(button1);
             Controls.Add(datagridviewuser);
             Controls.Add(panel1);
             Name = "UserManagement";
             Text = "UserManagement";
+            Load += UserManagement_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)datagridviewuser).EndInit();
+            ((System.ComponentModel.ISupportInitialize)backpic).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -278,22 +298,23 @@
         private Label label1;
         private DataGridView datagridviewuser;
         private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btndelete;
+        private Button btnupdate;
         private Button button4;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtfirstname;
+        private TextBox txtlastname;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txtphone;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox txtidnum;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox txtaddress;
         private Label label6;
         private Label label7;
-        private ComboBox comboBox1;
+        private ComboBox cmbgender;
         private Label label8;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dobpicker;
+        private PictureBox backpic;
     }
 }

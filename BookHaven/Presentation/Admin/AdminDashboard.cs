@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BookHaven.Business.Interfaces;
+using BookHaven.Business.Services;
+using BookHaven.Data.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +15,14 @@ namespace BookHaven.Presentation.Admin
 {
     public partial class AdminDashboard : Form
     {
+        private readonly IUserService _userService;
         private int sidebarExpandedWidth = 250; // Full size
         private int sidebarCollapsedWidth = 80; // Minimized size
         private bool isSidebarExpanded = true; // Track sidebar state
 
         public AdminDashboard()
         {
+            _userService = new UserService(new UserManageRepository()); // Fixed Repository Reference
             InitializeComponent();
         }
 
@@ -66,6 +71,13 @@ namespace BookHaven.Presentation.Admin
         private void menupicbox_Click(object sender, EventArgs e)
         {
             sidebartimer.Start(); // ✅ Correct timer reference
+        }
+
+        private void btnusers_Click(object sender, EventArgs e)
+        {
+            UserManagement userManagementForm = new UserManagement(_userService); // Pass _userService
+            this.Hide();
+            userManagementForm.Show(); // Opens the form
         }
     }
 }
