@@ -9,7 +9,7 @@ namespace BookHaven.Data.Repositories.SalesTransactionRepository
 {
     public interface ISalesTransactionRepository
     {
-        void InsertTransactionRecord(CustomerTransactions transaction);
+        int InsertTransactionRecord(CustomerTransactions transaction);
 
         void InsertTransactionDetail(SalesTransactionDetails transactionDetail);
     }

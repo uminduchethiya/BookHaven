@@ -33,6 +33,11 @@
             label2 = new Label();
             label3 = new Label();
             dataGridView1 = new DataGridView();
+            BookId = new DataGridViewTextBoxColumn();
+            Title = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Subtotal = new DataGridViewTextBoxColumn();
             btnAddCustomer = new Button();
             label4 = new Label();
             lblTotalAmount = new Label();
@@ -55,11 +60,6 @@
             lblEmail = new Label();
             lblPhone = new Label();
             panel2 = new Panel();
-            BookId = new DataGridViewTextBoxColumn();
-            Title = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
-            Subtotal = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -112,6 +112,31 @@
             dataGridView1.TabIndex = 7;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
+            // 
+            // BookId
+            // 
+            BookId.HeaderText = "BookId";
+            BookId.Name = "BookId";
+            // 
+            // Title
+            // 
+            Title.HeaderText = "BookTitle";
+            Title.Name = "Title";
+            // 
+            // Price
+            // 
+            Price.HeaderText = "Price";
+            Price.Name = "Price";
+            // 
+            // Quantity
+            // 
+            Quantity.HeaderText = "Quantity";
+            Quantity.Name = "Quantity";
+            // 
+            // Subtotal
+            // 
+            Subtotal.HeaderText = "Subtotal";
+            Subtotal.Name = "Subtotal";
             // 
             // btnAddCustomer
             // 
@@ -207,6 +232,7 @@
             btnClear.TabIndex = 16;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnGenarateBill
             // 
@@ -336,31 +362,6 @@
             panel2.Size = new Size(309, 160);
             panel2.TabIndex = 30;
             // 
-            // BookId
-            // 
-            BookId.HeaderText = "BookId";
-            BookId.Name = "BookId";
-            // 
-            // Title
-            // 
-            Title.HeaderText = "BookTitle";
-            Title.Name = "Title";
-            // 
-            // Price
-            // 
-            Price.HeaderText = "Price";
-            Price.Name = "Price";
-            // 
-            // Quantity
-            // 
-            Quantity.HeaderText = "Quantity";
-            Quantity.Name = "Quantity";
-            // 
-            // Subtotal
-            // 
-            Subtotal.HeaderText = "Subtotal";
-            Subtotal.Name = "Subtotal";
-            // 
             // SalesTransactionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -386,6 +387,7 @@
             Controls.Add(label1);
             Controls.Add(panel1);
             Controls.Add(panel2);
+            MaximizeBox = false;
             Name = "SalesTransactionForm";
             Text = "SalesTransactionForm";
             Load += SalesTransactionForm_Load;

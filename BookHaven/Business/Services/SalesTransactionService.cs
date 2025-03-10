@@ -163,7 +163,7 @@ namespace BookHaven.Business.Services
             };
 
             // Insert the transaction record and get the generated CustomerTransactionId
-            _salesRepository.InsertTransactionRecord(transaction);
+            var customerTransactionId = _salesRepository.InsertTransactionRecord(transaction);
 
             // Now that we have the CustomerTransactionId, we can use it in the details table
             foreach (var row in salesData)
@@ -176,7 +176,7 @@ namespace BookHaven.Business.Services
                 // Create the SalesTransactionDetails object
                 var transactionDetail = new SalesTransactionDetails
                 {
-                    CustomerTransactionId = transaction.CustomerTransactionId,  // Use the generated CustomerTransactionId
+                    CustomerTransactionId = customerTransactionId,  // Use the generated CustomerTransactionId
                     BookId = Convert.ToInt32(row.Cells["BookId"].Value),  // Assuming the BookId is present in the DataGridView
                     BookTitle = bookTitle,
                     Quantity = quantity,
@@ -185,10 +185,13 @@ namespace BookHaven.Business.Services
                     CreatedAt = DateTime.Now  // Set the CreatedAt timestamp
                 };
 
+                Console.WriteLine(transactionDetail.CustomerTransactionId);
+
                 // Insert the transaction details into SalesTransactionDetails table
                 _salesRepository.InsertTransactionDetail(transactionDetail);
             }
         }
+
 
 
     }

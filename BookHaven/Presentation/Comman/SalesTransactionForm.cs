@@ -268,5 +268,18 @@ namespace BookHaven.Presentation.Comman
                 lblPhone.Text = selectedCustomer.PhoneNumber;
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+            dataGridView1.Rows.Clear();
+            lblTotalAmount.Text = "0.00";
+            lblDiscountedAmount.Text = "0.00";
+            lblFinalAamount.Text = "0.00";
+            selectedCustomer = null;
+            lblEmail.Text = string.Empty;
+            lblName.Text = string.Empty;
+            lblPhone.Text = string.Empty;
+        }
     }
 }

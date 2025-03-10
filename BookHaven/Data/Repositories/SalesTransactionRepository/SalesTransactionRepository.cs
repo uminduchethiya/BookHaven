@@ -22,6 +22,7 @@ namespace BookHaven.Data.Repositories.SalesTransactionRepository
         {
             try
             {
+                Console.WriteLine(transactionDetail.CustomerTransactionId);
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
                     string query = @"
@@ -49,14 +50,15 @@ namespace BookHaven.Data.Repositories.SalesTransactionRepository
             }
         }
 
-        public void InsertTransactionRecord(CustomerTransactions transaction)
+        public int InsertTransactionRecord(CustomerTransactions transaction)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
                     string query = @"INSERT INTO CustomerTransactions (CustomerId, TotalAmount, DiscountAmount, FinalAmount, Date)
-                                 VALUES (@CustomerId, @TotalAmount, @DiscountAmount, @FinalAmount, @Date)";
+                                     VALUES (@CustomerId, @TotalAmount, @DiscountAmount, @FinalAmount, @Date);
+                                     SELECT SCOPE_IDENTITY();";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@CustomerId", transaction.CustomerId);
@@ -66,14 +68,15 @@ namespace BookHaven.Data.Repositories.SalesTransactionRepository
                         cmd.Parameters.AddWithValue("@Date", transaction.Date);
 
                         conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
+                        var result = cmd.ExecuteScalar();
+                        return Convert.ToInt32(result);
                     }
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error inserting transaction record: {ex.Message}");
+                throw;
             }
         }
     }
