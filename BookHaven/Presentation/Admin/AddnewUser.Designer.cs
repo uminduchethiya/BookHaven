@@ -51,6 +51,7 @@
             cmbuserrole = new ComboBox();
             label10 = new Label();
             dobpicker = new DateTimePicker();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -200,6 +201,7 @@
             btnclear.TabIndex = 26;
             btnclear.Text = "Clear";
             btnclear.UseVisualStyleBackColor = true;
+            btnclear.Click += btnclear_Click;
             // 
             // txtname
             // 
@@ -261,11 +263,22 @@
             dobpicker.Size = new Size(200, 23);
             dobpicker.TabIndex = 47;
             // 
+            // button1
+            // 
+            button1.Location = new Point(557, 680);
+            button1.Name = "button1";
+            button1.Size = new Size(115, 44);
+            button1.TabIndex = 48;
+            button1.Text = "User Page";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // AddnewUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 729);
+            Controls.Add(button1);
             Controls.Add(dobpicker);
             Controls.Add(cmbuserrole);
             Controls.Add(label10);
@@ -321,5 +334,6 @@
         private ComboBox cmbuserrole;
         private Label label10;
         private DateTimePicker dobpicker;
+        private Button button1;
     }
 }
