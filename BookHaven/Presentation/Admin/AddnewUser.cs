@@ -75,6 +75,7 @@ namespace BookHaven.Presentation.Admin
         private void button1_Click(object sender, EventArgs e)
         {
             UserManagement userManagementForm = new UserManagement(_userService); // Pass _userService
+            this.Hide();  // Optionally hide the current form
             userManagementForm.Show(); // Opens the form
         }
     }
