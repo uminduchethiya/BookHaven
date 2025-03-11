@@ -7,10 +7,15 @@ using System.Threading.Tasks;
 
 namespace BookHaven.Business.Interfaces
 {
-    interface IOrderManagementService
+    public interface IOrderManagementService
     {
         List<Customer> GetCustomerByPhone(string phoneNumber);
         List<Book> GetBookByTitle(string title);
         void SaveOrder(Order order);
+        List<Order> GetAllOrders(); // Fetch all orders
+       
+        Order GetOrderById(int orderId);  // Ensure this method exists
+
+        bool UpdateOrderStatus(Order order);
     }
 }

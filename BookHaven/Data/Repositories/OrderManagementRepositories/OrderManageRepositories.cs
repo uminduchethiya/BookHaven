@@ -116,6 +116,94 @@ namespace BookHaven.Data.Repositories.OrderManagementRepositories
             }
         }
 
+        public List<Order> GetAllOrders()
+        {
+            List<Order> orders = new List<Order>();
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT OrderId, CustomerId, BookId, Quantity, Price, Subtotal, DeliveryType, Status, OrderDate FROM [Order]";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        orders.Add(new Order
+                        {
+                            OrderId = Convert.ToInt32(reader["OrderId"]),
+                            CustomerId = Convert.ToInt32(reader["CustomerId"]),
+                            BookId = Convert.ToInt32(reader["BookId"]),
+                            Quantity = Convert.ToInt32(reader["Quantity"]),
+                            Price = Convert.ToDecimal(reader["Price"]),
+                            Subtotal = Convert.ToDecimal(reader["Subtotal"]),
+                            DeliveryType = reader["DeliveryType"].ToString(),
+                            Status = reader["Status"].ToString(),
+                            OrderDate = reader["OrderDate"] != DBNull.Value ? (DateTime)reader["OrderDate"] : DateTime.MinValue
+                        });
+                    }
+                }
+            }
+
+            return orders;
+        }
+
+        public Order GetOrderById(int orderId)
+        {
+            Order order = null;
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM [Order] WHERE OrderId = @OrderId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@OrderId", orderId);
+
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        order = new Order
+                        {
+                            OrderId = Convert.ToInt32(reader["OrderId"]),
+                            CustomerId = Convert.ToInt32(reader["CustomerId"]),
+                            BookId = Convert.ToInt32(reader["BookId"]),
+                            Quantity = Convert.ToInt32(reader["Quantity"]),
+                            Price = Convert.ToDecimal(reader["Price"]),
+                            Subtotal = Convert.ToDecimal(reader["Subtotal"]),
+                            DeliveryType = reader["DeliveryType"].ToString(),
+                            Status = reader["Status"].ToString(),
+                            OrderDate = reader["OrderDate"] != DBNull.Value ? (DateTime)reader["OrderDate"] : DateTime.MinValue
+                        };
+                    }
+                }
+            }
+
+            return order;
+        }
+        public bool UpdateOrderStatus(Order order)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "UPDATE [Order] SET Status = @Status WHERE OrderId = @OrderId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@OrderId", order.OrderId);
+                    command.Parameters.AddWithValue("@Status", order.Status);
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    return rowsAffected > 0; // Return true if the update was successful, otherwise false
+                }
+            }
+        }
+
 
     }
 }
