@@ -8,6 +8,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using BookHaven.Presentation.Comman;
 
 namespace BookHaven.Business.Services
 {
@@ -45,7 +46,23 @@ namespace BookHaven.Business.Services
             _orderRepo.SaveOrder(order); // Call SaveOrder from repository
         }
 
-      
+
+
+        public List<Order> GetAllOrders()
+        {
+            return _orderRepo.GetAllOrders(); // Fetch all orders from repository
+        }
+
+        public Order GetOrderById(int orderId)
+        {
+            return _orderRepo.GetOrderById(orderId); // Fetch order by ID
+        }
+        public bool UpdateOrderStatus(Order order)
+        {
+            // Assuming the repository has an update method for order status
+            return _orderRepo.UpdateOrderStatus(order);  // Call the repository method to update the status
+        }
+
 
     }
 }
