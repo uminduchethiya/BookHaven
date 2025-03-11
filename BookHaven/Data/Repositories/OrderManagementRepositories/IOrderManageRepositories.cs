@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookHaven.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,8 @@ namespace BookHaven.Data.Repositories.OrderManagementRepositories
 {
     interface IOrderManageRepositories
     {
+        List<Customer> GetCustomers();
+        List<Book> GetBooks();
+        void SaveOrder(Order order);
     }
 }
