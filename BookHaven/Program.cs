@@ -1,8 +1,10 @@
+using BookHaven.Data.Models;
 using BookHaven.Presentation;
 
 using BookHaven.Presentation.Admin;
 
 using BookHaven.Presentation.Comman;
+using BookHaven.Presentation.Staff;
 
 
 namespace BookHaven
@@ -18,7 +20,7 @@ namespace BookHaven
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new AdminDashboard());
+            Application.Run(new ReportDashboard());
         }
     }
 }
