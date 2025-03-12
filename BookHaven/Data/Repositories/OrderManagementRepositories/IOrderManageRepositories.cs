@@ -15,5 +15,7 @@ namespace BookHaven.Data.Repositories.OrderManagementRepositories
         List<Order> GetAllOrders();  // Ensure this exists
         Order GetOrderById(int orderId);
         bool UpdateOrderStatus(Order order); // Add this line
+
+
     }
 }
