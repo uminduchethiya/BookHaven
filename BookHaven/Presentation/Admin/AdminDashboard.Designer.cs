@@ -41,9 +41,10 @@
             btnsalestransaction = new Button();
             btnordermanagement = new Button();
             btnsuppliers = new Button();
-            btnreportanaliytics = new Button();
-            btnsetting = new Button();
+            btnorderrequest = new Button();
+            btnreporting = new Button();
             sidebartimer = new System.Windows.Forms.Timer(components);
+            button1 = new Button();
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)menupicbox).BeginInit();
@@ -60,8 +61,9 @@
             sidebar.Controls.Add(btnsalestransaction);
             sidebar.Controls.Add(btnordermanagement);
             sidebar.Controls.Add(btnsuppliers);
-            sidebar.Controls.Add(btnreportanaliytics);
-            sidebar.Controls.Add(btnsetting);
+            sidebar.Controls.Add(btnorderrequest);
+            sidebar.Controls.Add(btnreporting);
+            sidebar.Controls.Add(button1);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.Name = "sidebar";
@@ -189,6 +191,7 @@
             btnordermanagement.Text = "                     Order Management";
             btnordermanagement.TextAlign = ContentAlignment.MiddleLeft;
             btnordermanagement.UseVisualStyleBackColor = false;
+            btnordermanagement.Click += btnordermanagement_Click;
             // 
             // btnsuppliers
             // 
@@ -205,42 +208,60 @@
             btnsuppliers.Text = "                    Suppliers";
             btnsuppliers.TextAlign = ContentAlignment.MiddleLeft;
             btnsuppliers.UseVisualStyleBackColor = false;
+            btnsuppliers.Click += btnsuppliers_Click;
             // 
-            // btnreportanaliytics
+            // btnorderrequest
             // 
-            btnreportanaliytics.FlatAppearance.BorderSize = 0;
-            btnreportanaliytics.FlatStyle = FlatStyle.Flat;
-            btnreportanaliytics.ForeColor = Color.White;
-            btnreportanaliytics.Image = (Image)resources.GetObject("btnreportanaliytics.Image");
-            btnreportanaliytics.ImageAlign = ContentAlignment.MiddleLeft;
-            btnreportanaliytics.Location = new Point(3, 466);
-            btnreportanaliytics.Name = "btnreportanaliytics";
-            btnreportanaliytics.Padding = new Padding(30, 0, 0, 0);
-            btnreportanaliytics.Size = new Size(252, 53);
-            btnreportanaliytics.TabIndex = 5;
-            btnreportanaliytics.Text = "                     Report and Analiytics";
-            btnreportanaliytics.TextAlign = ContentAlignment.MiddleLeft;
-            btnreportanaliytics.UseVisualStyleBackColor = false;
+            btnorderrequest.FlatAppearance.BorderSize = 0;
+            btnorderrequest.FlatStyle = FlatStyle.Flat;
+            btnorderrequest.ForeColor = Color.White;
+            btnorderrequest.Image = (Image)resources.GetObject("btnorderrequest.Image");
+            btnorderrequest.ImageAlign = ContentAlignment.MiddleLeft;
+            btnorderrequest.Location = new Point(3, 466);
+            btnorderrequest.Name = "btnorderrequest";
+            btnorderrequest.Padding = new Padding(30, 0, 0, 0);
+            btnorderrequest.Size = new Size(252, 53);
+            btnorderrequest.TabIndex = 5;
+            btnorderrequest.Text = "                     Order Request";
+            btnorderrequest.TextAlign = ContentAlignment.MiddleLeft;
+            btnorderrequest.UseVisualStyleBackColor = false;
+            btnorderrequest.Click += btnorderrequest_Click;
             // 
-            // btnsetting
+            // btnreporting
             // 
-            btnsetting.FlatAppearance.BorderSize = 0;
-            btnsetting.FlatStyle = FlatStyle.Flat;
-            btnsetting.ForeColor = Color.White;
-            btnsetting.Image = (Image)resources.GetObject("btnsetting.Image");
-            btnsetting.ImageAlign = ContentAlignment.MiddleLeft;
-            btnsetting.Location = new Point(3, 525);
-            btnsetting.Name = "btnsetting";
-            btnsetting.Padding = new Padding(30, 0, 0, 0);
-            btnsetting.Size = new Size(252, 53);
-            btnsetting.TabIndex = 6;
-            btnsetting.Text = "                     Setting";
-            btnsetting.TextAlign = ContentAlignment.MiddleLeft;
-            btnsetting.UseVisualStyleBackColor = false;
+            btnreporting.FlatAppearance.BorderSize = 0;
+            btnreporting.FlatStyle = FlatStyle.Flat;
+            btnreporting.ForeColor = Color.White;
+            btnreporting.Image = (Image)resources.GetObject("btnreporting.Image");
+            btnreporting.ImageAlign = ContentAlignment.MiddleLeft;
+            btnreporting.Location = new Point(3, 525);
+            btnreporting.Name = "btnreporting";
+            btnreporting.Padding = new Padding(30, 0, 0, 0);
+            btnreporting.Size = new Size(252, 53);
+            btnreporting.TabIndex = 6;
+            btnreporting.Text = "                     Reporting and Analytics";
+            btnreporting.TextAlign = ContentAlignment.MiddleLeft;
+            btnreporting.UseVisualStyleBackColor = false;
             // 
             // sidebartimer
             // 
             sidebartimer.Tick += sidebarTimer_Tick;
+            // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(3, 584);
+            button1.Name = "button1";
+            button1.Padding = new Padding(30, 0, 0, 0);
+            button1.Size = new Size(252, 53);
+            button1.TabIndex = 7;
+            button1.Text = "                     Setting";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.UseVisualStyleBackColor = false;
             // 
             // AdminDashboard
             // 
@@ -270,10 +291,11 @@
         private Button btnsalestransaction;
         private Button btnordermanagement;
         private Button btnsuppliers;
-        private Button btnreportanaliytics;
-        private Button btnsetting;
+        private Button btnorderrequest;
+        private Button btnreporting;
         private PictureBox menupicbox;
         private Label Menu;
         private System.Windows.Forms.Timer sidebartimer;
+        private Button button1;
     }
 }

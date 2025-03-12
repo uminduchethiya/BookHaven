@@ -48,6 +48,7 @@
             txtaddress = new TextBox();
             label7 = new Label();
             btnorder = new Button();
+            btnmanageorder = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgcustomerdeatils).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgsearchbook).BeginInit();
@@ -223,19 +224,30 @@
             // 
             // btnorder
             // 
-            btnorder.Location = new Point(456, 628);
+            btnorder.Location = new Point(327, 661);
             btnorder.Name = "btnorder";
-            btnorder.Size = new Size(75, 23);
+            btnorder.Size = new Size(117, 45);
             btnorder.TabIndex = 18;
             btnorder.Text = "Order";
             btnorder.UseVisualStyleBackColor = true;
             btnorder.Click += btnorder_Click;
+            // 
+            // btnmanageorder
+            // 
+            btnmanageorder.Location = new Point(571, 661);
+            btnmanageorder.Name = "btnmanageorder";
+            btnmanageorder.Size = new Size(129, 45);
+            btnmanageorder.TabIndex = 19;
+            btnmanageorder.Text = "Manage Order";
+            btnmanageorder.UseVisualStyleBackColor = true;
+            btnmanageorder.Click += btnmanageorder_Click;
             // 
             // OrderAdd
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 729);
+            Controls.Add(btnmanageorder);
             Controls.Add(btnorder);
             Controls.Add(txtaddress);
             Controls.Add(label7);
@@ -288,5 +300,6 @@
         private TextBox txtaddress;
         private Label label7;
         private Button btnorder;
+        private Button btnmanageorder;
     }
 }
