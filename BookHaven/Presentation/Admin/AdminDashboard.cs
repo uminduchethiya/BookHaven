@@ -1,6 +1,7 @@
 ﻿using BookHaven.Business.Interfaces;
 using BookHaven.Business.Services;
 using BookHaven.Data.Repositories;
+using BookHaven.Presentation.Comman;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,6 +79,43 @@ namespace BookHaven.Presentation.Admin
             UserManagement userManagementForm = new UserManagement(_userService); // Pass _userService
             this.Hide();
             userManagementForm.Show(); // Opens the form
+        }
+
+        private void btnsuppliers_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the AddSupplier form
+            AddSupplier addSupplierForm = new AddSupplier();
+
+            // Show the AddSupplier form (this opens the form as a new window)
+            addSupplierForm.Show();
+        }
+
+        private void btnorderrequest_Click(object sender, EventArgs e)
+        {
+            // Create an instance of ISupplierOrderManagementService
+            ISupplierOrderManagementService supplierOrderService = new SupplierOrderManagementService();
+
+            // Create an instance of SupplierOrderForm and pass the service
+            SupplierOrderForm supplierOrderForm = new SupplierOrderForm(supplierOrderService);
+
+
+            // Hide the AdminDashboard form
+            this.Hide();
+
+
+            // Show the SupplierOrderForm (non-blocking, new window)
+            supplierOrderForm.Show();
+        }
+
+        private void btnordermanagement_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the OrderAdd form
+            OrderAdd orderAddForm = new OrderAdd();
+            // Hide the AdminDashboard form
+            this.Hide();
+
+            // Show the OrderAdd form (non-blocking, new window)
+            orderAddForm.Show();
         }
     }
 }

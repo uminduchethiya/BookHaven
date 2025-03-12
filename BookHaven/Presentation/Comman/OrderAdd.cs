@@ -286,14 +286,14 @@ namespace BookHaven.Presentation.Comman
         {
             try
             {
-                
-                    string senderEmail = "uminduchethiya@gmail.com"; // Change to your email
-                    string senderPassword = "bcgjguscujhvknor"; // Change to your email password
-                    string smtpServer = "smtp.gmail.com"; // Change to your SMTP server
-                    int smtpPort = 587; // Change to the correct SMTP port
+
+                string senderEmail = "uminduchethiya@gmail.com"; // Change to your email
+                string senderPassword = "bcgjguscujhvknor"; // Change to your email password
+                string smtpServer = "smtp.gmail.com"; // Change to your SMTP server
+                int smtpPort = 587; // Change to the correct SMTP port
 
 
-                    using (MailMessage mail = new MailMessage())
+                using (MailMessage mail = new MailMessage())
                 {
                     mail.From = new MailAddress(senderEmail);
                     mail.To.Add(recipientEmail);
@@ -326,6 +326,20 @@ namespace BookHaven.Presentation.Comman
             }
         }
 
+        private void btnmanageorder_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the OrderManageRepositories
+            IOrderManageRepositories orderRepo = new OrderManageRepositories();
+
+            // Initialize service with the repository
+            IOrderManagementService orderService = new OrderManagementService(orderRepo);
+
+            // Create an instance of OrderManage form and pass the service
+            OrderManage orderManageForm = new OrderManage(orderService);
+            this.Hide();
+            // Show the OrderManage form (non-blocking, new window)
+            orderManageForm.Show();
+        }
     }
 
 }

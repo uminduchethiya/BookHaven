@@ -24,12 +24,12 @@ namespace BookHaven.Business.Services
         public List<Supplier> GetAllSuppliers() => _supplierRepository.GetAllSuppliers();
         public Supplier GetSupplierByName(string supplierName) => _supplierRepository.GetSupplierByName(supplierName);
 
-        public void DeactivateSupplier(int supplierId)  // ✅ Fixed
+        public void DeactivateSupplier(int supplierId)  
         {
             _supplierRepository.DeactivateSupplier(supplierId);
         }
 
-        public List<Supplier> GetActiveSuppliers()  // ✅ Fixed
+        public List<Supplier> GetActiveSuppliers() 
         {
             return _supplierRepository.GetActiveSuppliers();
         }
