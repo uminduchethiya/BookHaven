@@ -54,10 +54,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(436, 19);
+            label1.Font = new Font("Cambria", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(12, 18);
             label1.Name = "label1";
-            label1.Size = new Size(148, 37);
+            label1.Size = new Size(175, 41);
             label1.TabIndex = 0;
             label1.Text = "Add Book";
             label1.Click += label1_Click;
@@ -65,7 +66,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(500, 127);
             label2.Name = "label2";
             label2.Size = new Size(32, 15);
@@ -75,7 +78,9 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(500, 194);
             label3.Name = "label3";
             label3.Size = new Size(46, 15);
@@ -85,7 +90,9 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(500, 264);
             label4.Name = "label4";
             label4.Size = new Size(35, 15);
@@ -95,7 +102,9 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Control;
             label5.Location = new Point(500, 334);
             label5.Name = "label5";
             label5.Size = new Size(57, 15);
@@ -105,7 +114,9 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(500, 403);
             label6.Name = "label6";
             label6.Size = new Size(35, 15);
@@ -115,7 +126,9 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.Control;
             label7.Location = new Point(500, 475);
             label7.Name = "label7";
             label7.Size = new Size(39, 15);
@@ -160,6 +173,7 @@
             // 
             // btnSave
             // 
+            btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.Location = new Point(703, 574);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(100, 37);
@@ -170,6 +184,7 @@
             // 
             // btnCancel
             // 
+            btnCancel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancel.Location = new Point(834, 574);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(100, 37);
@@ -190,7 +205,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.pngtree_open_book_icon_for_library_and_studying_in_head_vector_png_image_15477299;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.pngtree_open_book_icon_for_library_and_studying_in_head_vector_png_image_15477299_removebg_preview;
             pictureBox1.Location = new Point(44, 127);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(405, 371);
@@ -201,6 +217,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.Transparent;
             panel1.Location = new Point(29, 93);
             panel1.Name = "panel1";
             panel1.Size = new Size(948, 548);
@@ -208,6 +225,7 @@
             // 
             // btnInventoryManagement
             // 
+            btnInventoryManagement.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInventoryManagement.Location = new Point(806, 647);
             btnInventoryManagement.Name = "btnInventoryManagement";
             btnInventoryManagement.Size = new Size(128, 36);
@@ -218,7 +236,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.BackColor = SystemColors.ActiveCaptionText;
             panel2.Controls.Add(label1);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -229,6 +247,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
             Controls.Add(btnInventoryManagement);
             Controls.Add(pictureBox1);
@@ -248,6 +268,7 @@
             Controls.Add(label2);
             Controls.Add(panel1);
             Controls.Add(panel2);
+            DoubleBuffered = true;
             Name = "AddBook";
             Text = "AddBook";
             Load += AddBook_Load;
