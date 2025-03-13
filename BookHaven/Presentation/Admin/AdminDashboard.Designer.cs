@@ -47,16 +47,16 @@
             sidebartimer = new System.Windows.Forms.Timer(components);
             Overview = new Label();
             panel3 = new Panel();
-            label1 = new Label();
-            panel4 = new Panel();
             panel6 = new Panel();
-            panel5 = new Panel();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            lbldailySales = new Label();
-            lblweeklySales = new Label();
             lblmonthlySales = new Label();
+            label4 = new Label();
+            panel5 = new Panel();
+            lblweeklySales = new Label();
+            label3 = new Label();
+            panel4 = new Panel();
+            lbldailySales = new Label();
+            label2 = new Label();
+            label1 = new Label();
             panel7 = new Panel();
             panel8 = new Panel();
             lblmonthlyamount = new Label();
@@ -80,27 +80,27 @@
             label14 = new Label();
             label15 = new Label();
             panel15 = new Panel();
+            panel19 = new Panel();
+            lblmostselling = new Label();
+            label24 = new Label();
+            panel17 = new Panel();
+            lbltotalbooks = new Label();
+            label19 = new Label();
+            panel16 = new Panel();
+            lbltotalsuppliers = new Label();
+            label17 = new Label();
             panel18 = new Panel();
             lbltotalcustomers = new Label();
             label21 = new Label();
             label22 = new Label();
-            panel16 = new Panel();
-            lbltotalsuppliers = new Label();
-            label17 = new Label();
-            panel17 = new Panel();
-            lbltotalbooks = new Label();
-            label19 = new Label();
-            panel19 = new Panel();
-            lblmostselling = new Label();
-            label24 = new Label();
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)menupicbox).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            panel4.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
+            panel4.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
             panel9.SuspendLayout();
@@ -110,10 +110,10 @@
             panel13.SuspendLayout();
             panel14.SuspendLayout();
             panel15.SuspendLayout();
-            panel18.SuspendLayout();
-            panel16.SuspendLayout();
-            panel17.SuspendLayout();
             panel19.SuspendLayout();
+            panel17.SuspendLayout();
+            panel16.SuspendLayout();
+            panel18.SuspendLayout();
             SuspendLayout();
             // 
             // sidebar
@@ -349,15 +349,63 @@
             panel3.Size = new Size(735, 140);
             panel3.TabIndex = 2;
             // 
-            // label1
+            // panel6
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(3, 4);
-            label1.Name = "label1";
-            label1.Size = new Size(142, 17);
-            label1.TabIndex = 3;
-            label1.Text = "Sales Count Overview";
+            panel6.Controls.Add(lblmonthlySales);
+            panel6.Controls.Add(label4);
+            panel6.Location = new Point(513, 24);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(200, 100);
+            panel6.TabIndex = 5;
+            // 
+            // lblmonthlySales
+            // 
+            lblmonthlySales.AutoSize = true;
+            lblmonthlySales.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblmonthlySales.Location = new Point(73, 24);
+            lblmonthlySales.Name = "lblmonthlySales";
+            lblmonthlySales.Size = new Size(63, 25);
+            lblmonthlySales.TabIndex = 8;
+            lblmonthlySales.Text = "label7";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(59, 72);
+            label4.Name = "label4";
+            label4.Size = new Size(93, 17);
+            label4.TabIndex = 8;
+            label4.Text = "Monthly Sales";
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(lblweeklySales);
+            panel5.Controls.Add(label3);
+            panel5.Location = new Point(268, 24);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(200, 100);
+            panel5.TabIndex = 4;
+            // 
+            // lblweeklySales
+            // 
+            lblweeklySales.AutoSize = true;
+            lblweeklySales.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblweeklySales.Location = new Point(67, 24);
+            lblweeklySales.Name = "lblweeklySales";
+            lblweeklySales.Size = new Size(63, 25);
+            lblweeklySales.TabIndex = 7;
+            lblweeklySales.Text = "label6";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(56, 72);
+            label3.Name = "label3";
+            label3.Size = new Size(86, 17);
+            label3.TabIndex = 7;
+            label3.Text = "Weekly Sales";
             // 
             // panel4
             // 
@@ -368,23 +416,15 @@
             panel4.Size = new Size(200, 100);
             panel4.TabIndex = 3;
             // 
-            // panel6
+            // lbldailySales
             // 
-            panel6.Controls.Add(lblmonthlySales);
-            panel6.Controls.Add(label4);
-            panel6.Location = new Point(513, 24);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(200, 100);
-            panel6.TabIndex = 5;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(lblweeklySales);
-            panel5.Controls.Add(label3);
-            panel5.Location = new Point(268, 24);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(200, 100);
-            panel5.TabIndex = 4;
+            lbldailySales.AutoSize = true;
+            lbldailySales.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbldailySales.Location = new Point(71, 24);
+            lbldailySales.Name = "lbldailySales";
+            lbldailySales.Size = new Size(63, 25);
+            lbldailySales.TabIndex = 3;
+            lbldailySales.Text = "label5";
             // 
             // label2
             // 
@@ -397,55 +437,15 @@
             label2.Text = "Daily Sales";
             label2.Click += label2_Click;
             // 
-            // label3
+            // label1
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(56, 72);
-            label3.Name = "label3";
-            label3.Size = new Size(86, 17);
-            label3.TabIndex = 7;
-            label3.Text = "Weekly Sales";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(59, 72);
-            label4.Name = "label4";
-            label4.Size = new Size(93, 17);
-            label4.TabIndex = 8;
-            label4.Text = "Monthly Sales";
-            // 
-            // lbldailySales
-            // 
-            lbldailySales.AutoSize = true;
-            lbldailySales.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbldailySales.Location = new Point(71, 24);
-            lbldailySales.Name = "lbldailySales";
-            lbldailySales.Size = new Size(63, 25);
-            lbldailySales.TabIndex = 3;
-            lbldailySales.Text = "label5";
-            // 
-            // lblweeklySales
-            // 
-            lblweeklySales.AutoSize = true;
-            lblweeklySales.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblweeklySales.Location = new Point(67, 24);
-            lblweeklySales.Name = "lblweeklySales";
-            lblweeklySales.Size = new Size(63, 25);
-            lblweeklySales.TabIndex = 7;
-            lblweeklySales.Text = "label6";
-            // 
-            // lblmonthlySales
-            // 
-            lblmonthlySales.AutoSize = true;
-            lblmonthlySales.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblmonthlySales.Location = new Point(73, 24);
-            lblmonthlySales.Name = "lblmonthlySales";
-            lblmonthlySales.Size = new Size(63, 25);
-            lblmonthlySales.TabIndex = 8;
-            lblmonthlySales.Text = "label7";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(3, 4);
+            label1.Name = "label1";
+            label1.Size = new Size(142, 17);
+            label1.TabIndex = 3;
+            label1.Text = "Sales Count Overview";
             // 
             // panel7
             // 
@@ -677,6 +677,93 @@
             panel15.TabIndex = 8;
             panel15.Paint += panel15_Paint;
             // 
+            // panel19
+            // 
+            panel19.Controls.Add(lblmostselling);
+            panel19.Controls.Add(label24);
+            panel19.Location = new Point(572, 24);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(137, 100);
+            panel19.TabIndex = 9;
+            // 
+            // lblmostselling
+            // 
+            lblmostselling.AutoSize = true;
+            lblmostselling.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblmostselling.Location = new Point(39, 24);
+            lblmostselling.Name = "lblmostselling";
+            lblmostselling.Size = new Size(63, 25);
+            lblmostselling.TabIndex = 3;
+            lblmostselling.Text = "label5";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label24.Location = new Point(15, 71);
+            label24.Name = "label24";
+            label24.Size = new Size(117, 17);
+            label24.TabIndex = 6;
+            label24.Text = "Most Selling Book";
+            // 
+            // panel17
+            // 
+            panel17.Controls.Add(lbltotalbooks);
+            panel17.Controls.Add(label19);
+            panel17.Location = new Point(391, 24);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(137, 100);
+            panel17.TabIndex = 8;
+            // 
+            // lbltotalbooks
+            // 
+            lbltotalbooks.AutoSize = true;
+            lbltotalbooks.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbltotalbooks.Location = new Point(39, 24);
+            lbltotalbooks.Name = "lbltotalbooks";
+            lbltotalbooks.Size = new Size(63, 25);
+            lbltotalbooks.TabIndex = 3;
+            lbltotalbooks.Text = "label5";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.Location = new Point(27, 71);
+            label19.Name = "label19";
+            label19.Size = new Size(78, 17);
+            label19.TabIndex = 6;
+            label19.Text = "Total Books";
+            // 
+            // panel16
+            // 
+            panel16.Controls.Add(lbltotalsuppliers);
+            panel16.Controls.Add(label17);
+            panel16.Location = new Point(210, 24);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(137, 100);
+            panel16.TabIndex = 7;
+            // 
+            // lbltotalsuppliers
+            // 
+            lbltotalsuppliers.AutoSize = true;
+            lbltotalsuppliers.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbltotalsuppliers.Location = new Point(39, 24);
+            lbltotalsuppliers.Name = "lbltotalsuppliers";
+            lbltotalsuppliers.Size = new Size(63, 25);
+            lbltotalsuppliers.TabIndex = 3;
+            lbltotalsuppliers.Text = "label5";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.Location = new Point(15, 71);
+            label17.Name = "label17";
+            label17.Size = new Size(96, 17);
+            label17.TabIndex = 6;
+            label17.Text = "Total Suppliers";
+            // 
             // panel18
             // 
             panel18.Controls.Add(lbltotalcustomers);
@@ -717,93 +804,6 @@
             label22.TabIndex = 3;
             label22.Text = "System Overview";
             // 
-            // panel16
-            // 
-            panel16.Controls.Add(lbltotalsuppliers);
-            panel16.Controls.Add(label17);
-            panel16.Location = new Point(210, 24);
-            panel16.Name = "panel16";
-            panel16.Size = new Size(137, 100);
-            panel16.TabIndex = 7;
-            // 
-            // lbltotalsuppliers
-            // 
-            lbltotalsuppliers.AutoSize = true;
-            lbltotalsuppliers.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbltotalsuppliers.Location = new Point(39, 24);
-            lbltotalsuppliers.Name = "lbltotalsuppliers";
-            lbltotalsuppliers.Size = new Size(63, 25);
-            lbltotalsuppliers.TabIndex = 3;
-            lbltotalsuppliers.Text = "label5";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(15, 71);
-            label17.Name = "label17";
-            label17.Size = new Size(96, 17);
-            label17.TabIndex = 6;
-            label17.Text = "Total Suppliers";
-            // 
-            // panel17
-            // 
-            panel17.Controls.Add(lbltotalbooks);
-            panel17.Controls.Add(label19);
-            panel17.Location = new Point(391, 24);
-            panel17.Name = "panel17";
-            panel17.Size = new Size(137, 100);
-            panel17.TabIndex = 8;
-            // 
-            // lbltotalbooks
-            // 
-            lbltotalbooks.AutoSize = true;
-            lbltotalbooks.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbltotalbooks.Location = new Point(39, 24);
-            lbltotalbooks.Name = "lbltotalbooks";
-            lbltotalbooks.Size = new Size(63, 25);
-            lbltotalbooks.TabIndex = 3;
-            lbltotalbooks.Text = "label5";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.Location = new Point(15, 71);
-            label19.Name = "label19";
-            label19.Size = new Size(78, 17);
-            label19.TabIndex = 6;
-            label19.Text = "Total Books";
-            // 
-            // panel19
-            // 
-            panel19.Controls.Add(lblmostselling);
-            panel19.Controls.Add(label24);
-            panel19.Location = new Point(572, 24);
-            panel19.Name = "panel19";
-            panel19.Size = new Size(137, 100);
-            panel19.TabIndex = 9;
-            // 
-            // lblmostselling
-            // 
-            lblmostselling.AutoSize = true;
-            lblmostselling.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblmostselling.Location = new Point(39, 24);
-            lblmostselling.Name = "lblmostselling";
-            lblmostselling.Size = new Size(63, 25);
-            lblmostselling.TabIndex = 3;
-            lblmostselling.Text = "label5";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label24.Location = new Point(15, 71);
-            label24.Name = "label24";
-            label24.Size = new Size(117, 17);
-            label24.TabIndex = 6;
-            label24.Text = "Most Selling Book";
-            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -825,12 +825,12 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             panel8.ResumeLayout(false);
@@ -849,14 +849,14 @@
             panel14.PerformLayout();
             panel15.ResumeLayout(false);
             panel15.PerformLayout();
-            panel18.ResumeLayout(false);
-            panel18.PerformLayout();
-            panel16.ResumeLayout(false);
-            panel16.PerformLayout();
-            panel17.ResumeLayout(false);
-            panel17.PerformLayout();
             panel19.ResumeLayout(false);
             panel19.PerformLayout();
+            panel17.ResumeLayout(false);
+            panel17.PerformLayout();
+            panel16.ResumeLayout(false);
+            panel16.PerformLayout();
+            panel18.ResumeLayout(false);
+            panel18.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
