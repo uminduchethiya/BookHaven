@@ -74,6 +74,7 @@
             lbltotalcustomers = new Label();
             label21 = new Label();
             label22 = new Label();
+            button1 = new Button();
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)menupicbox).BeginInit();
@@ -102,6 +103,7 @@
             sidebar.Controls.Add(btnsalestransaction);
             sidebar.Controls.Add(btnordermanagement);
             sidebar.Controls.Add(btnreporting);
+            sidebar.Controls.Add(button1);
             sidebar.Location = new Point(1, 1);
             sidebar.Name = "sidebar";
             sidebar.Size = new Size(240, 729);
@@ -581,6 +583,23 @@
             label22.TabIndex = 3;
             label22.Text = "System Overview";
             // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(3, 407);
+            button1.Name = "button1";
+            button1.Padding = new Padding(30, 0, 0, 0);
+            button1.Size = new Size(252, 53);
+            button1.TabIndex = 7;
+            button1.Text = "                     Logout";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // SalesClerkDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -678,5 +697,6 @@
         private Label lbltotalcustomers;
         private Label label21;
         private Label label22;
+        private Button button1;
     }
 }

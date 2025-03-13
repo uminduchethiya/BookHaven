@@ -20,7 +20,7 @@ namespace BookHaven.Presentation.Admin
     {
         private readonly IUserService _userService;
         private readonly IDashboardManagementService _dashboardManagementService;
-     
+
         public AdminDashboard()
         {
             _dashboardManagementService = new DashboardManagementService(new DashboardRepository());
@@ -90,7 +90,7 @@ namespace BookHaven.Presentation.Admin
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
-            
+
         }
 
         private void menupicbox_Click(object sender, EventArgs e)
@@ -101,8 +101,8 @@ namespace BookHaven.Presentation.Admin
         private void btnusers_Click(object sender, EventArgs e)
         {
             this.Hide();
-            UserManagement userManagementForm = new UserManagement(_userService); 
-            userManagementForm.Show(); 
+            UserManagement userManagementForm = new UserManagement(_userService);
+            userManagementForm.Show();
         }
 
         private void btnsuppliers_Click(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace BookHaven.Presentation.Admin
             this.Hide();
             OrderAdd orderAddForm = new OrderAdd();
             orderAddForm.Show();
-           
+
         }
 
         private void Overview_Click(object sender, EventArgs e)
@@ -176,5 +176,24 @@ namespace BookHaven.Presentation.Admin
             reportDashboard.ShowDialog();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to log out?",  // Message
+                "Logout Confirmation",  // Title
+                MessageBoxButtons.YesNo,  // Yes/No buttons
+                MessageBoxIcon.Question  // Question icon
+            );
+
+            if (result == DialogResult.Yes)  // Proceed only if the user confirms
+            {
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.ShowDialog();
+                this.Close();
+            }
+        }
+
     }
 }

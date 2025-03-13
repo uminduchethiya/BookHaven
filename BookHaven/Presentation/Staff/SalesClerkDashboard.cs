@@ -83,28 +83,26 @@ namespace BookHaven.Presentation.Staff
 
         private void btncustomers_Click(object sender, EventArgs e)
         {
-            this.Hide();
+           
             CustomerManagementViewForm customerManagementView = new CustomerManagementViewForm();
             customerManagementView.ShowDialog();
-            this.Close();
+           
         }
 
         private void btnsalestransaction_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             SalesTransactionForm salesTransactionForm = new SalesTransactionForm();
             salesTransactionForm.ShowDialog();
-            this.Close();
 
         }
 
         private void btnordermanagement_Click(object sender, EventArgs e)
         {
-            
+
             OrderAdd orderAddForm = new OrderAdd();
-            this.Hide();
             orderAddForm.Show();
-           
+
         }
 
         private void btnreporting_Click(object sender, EventArgs e)
@@ -114,5 +112,24 @@ namespace BookHaven.Presentation.Staff
             salesReportDaily.ShowDialog();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to log out?",
+                "Logout Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.ShowDialog();
+                this.Close();
+            }
+        }
+
     }
 }

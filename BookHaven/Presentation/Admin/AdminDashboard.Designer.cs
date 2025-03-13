@@ -324,9 +324,10 @@
             button1.Padding = new Padding(30, 0, 0, 0);
             button1.Size = new Size(252, 53);
             button1.TabIndex = 7;
-            button1.Text = "                     Setting";
+            button1.Text = "                     Logout";
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // sidebartimer
             // 
