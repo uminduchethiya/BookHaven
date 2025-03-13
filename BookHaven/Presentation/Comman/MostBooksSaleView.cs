@@ -96,5 +96,13 @@ namespace BookHaven.Presentation.Comman
         {
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportDashboard reportDashboard = new ReportDashboard();
+            reportDashboard.ShowDialog();
+            this.Close();
+        }
     }
 }

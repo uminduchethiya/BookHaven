@@ -98,6 +98,7 @@
             btnBack.TabIndex = 5;
             btnBack.Text = "Back To Dashboard";
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // MostBooksSaleView
             // 
