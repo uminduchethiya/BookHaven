@@ -32,32 +32,37 @@
             dgvDailySales = new DataGridView();
             btnExport = new Button();
             btnBack = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvDailySales).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(368, 20);
+            label1.Font = new Font("Cambria", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(12, 18);
             label1.Name = "label1";
-            label1.Size = new Size(265, 40);
+            label1.Size = new Size(312, 41);
             label1.TabIndex = 0;
             label1.Text = "Daily Sales Report";
             // 
             // dgvDailySales
             // 
+            dgvDailySales.BackgroundColor = SystemColors.ControlLightLight;
             dgvDailySales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDailySales.Location = new Point(91, 77);
+            dgvDailySales.Location = new Point(80, 122);
             dgvDailySales.Name = "dgvDailySales";
             dgvDailySales.Size = new Size(838, 497);
             dgvDailySales.TabIndex = 1;
             // 
             // btnExport
             // 
-            btnExport.Location = new Point(809, 617);
+            btnExport.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExport.Location = new Point(798, 645);
             btnExport.Name = "btnExport";
-            btnExport.Size = new Size(109, 35);
+            btnExport.Size = new Size(120, 35);
             btnExport.TabIndex = 2;
             btnExport.Text = "Export To Excel";
             btnExport.UseVisualStyleBackColor = true;
@@ -65,7 +70,8 @@
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(327, 633);
+            btnBack.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.Location = new Point(405, 652);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(170, 23);
             btnBack.TabIndex = 3;
@@ -73,21 +79,34 @@
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ActiveCaptionText;
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1009, 74);
+            panel1.TabIndex = 4;
+            // 
             // SalesReportDaily
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
+            Controls.Add(panel1);
             Controls.Add(btnBack);
             Controls.Add(btnExport);
             Controls.Add(dgvDailySales);
-            Controls.Add(label1);
+            DoubleBuffered = true;
             Name = "SalesReportDaily";
             Text = "SalesReportDaily";
             Load += SalesReportDaily_Load;
             ((System.ComponentModel.ISupportInitialize)dgvDailySales).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -96,5 +115,6 @@
         private DataGridView dgvDailySales;
         private Button btnExport;
         private Button btnBack;
+        private Panel panel1;
     }
 }
