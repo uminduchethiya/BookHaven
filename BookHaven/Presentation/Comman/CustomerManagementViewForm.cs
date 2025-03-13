@@ -207,5 +207,10 @@ namespace BookHaven.Presentation.Comman
             addCustomer.Show();
             this.Hide();
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

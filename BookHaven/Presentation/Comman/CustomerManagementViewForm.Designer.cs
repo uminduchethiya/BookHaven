@@ -54,6 +54,8 @@
             txtLastName = new TextBox();
             txtAddress = new TextBox();
             txtEmail = new TextBox();
+            label2 = new Label();
+            label11 = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
@@ -61,7 +63,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.BackColor = SystemColors.ActiveCaptionText;
             panel2.Controls.Add(label1);
             panel2.Location = new Point(2, 0);
             panel2.Name = "panel2";
@@ -71,15 +73,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(284, 9);
+            label1.Font = new Font("Cambria", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(10, 15);
             label1.Name = "label1";
-            label1.Size = new Size(387, 45);
+            label1.Size = new Size(392, 41);
             label1.TabIndex = 0;
             label1.Text = "Customer Management";
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 140);
             dataGridView1.Name = "dataGridView1";
@@ -108,6 +112,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(dateTimePicker1);
             panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(btnUpdate);
@@ -138,11 +143,12 @@
             // 
             dateTimePicker1.Location = new Point(132, 128);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(240, 23);
+            dateTimePicker1.Size = new Size(252, 23);
             dateTimePicker1.TabIndex = 22;
             // 
             // btnDelete
             // 
+            btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDelete.Location = new Point(831, 272);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(85, 38);
@@ -153,6 +159,7 @@
             // 
             // btnUpdate
             // 
+            btnUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUpdate.Location = new Point(706, 272);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(85, 38);
@@ -172,7 +179,7 @@
             // 
             // txtname
             // 
-            txtname.Location = new Point(124, 28);
+            txtname.Location = new Point(136, 28);
             txtname.Name = "txtname";
             txtname.Size = new Size(248, 23);
             txtname.TabIndex = 18;
@@ -180,6 +187,8 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = SystemColors.Control;
             label10.Location = new Point(554, 174);
             label10.Name = "label10";
             label10.Size = new Size(28, 15);
@@ -189,33 +198,42 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.Control;
             label9.Location = new Point(554, 126);
             label9.Name = "label9";
-            label9.Size = new Size(45, 15);
+            label9.Size = new Size(49, 15);
             label9.TabIndex = 16;
             label9.Text = "Gender";
+            label9.Click += label9_Click;
             // 
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.Control;
             label8.Location = new Point(554, 77);
             label8.Name = "label8";
-            label8.Size = new Size(88, 15);
+            label8.Size = new Size(91, 15);
             label8.TabIndex = 15;
             label8.Text = "Phone Number";
             // 
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.Control;
             label7.Location = new Point(554, 36);
             label7.Name = "label7";
-            label7.Size = new Size(63, 15);
+            label7.Size = new Size(65, 15);
             label7.TabIndex = 14;
             label7.Text = "Last Name";
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.Control;
             label6.Location = new Point(51, 247);
             label6.Name = "label6";
             label6.Size = new Size(55, 15);
@@ -225,24 +243,30 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Control;
             label5.Location = new Point(51, 190);
             label5.Name = "label5";
-            label5.Size = new Size(49, 15);
+            label5.Size = new Size(51, 15);
             label5.TabIndex = 12;
             label5.Text = "Address";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(51, 134);
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(48, 134);
             label4.Name = "label4";
-            label4.Size = new Size(75, 15);
+            label4.Size = new Size(82, 15);
             label4.TabIndex = 11;
             label4.Text = "Date Of Birth";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(51, 77);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
@@ -252,16 +276,18 @@
             // txtFirstName
             // 
             txtFirstName.AutoSize = true;
+            txtFirstName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtFirstName.ForeColor = SystemColors.Control;
             txtFirstName.Location = new Point(51, 31);
             txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new Size(64, 15);
+            txtFirstName.Size = new Size(67, 15);
             txtFirstName.TabIndex = 9;
             txtFirstName.Text = "First Name";
             txtFirstName.Click += label2_Click;
             // 
             // txtZipcode
             // 
-            txtZipcode.Location = new Point(124, 239);
+            txtZipcode.Location = new Point(131, 239);
             txtZipcode.Name = "txtZipcode";
             txtZipcode.Size = new Size(248, 23);
             txtZipcode.TabIndex = 8;
@@ -289,7 +315,7 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(124, 182);
+            txtAddress.Location = new Point(132, 182);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(248, 23);
             txtAddress.TabIndex = 3;
@@ -297,21 +323,49 @@
             // txtEmail
             // 
             txtEmail.Enabled = false;
-            txtEmail.Location = new Point(124, 74);
+            txtEmail.Location = new Point(134, 74);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(248, 23);
             txtEmail.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(660, 115);
+            label2.Name = "label2";
+            label2.Size = new Size(48, 17);
+            label2.TabIndex = 14;
+            label2.Text = "Search";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(660, 114);
+            label11.Name = "label11";
+            label11.Size = new Size(48, 17);
+            label11.TabIndex = 15;
+            label11.Text = "Search";
             // 
             // CustomerManagementViewForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
+            Controls.Add(label11);
+            Controls.Add(label2);
             Controls.Add(panel1);
             Controls.Add(btnAddCustomer);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
             Controls.Add(panel2);
+            DoubleBuffered = true;
             Name = "CustomerManagementViewForm";
             Text = "CustomerManagementViewForm";
             Load += CustomerManagementViewForm_Load;
@@ -353,5 +407,7 @@
         private Button btnUpdate;
         private ComboBox cmbGender;
         private DateTimePicker dateTimePicker1;
+        private Label label2;
+        private Label label11;
     }
 }
