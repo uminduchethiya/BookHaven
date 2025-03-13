@@ -4,6 +4,8 @@ using BookHaven.Data.Repositories.SupplierOrderManagementRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,7 +37,24 @@ namespace BookHaven.Business.Services
             _supplierOrderRepository.SaveSupplierOrder(order);
         }
 
+        public List<SupplierOrder> GetSupplierOrdersWithDetails()
+        {
+            return _supplierOrderRepository.GetSupplierOrdersWithDetails();
+        }
 
-       
+        
+
+        public void UpdateBookStock(int bookId, int quantity)
+        {
+            _supplierOrderRepository.UpdateBookStock(bookId, quantity);
+        }
+        public void UpdateOrderStatus(int orderID, string status)
+        {
+            _supplierOrderRepository.UpdateOrderStatus(orderID, status);
+        }
+
+
+
+
     }
 }

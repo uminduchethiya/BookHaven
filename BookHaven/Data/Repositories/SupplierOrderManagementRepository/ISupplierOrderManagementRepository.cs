@@ -12,6 +12,11 @@ namespace BookHaven.Data.Repositories.SupplierOrderManagementRepository
         List<Supplier> GetAllSuppliers();
         List<Book> GetLowStockBooks();
         void SaveSupplierOrder(SupplierOrder order); // Method for saving SupplierOrder
-        
+                                                     // Add this method to retrieve supplier orders with details
+        List<SupplierOrder> GetSupplierOrdersWithDetails();
+        // Add this method
+        void UpdateBookStock(int bookId, int quantity);
+
+        void UpdateOrderStatus(int orderID, string status);
     }
 }
