@@ -85,7 +85,10 @@ namespace BookHaven.Presentation.Admin
 
         private void btndashboard_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            BookInventoryViewForm bookInventory = new BookInventoryViewForm();
+            bookInventory.ShowDialog();
+            this.Close();
         }
 
         private void sidebarTimer_Tick(object sender, EventArgs e)

@@ -75,10 +75,10 @@ namespace BookHaven.Presentation.Staff
 
         private void btndashboard_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //SalesClerkDashboard salesClarkDashboard = new SalesClerkDashboard();
-            //salesClarkDashboard.ShowDialog();
-            //this.Close();
+           
+            BookInventoryViewForm salesClarkDashboard = new BookInventoryViewForm();
+            salesClarkDashboard.ShowDialog();
+           
         }
 
         private void btncustomers_Click(object sender, EventArgs e)

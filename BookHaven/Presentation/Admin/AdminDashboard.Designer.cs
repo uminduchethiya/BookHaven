@@ -188,7 +188,7 @@
             btndashboard.Padding = new Padding(30, 0, 0, 0);
             btndashboard.Size = new Size(252, 53);
             btndashboard.TabIndex = 3;
-            btndashboard.Text = "                     Dashboard";
+            btndashboard.Text = "                     Book Management";
             btndashboard.TextAlign = ContentAlignment.MiddleLeft;
             btndashboard.UseVisualStyleBackColor = false;
             btndashboard.Click += btndashboard_Click;
@@ -348,7 +348,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = SystemColors.ControlDark;
+            panel3.BackColor = SystemColors.Control;
             panel3.Controls.Add(panel6);
             panel3.Controls.Add(panel5);
             panel3.Controls.Add(panel4);
@@ -458,7 +458,7 @@
             // 
             // panel7
             // 
-            panel7.BackColor = SystemColors.ControlDark;
+            panel7.BackColor = SystemColors.Control;
             panel7.Controls.Add(panel8);
             panel7.Controls.Add(panel9);
             panel7.Controls.Add(panel10);
@@ -567,7 +567,7 @@
             // 
             // panel11
             // 
-            panel11.BackColor = SystemColors.ControlDark;
+            panel11.BackColor = SystemColors.Control;
             panel11.Controls.Add(panel12);
             panel11.Controls.Add(panel13);
             panel11.Controls.Add(panel14);
@@ -677,7 +677,7 @@
             // 
             // panel15
             // 
-            panel15.BackColor = SystemColors.ControlDark;
+            panel15.BackColor = SystemColors.Control;
             panel15.Controls.Add(panel19);
             panel15.Controls.Add(panel17);
             panel15.Controls.Add(panel16);

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookHaven.Data.Models;
 using BookHaven.Data.Repositories.BookManagementRepository;
+using BookHaven.Presentation.Admin;
 
 namespace BookHaven.Presentation.Comman
 {
@@ -55,7 +56,7 @@ namespace BookHaven.Presentation.Comman
 
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
-            string searchTerm = txtsearch.Text.Trim(); 
+            string searchTerm = txtsearch.Text.Trim();
             LoadBooks(searchTerm); // Load the books filtered by the search term
         }
 
@@ -99,7 +100,7 @@ namespace BookHaven.Presentation.Comman
                 };
 
                 // Update the book in the repository/database
-                var result = _bookRepository.EditBook(updatedBook); 
+                var result = _bookRepository.EditBook(updatedBook);
 
                 if (result)
                 {
@@ -155,10 +156,19 @@ namespace BookHaven.Presentation.Comman
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-            AddBook addBookForm = new AddBook();
-            addBookForm.Show();
             this.Hide();
+            AddBook addBook = new AddBook();
+            addBook.ShowDialog();
+            this.Close();
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.ShowDialog();
+            this.Close();
         }
     }
 }

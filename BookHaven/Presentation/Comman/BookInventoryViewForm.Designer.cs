@@ -50,6 +50,7 @@
             btnAddBook = new Button();
             label8 = new Label();
             panel2 = new Panel();
+            btnBack = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -106,6 +107,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(btnBack);
             panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(btnUpdate);
             panel1.Controls.Add(label7);
@@ -273,6 +275,17 @@
             panel2.Size = new Size(1006, 70);
             panel2.TabIndex = 8;
             // 
+            // btnBack
+            // 
+            btnBack.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.Location = new Point(394, 184);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(140, 41);
+            btnBack.TabIndex = 17;
+            btnBack.Text = "Dashboard";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // BookInventoryViewForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -323,5 +336,6 @@
         private Button btnAddBook;
         private Label label8;
         private Panel panel2;
+        private Button btnBack;
     }
 }

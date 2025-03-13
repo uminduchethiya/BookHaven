@@ -39,6 +39,7 @@
             btnsalestransaction = new Button();
             btnordermanagement = new Button();
             btnreporting = new Button();
+            button1 = new Button();
             label1 = new Label();
             panel3 = new Panel();
             panel4 = new Panel();
@@ -74,7 +75,6 @@
             lbltotalcustomers = new Label();
             label21 = new Label();
             label22 = new Label();
-            button1 = new Button();
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)menupicbox).BeginInit();
@@ -160,7 +160,7 @@
             btndashboard.Padding = new Padding(30, 0, 0, 0);
             btndashboard.Size = new Size(252, 53);
             btndashboard.TabIndex = 3;
-            btndashboard.Text = "                     Dashboard";
+            btndashboard.Text = "                     Book Management";
             btndashboard.TextAlign = ContentAlignment.MiddleLeft;
             btndashboard.UseVisualStyleBackColor = false;
             btndashboard.Click += btndashboard_Click;
@@ -232,6 +232,23 @@
             btnreporting.TextAlign = ContentAlignment.MiddleLeft;
             btnreporting.UseVisualStyleBackColor = false;
             btnreporting.Click += btnreporting_Click;
+            // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(3, 407);
+            button1.Name = "button1";
+            button1.Padding = new Padding(30, 0, 0, 0);
+            button1.Size = new Size(252, 53);
+            button1.TabIndex = 7;
+            button1.Text = "                     Logout";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -582,23 +599,6 @@
             label22.Size = new Size(142, 21);
             label22.TabIndex = 3;
             label22.Text = "System Overview";
-            // 
-            // button1
-            // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(3, 407);
-            button1.Name = "button1";
-            button1.Padding = new Padding(30, 0, 0, 0);
-            button1.Size = new Size(252, 53);
-            button1.TabIndex = 7;
-            button1.Text = "                     Logout";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // SalesClerkDashboard
             // 

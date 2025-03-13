@@ -38,7 +38,7 @@ namespace BookHaven.Presentation.Comman
         private void btnInventoryStatus_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BookInventoryViewForm bookInventoryViewForm = new BookInventoryViewForm();
+            InventoryStatusView bookInventoryViewForm = new InventoryStatusView();
             bookInventoryViewForm.ShowDialog();
             this.Close();
         }
