@@ -93,6 +93,7 @@
             lbltotalcustomers = new Label();
             label21 = new Label();
             label22 = new Label();
+            panel20 = new Panel();
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)menupicbox).BeginInit();
@@ -114,6 +115,7 @@
             panel17.SuspendLayout();
             panel16.SuspendLayout();
             panel18.SuspendLayout();
+            panel20.SuspendLayout();
             SuspendLayout();
             // 
             // sidebar
@@ -129,9 +131,9 @@
             sidebar.Controls.Add(btnorderrequest);
             sidebar.Controls.Add(btnreporting);
             sidebar.Controls.Add(button1);
-            sidebar.Location = new Point(0, 0);
+            sidebar.Location = new Point(0, 2);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(240, 729);
+            sidebar.Size = new Size(242, 729);
             sidebar.TabIndex = 0;
             // 
             // panel1
@@ -333,21 +335,24 @@
             // Overview
             // 
             Overview.AutoSize = true;
+            Overview.BackColor = Color.Transparent;
             Overview.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Overview.Location = new Point(529, 9);
+            Overview.ForeColor = SystemColors.Control;
+            Overview.Location = new Point(229, 12);
             Overview.Name = "Overview";
-            Overview.Size = new Size(155, 40);
+            Overview.Size = new Size(304, 40);
             Overview.TabIndex = 1;
-            Overview.Text = "Overview ";
+            Overview.Text = "Dashboard Overview";
             Overview.Click += Overview_Click;
             // 
             // panel3
             // 
+            panel3.BackColor = SystemColors.ControlDark;
             panel3.Controls.Add(panel6);
             panel3.Controls.Add(panel5);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(label1);
-            panel3.Location = new Point(261, 52);
+            panel3.Location = new Point(261, 73);
             panel3.Name = "panel3";
             panel3.Size = new Size(735, 140);
             panel3.TabIndex = 2;
@@ -443,20 +448,21 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(3, 4);
             label1.Name = "label1";
-            label1.Size = new Size(142, 17);
+            label1.Size = new Size(176, 21);
             label1.TabIndex = 3;
             label1.Text = "Sales Count Overview";
             // 
             // panel7
             // 
+            panel7.BackColor = SystemColors.ControlDark;
             panel7.Controls.Add(panel8);
             panel7.Controls.Add(panel9);
             panel7.Controls.Add(panel10);
             panel7.Controls.Add(label11);
-            panel7.Location = new Point(261, 211);
+            panel7.Location = new Point(261, 232);
             panel7.Name = "panel7";
             panel7.Size = new Size(735, 140);
             panel7.TabIndex = 6;
@@ -551,20 +557,21 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.Location = new Point(3, 4);
             label11.Name = "label11";
-            label11.Size = new Size(134, 17);
+            label11.Size = new Size(164, 21);
             label11.TabIndex = 3;
             label11.Text = "Total Sales Amounts";
             // 
             // panel11
             // 
+            panel11.BackColor = SystemColors.ControlDark;
             panel11.Controls.Add(panel12);
             panel11.Controls.Add(panel13);
             panel11.Controls.Add(panel14);
             panel11.Controls.Add(label15);
-            panel11.Location = new Point(261, 370);
+            panel11.Location = new Point(261, 391);
             panel11.Name = "panel11";
             panel11.Size = new Size(735, 140);
             panel11.TabIndex = 7;
@@ -660,21 +667,22 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label15.Location = new Point(3, 4);
             label15.Name = "label15";
-            label15.Size = new Size(111, 17);
+            label15.Size = new Size(137, 21);
             label15.TabIndex = 3;
             label15.Text = "Orders Overview";
             // 
             // panel15
             // 
+            panel15.BackColor = SystemColors.ControlDark;
             panel15.Controls.Add(panel19);
             panel15.Controls.Add(panel17);
             panel15.Controls.Add(panel16);
             panel15.Controls.Add(panel18);
             panel15.Controls.Add(label22);
-            panel15.Location = new Point(261, 525);
+            panel15.Location = new Point(261, 546);
             panel15.Name = "panel15";
             panel15.Size = new Size(735, 140);
             panel15.TabIndex = 8;
@@ -800,23 +808,32 @@
             // label22
             // 
             label22.AutoSize = true;
-            label22.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label22.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label22.Location = new Point(3, 4);
             label22.Name = "label22";
-            label22.Size = new Size(114, 17);
+            label22.Size = new Size(142, 21);
             label22.TabIndex = 3;
             label22.Text = "System Overview";
+            // 
+            // panel20
+            // 
+            panel20.BackColor = SystemColors.ActiveCaptionText;
+            panel20.Controls.Add(Overview);
+            panel20.Location = new Point(242, 2);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(766, 64);
+            panel20.TabIndex = 9;
             // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 729);
+            Controls.Add(panel20);
             Controls.Add(panel15);
             Controls.Add(panel11);
             Controls.Add(panel7);
             Controls.Add(panel3);
-            Controls.Add(Overview);
             Controls.Add(sidebar);
             Name = "AdminDashboard";
             Text = "AdminDashboard";
@@ -860,8 +877,9 @@
             panel16.PerformLayout();
             panel18.ResumeLayout(false);
             panel18.PerformLayout();
+            panel20.ResumeLayout(false);
+            panel20.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -929,5 +947,6 @@
         private Panel panel19;
         private Label lblmostselling;
         private Label label24;
+        private Panel panel20;
     }
 }

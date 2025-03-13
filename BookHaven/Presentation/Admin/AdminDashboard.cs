@@ -20,10 +20,7 @@ namespace BookHaven.Presentation.Admin
     {
         private readonly IUserService _userService;
         private readonly IDashboardManagementService _dashboardManagementService;
-        private int sidebarExpandedWidth = 250; // Full size
-        private int sidebarCollapsedWidth = 80; // Minimized size
-        private bool isSidebarExpanded = true; // Track sidebar state
-
+     
         public AdminDashboard()
         {
             _dashboardManagementService = new DashboardManagementService(new DashboardRepository());
@@ -93,34 +90,7 @@ namespace BookHaven.Presentation.Admin
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
-            int stepSize = 30; // Increase speed
-
-            if (isSidebarExpanded)
-            {
-                // Collapse Sidebar 
-                if (sidebar.Width > sidebarCollapsedWidth)
-                {
-                    sidebar.Width -= stepSize; // Faster collapse
-                }
-                else
-                {
-                    sidebartimer.Stop();
-                    isSidebarExpanded = false;
-                }
-            }
-            else
-            {
-                // Expand Sidebar 
-                if (sidebar.Width < sidebarExpandedWidth)
-                {
-                    sidebar.Width += stepSize; // Faster expand
-                }
-                else
-                {
-                    sidebartimer.Stop();
-                    isSidebarExpanded = true;
-                }
-            }
+            
         }
 
         private void menupicbox_Click(object sender, EventArgs e)
