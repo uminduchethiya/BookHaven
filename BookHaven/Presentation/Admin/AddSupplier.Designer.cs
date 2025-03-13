@@ -46,6 +46,7 @@
             btnclear = new Button();
             cmbsupplier = new ComboBox();
             label7 = new Label();
+            btnDashboard = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgsupplier).BeginInit();
             SuspendLayout();
@@ -238,6 +239,17 @@
             label7.Text = "Search";
             label7.Click += label7_Click;
             // 
+            // btnDashboard
+            // 
+            btnDashboard.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDashboard.Location = new Point(232, 657);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.Size = new Size(127, 41);
+            btnDashboard.TabIndex = 17;
+            btnDashboard.Text = "Dashboard";
+            btnDashboard.UseVisualStyleBackColor = true;
+            btnDashboard.Click += btnDashboard_Click;
+            // 
             // AddSupplier
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -245,6 +257,7 @@
             BackgroundImage = Properties.Resources.normal;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
+            Controls.Add(btnDashboard);
             Controls.Add(label7);
             Controls.Add(cmbsupplier);
             Controls.Add(btnclear);
@@ -292,5 +305,6 @@
         private Button btnclear;
         private ComboBox cmbsupplier;
         private Label label7;
+        private Button btnDashboard;
     }
 }

@@ -43,6 +43,8 @@
             label5 = new Label();
             btnlogin = new Button();
             label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -50,21 +52,22 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.MenuHighlight;
+            panel1.BackColor = SystemColors.InactiveCaptionText;
+            panel1.Controls.Add(label7);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(-4, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(803, 70);
+            panel1.Size = new Size(1017, 103);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-7, -20);
+            pictureBox1.Image = Properties.Resources._2_modified;
+            pictureBox1.Location = new Point(25, -4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(147, 120);
+            pictureBox1.Size = new Size(121, 107);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -98,10 +101,11 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(307, 96);
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = Properties.Resources._2_modified;
+            pictureBox2.Location = new Point(47, 204);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(227, 155);
+            pictureBox2.Size = new Size(372, 331);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
@@ -109,21 +113,23 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.MenuHighlight;
-            label3.Location = new Point(319, 209);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Arial", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.HighlightText;
+            label3.Location = new Point(633, 204);
             label3.Name = "label3";
-            label3.Size = new Size(204, 22);
+            label3.Size = new Size(110, 41);
             label3.TabIndex = 4;
-            label3.Text = "Login To BookHaven";
+            label3.Text = "Login";
             label3.Click += label3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.MenuHighlight;
-            label4.Location = new Point(222, 293);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(504, 291);
             label4.Name = "label4";
             label4.Size = new Size(51, 16);
             label4.TabIndex = 5;
@@ -131,14 +137,14 @@
             // 
             // txtemail
             // 
-            txtemail.Location = new Point(222, 326);
+            txtemail.Location = new Point(504, 324);
             txtemail.Name = "txtemail";
             txtemail.Size = new Size(363, 23);
             txtemail.TabIndex = 6;
             // 
             // txtpassword
             // 
-            txtpassword.Location = new Point(222, 398);
+            txtpassword.Location = new Point(504, 396);
             txtpassword.Name = "txtpassword";
             txtpassword.Size = new Size(363, 23);
             txtpassword.TabIndex = 8;
@@ -146,9 +152,10 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.MenuHighlight;
-            label5.Location = new Point(222, 365);
+            label5.ForeColor = SystemColors.HighlightText;
+            label5.Location = new Point(504, 363);
             label5.Name = "label5";
             label5.Size = new Size(76, 16);
             label5.TabIndex = 7;
@@ -156,12 +163,13 @@
             // 
             // btnlogin
             // 
-            btnlogin.BackColor = SystemColors.MenuHighlight;
-            btnlogin.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnlogin.BackColor = SystemColors.HotTrack;
+            btnlogin.FlatStyle = FlatStyle.Flat;
+            btnlogin.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnlogin.ForeColor = SystemColors.ButtonFace;
-            btnlogin.Location = new Point(222, 474);
+            btnlogin.Location = new Point(504, 472);
             btnlogin.Name = "btnlogin";
-            btnlogin.Size = new Size(363, 36);
+            btnlogin.Size = new Size(363, 45);
             btnlogin.TabIndex = 9;
             btnlogin.Text = "Login";
             btnlogin.UseVisualStyleBackColor = false;
@@ -170,20 +178,48 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
             label6.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = SystemColors.MenuHighlight;
-            label6.Location = new Point(336, 439);
+            label6.ForeColor = SystemColors.HighlightText;
+            label6.Location = new Point(618, 437);
             label6.Name = "label6";
             label6.Size = new Size(125, 16);
             label6.TabIndex = 10;
             label6.Text = "Forgot Password ?";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.ButtonHighlight;
+            label7.Location = new Point(389, 29);
+            label7.Name = "label7";
+            label7.Size = new Size(278, 47);
+            label7.TabIndex = 11;
+            label7.Text = "BOOK HEAVEN ";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.Control;
+            label8.Location = new Point(463, 694);
+            label8.Name = "label8";
+            label8.Size = new Size(108, 15);
+            label8.TabIndex = 11;
+            label8.Text = "By Dineth Jayanga";
             // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(784, 561);
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1008, 729);
+            Controls.Add(label8);
             Controls.Add(label6);
             Controls.Add(btnlogin);
             Controls.Add(txtpassword);
@@ -194,6 +230,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(label2);
             Controls.Add(panel1);
+            DoubleBuffered = true;
             Name = "LoginForm";
             Text = "LoginForm";
             panel1.ResumeLayout(false);
@@ -219,5 +256,7 @@
         private Label label5;
         private Button btnlogin;
         private Label label6;
+        private Label label7;
+        private Label label8;
     }
 }

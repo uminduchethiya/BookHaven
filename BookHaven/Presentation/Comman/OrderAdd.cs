@@ -340,6 +340,14 @@ namespace BookHaven.Presentation.Comman
             // Show the OrderManage form (non-blocking, new window)
             orderManageForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddCustomer addCustomer = new AddCustomer();
+            addCustomer.ShowDialog();
+            this.Close();
+        }
     }
 
 }

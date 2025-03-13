@@ -1,6 +1,7 @@
 ﻿using BookHaven.Business.Interfaces;
 using BookHaven.Business.Services;
 using BookHaven.Data.Models;
+using BookHaven.Presentation.Comman;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -189,6 +190,14 @@ namespace BookHaven.Presentation.Admin
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -29,19 +29,17 @@ namespace BookHaven.Data.Repositories
             UserModel user = null;
 
             // Hash the input password before querying
-            byte[] hashedPassword = HashPassword(password);
+            byte[] hashedPasswordBytes = HashPassword(password);
+            string hashedPassword = BitConverter.ToString(hashedPasswordBytes).Replace("-", ""); // Convert to Hex String
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-
-                string query = "SELECT  FirstName, LastName, Email, Phone, RoleID,IsDeleted,CreatedAt,Id,Address FROM Users WHERE Email = @Email AND Password = @Password";
-
-
+                string query = "SELECT FirstName, LastName, Email, Phone, RoleID, IsDeleted, CreatedAt, Id, Address " +
+                               "FROM Users WHERE Email = @Email AND Password = @Password AND IsDeleted = 0";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Password", hashedPassword); // Compare hashed password
-
+                    cmd.Parameters.AddWithValue("@Password", hashedPassword);
                     conn.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -49,7 +47,6 @@ namespace BookHaven.Data.Repositories
                         {
                             user = new UserModel
                             {
-                            
                                 FirstName = reader["FirstName"].ToString(),
                                 LastName = reader["LastName"].ToString(),
                                 Email = reader["Email"].ToString(),
@@ -63,6 +60,7 @@ namespace BookHaven.Data.Repositories
             }
             return user;
         }
+
 
         // Method to hash the password using SHA-256
         private byte[] HashPassword(string password)

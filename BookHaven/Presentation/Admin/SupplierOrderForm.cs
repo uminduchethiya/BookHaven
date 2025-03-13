@@ -12,6 +12,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookHaven.Presentation.Comman;
 
 namespace BookHaven.Presentation.Admin
 {
@@ -280,6 +281,14 @@ namespace BookHaven.Presentation.Admin
                 txtnewstock.Text = quantity.ToString();
                 comboBox1.SelectedItem = status;
             }
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -53,6 +53,7 @@
             btnCancel = new Button();
             btnSave = new Button();
             txtFirstName = new TextBox();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -316,6 +317,17 @@
             txtFirstName.Size = new Size(309, 23);
             txtFirstName.TabIndex = 26;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(365, 670);
+            button1.Name = "button1";
+            button1.Size = new Size(261, 36);
+            button1.TabIndex = 37;
+            button1.Text = "Back to Dashboard";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // AddCustomer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -323,6 +335,7 @@
             BackgroundImage = Properties.Resources.normal;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
+            Controls.Add(button1);
             Controls.Add(btnBacktoCustomerManagement);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
@@ -369,5 +382,6 @@
         private DateTimePicker dateTimePicker1;
         private TextBox txtPhoneNumber;
         private PictureBox pictureBox1;
+        private Button button1;
     }
 }

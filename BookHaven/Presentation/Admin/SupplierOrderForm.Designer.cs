@@ -40,6 +40,7 @@
             txtnewstock = new TextBox();
             btnupdatestatus = new Button();
             dtgorderreq = new DataGridView();
+            btnDashboard = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgsupplierorder).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgorderreq).BeginInit();
@@ -169,12 +170,24 @@
             dtgorderreq.TabIndex = 10;
             dtgorderreq.CellContentClick += dtgorderreq_CellContentClick;
             // 
+            // btnDashboard
+            // 
+            btnDashboard.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDashboard.Location = new Point(734, 569);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.Size = new Size(124, 43);
+            btnDashboard.TabIndex = 11;
+            btnDashboard.Text = "Dashboard";
+            btnDashboard.UseVisualStyleBackColor = true;
+            btnDashboard.Click += btnDashboard_Click;
+            // 
             // SupplierOrderForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.normal;
             ClientSize = new Size(1008, 689);
+            Controls.Add(btnDashboard);
             Controls.Add(dtgorderreq);
             Controls.Add(btnupdatestatus);
             Controls.Add(txtnewstock);
@@ -210,5 +223,6 @@
         private TextBox txtnewstock;
         private Button btnupdatestatus;
         private DataGridView dtgorderreq;
+        private Button btnDashboard;
     }
 }

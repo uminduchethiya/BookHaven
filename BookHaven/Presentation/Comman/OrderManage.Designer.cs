@@ -39,6 +39,7 @@
             btnupdate = new Button();
             cmborderstatus = new ComboBox();
             label3 = new Label();
+            btnDashboard = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgorder).BeginInit();
             SuspendLayout();
@@ -94,6 +95,7 @@
             btnaddneworder.TabIndex = 3;
             btnaddneworder.Text = "Add New Order";
             btnaddneworder.UseVisualStyleBackColor = true;
+            btnaddneworder.Click += btnaddneworder_Click;
             // 
             // btnaddnewcustomer
             // 
@@ -104,6 +106,7 @@
             btnaddnewcustomer.Size = new Size(82, 66);
             btnaddnewcustomer.TabIndex = 4;
             btnaddnewcustomer.UseVisualStyleBackColor = true;
+            btnaddnewcustomer.Click += btnaddnewcustomer_Click;
             // 
             // dtgorder
             // 
@@ -159,6 +162,17 @@
             label3.TabIndex = 9;
             label3.Text = "Order Status";
             // 
+            // btnDashboard
+            // 
+            btnDashboard.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDashboard.Location = new Point(821, 669);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.Size = new Size(160, 38);
+            btnDashboard.TabIndex = 10;
+            btnDashboard.Text = "DashBoard";
+            btnDashboard.UseVisualStyleBackColor = true;
+            btnDashboard.Click += btnDashboard_Click;
+            // 
             // OrderManage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -166,6 +180,7 @@
             BackgroundImage = Properties.Resources.normal;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
+            Controls.Add(btnDashboard);
             Controls.Add(label3);
             Controls.Add(cmborderstatus);
             Controls.Add(btnupdate);
@@ -199,5 +214,6 @@
         private Button btnupdate;
         private ComboBox cmborderstatus;
         private Label label3;
+        private Button btnDashboard;
     }
 }
