@@ -39,5 +39,13 @@ namespace BookHaven.Presentation.Comman
             bookInventoryViewForm.ShowDialog();
             this.Close();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.ShowDialog();
+            this.Close();
+        }
     }
 }
