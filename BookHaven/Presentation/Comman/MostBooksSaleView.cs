@@ -92,5 +92,9 @@ namespace BookHaven.Presentation.Comman
             }
         }
 
-}
+        private void MostBooksSaleView_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
