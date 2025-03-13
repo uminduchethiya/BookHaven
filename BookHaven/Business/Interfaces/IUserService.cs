@@ -9,6 +9,6 @@ namespace BookHaven.Business.Interfaces
         List<KeyValuePair<int, string>> GetUserRoles();
         List<UserModel> GetAllUsers();
         void UpdateUser(UserModel user);
-        void DeleteUser(int userId); // Add this line
+        void DeleteUser(int userId);
     }
 }

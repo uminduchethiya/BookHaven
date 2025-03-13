@@ -23,46 +23,36 @@ namespace BookHaven.Business.Services
         public List<Customer> GetCustomerByPhone(string phoneNumber)
         {
             if (string.IsNullOrWhiteSpace(phoneNumber))
-                return _orderRepo.GetCustomers(); // Return all customers
+                return _orderRepo.GetCustomers(); 
 
             return _orderRepo.GetCustomers()
-                             .Where(c => c.PhoneNumber.Contains(phoneNumber)) // Allows partial search
+                             .Where(c => c.PhoneNumber.Contains(phoneNumber)) 
                              .ToList();
         }
-
-
         public List<Book> GetBookByTitle(string title)
         {
             if (string.IsNullOrWhiteSpace(title))
                 return _orderRepo.GetBooks();
             return _orderRepo.GetBooks()
-                             .Where(b => b.Title.Contains(title)) // Allows partial search
+                             .Where(b => b.Title.Contains(title))
                              .ToList();
         }
-
-        // Implement the SaveOrder method
         public void SaveOrder(Order order)
         {
-            _orderRepo.SaveOrder(order); // Call SaveOrder from repository
+            _orderRepo.SaveOrder(order);
         }
-
-
-
         public List<Order> GetAllOrders()
         {
-            return _orderRepo.GetAllOrders(); // Fetch all orders from repository
+            return _orderRepo.GetAllOrders();
         }
-
         public Order GetOrderById(int orderId)
         {
-            return _orderRepo.GetOrderById(orderId); // Fetch order by ID
+            return _orderRepo.GetOrderById(orderId); 
         }
         public bool UpdateOrderStatus(Order order)
         {
-            // Assuming the repository has an update method for order status
-            return _orderRepo.UpdateOrderStatus(order);  // Call the repository method to update the status
+            return _orderRepo.UpdateOrderStatus(order);
         }
-
         public bool UpdateBookStock(int bookId, int quantity)
         {
             return _orderRepo.UpdateBookStock(bookId, quantity);

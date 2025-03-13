@@ -23,14 +23,19 @@ namespace BookHaven.Data.Repositories
                 throw new Exception("Connection string 'BookHavenDB' not found in App.config.");
             }
         }
-
+        /// <summary>
+        /// Get User by email and password
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public UserModel GetUserByEmailAndPassword(string email, string password)
         {
             UserModel user = null;
 
             // Hash the input password before querying
             byte[] hashedPasswordBytes = HashPassword(password);
-            string hashedPassword = BitConverter.ToString(hashedPasswordBytes).Replace("-", ""); // Convert to Hex String
+            string hashedPassword = BitConverter.ToString(hashedPasswordBytes).Replace("-", "");
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {

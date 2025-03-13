@@ -17,7 +17,10 @@ namespace BookHaven.Data.Repositories.SalesTransactionRepository
         {
             _connectionString = ConfigurationManager.ConnectionStrings["BookHavenDB"]?.ConnectionString ?? throw new InvalidOperationException("Connection string 'BookHavenDB' not found.");
         }
-
+        /// <summary>
+        /// Insert transaction details
+        /// </summary>
+        /// <param name="transactionDetail"></param>
         public void InsertTransactionDetail(SalesTransactionDetails transactionDetail)
         {
             try
@@ -49,7 +52,11 @@ namespace BookHaven.Data.Repositories.SalesTransactionRepository
                 throw;
             }
         }
-
+        /// <summary>
+        /// Insert transaction record
+        /// </summary>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public int InsertTransactionRecord(CustomerTransactions transaction)
         {
             try

@@ -12,12 +12,9 @@ namespace BookHaven.Business.Interfaces
         List<Customer> GetCustomerByPhone(string phoneNumber);
         List<Book> GetBookByTitle(string title);
         void SaveOrder(Order order);
-        List<Order> GetAllOrders(); // Fetch all orders
-       
-        Order GetOrderById(int orderId);  // Ensure this method exists
-
+        List<Order> GetAllOrders(); 
+        Order GetOrderById(int orderId);  
         bool UpdateOrderStatus(Order order);
-
-        bool UpdateBookStock(int bookId, int quantity); // New method
+        bool UpdateBookStock(int bookId, int quantity);
     }
 }

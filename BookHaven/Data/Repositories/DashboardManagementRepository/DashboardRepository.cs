@@ -20,7 +20,11 @@ namespace BookHaven.Data.Repositories.DashboardManagementRepository
                 throw new Exception("Connection string 'BookHavenDB' not found in App.config.");
             }
         }
-        // Fetch Sales Count by Date
+        /// <summary>
+        /// Fetch Sales Count by Date
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public async Task<int> FetchSalesCountByDate(DateTime date)
         {
             var query = @"
@@ -38,7 +42,12 @@ namespace BookHaven.Data.Repositories.DashboardManagementRepository
             }
         }
 
-        // Fetch Sales Count by Date Range (Weekly/Monthly)
+        /// <summary>
+        /// Fetch Sales Count by Date Range
+        /// </summary>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
         public async Task<int> FetchSalesCountByDateRange(DateTime startDate, DateTime endDate)
         {
             var query = @"
@@ -57,7 +66,11 @@ namespace BookHaven.Data.Repositories.DashboardManagementRepository
             }
         }
 
-        // Fetch Sales Amount by Date
+        /// <summary>
+        /// Fetch Sales Amount by Date
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public async Task<decimal> FetchSalesAmountByDate(DateTime date)
         {
             var query = @"
@@ -75,7 +88,12 @@ namespace BookHaven.Data.Repositories.DashboardManagementRepository
             }
         }
 
-        // Fetch Sales Amount by Date Range
+        /// <summary>
+        /// Fetch Sales Amount by Date Range
+        /// </summary>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
         public async Task<decimal> FetchSalesAmountByDateRange(DateTime startDate, DateTime endDate)
         {
             var query = @"
@@ -94,7 +112,10 @@ namespace BookHaven.Data.Repositories.DashboardManagementRepository
             }
         }
 
-        // Fetch Total Orders Count
+        /// <summary>
+        /// Fetch Total Orders Count
+        /// </summary>
+        /// <returns></returns>
         public async Task<int> FetchTotalOrdersCount()
         {
             var query = "SELECT COUNT(*) FROM [Order]";
@@ -106,8 +127,11 @@ namespace BookHaven.Data.Repositories.DashboardManagementRepository
                 return Convert.ToInt32(result);
             }
         }
-
-        // Fetch Orders by Status (Pending/Completed)
+        /// <summary>
+        /// Fetch Orders Count by Status
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
         public async Task<int> FetchOrdersCountByStatus(string status)
         {
             var query = "SELECT COUNT(*) FROM [Order] WHERE Status = @Status";
@@ -121,7 +145,10 @@ namespace BookHaven.Data.Repositories.DashboardManagementRepository
             }
         }
 
-        // Fetch Total Customers Count
+        /// <summary>
+        /// Fetch Total Customers Count
+        /// </summary>
+        /// <returns></returns>
         public async Task<int> FetchTotalCustomersCount()
         {
             var query = "SELECT COUNT(*) FROM Customer";
@@ -134,7 +161,10 @@ namespace BookHaven.Data.Repositories.DashboardManagementRepository
             }
         }
 
-        // Fetch Total Suppliers Count
+        /// <summary>
+        /// Fetch Total Suppliers Count
+        /// </summary>
+        /// <returns></returns>
         public async Task<int> FetchTotalSuppliersCount()
         {
             var query = "SELECT COUNT(*) FROM Supplier";
@@ -147,7 +177,10 @@ namespace BookHaven.Data.Repositories.DashboardManagementRepository
             }
         }
 
-        // Fetch Total Books Count
+        /// <summary>
+        /// Fetch Total Books Count
+        /// </summary>
+        /// <returns></returns>
         public async Task<int> FetchTotalBooksCount()
         {
             var query = "SELECT COUNT(*) FROM Book";
@@ -159,8 +192,10 @@ namespace BookHaven.Data.Repositories.DashboardManagementRepository
                 return Convert.ToInt32(result);
             }
         }
-
-        // Fetch Most Selling Book
+        /// <summary>
+        ///     Fetch Most Selling Book
+        /// </summary>
+        /// <returns></returns>
         public async Task<Book> FetchMostSellingBook()
         {
             var query = @"

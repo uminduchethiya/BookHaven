@@ -20,7 +20,10 @@ namespace BookHaven.Data.Repositories.OrderManagementRepositories
                 throw new Exception("Connection string 'BookHavenDB' not found in App.config.");
             }
         }
-
+        /// <summary>
+        /// Get all customers
+        /// </summary>
+        /// <returns></returns>
         public List<Customer> GetCustomers()
         {
             List<Customer> customers = new List<Customer>();
@@ -51,7 +54,10 @@ namespace BookHaven.Data.Repositories.OrderManagementRepositories
 
             return customers;
         }
-
+        /// <summary>
+        ///     Get all books
+        /// </summary>
+        /// <returns></returns>
         public List<Book> GetBooks()
         {
             List<Book> books = new List<Book>();
@@ -84,15 +90,18 @@ namespace BookHaven.Data.Repositories.OrderManagementRepositories
             return books;
         }
 
-        // Implement the SaveOrder method here
-        public void SaveOrder(Order order)  // Ensure the return type is 'void'
+        /// <summary>
+        /// Save order
+        /// </summary>
+        /// <param name="order"></param>
+        public void SaveOrder(Order order)
         {
-            // Your implementation for saving the order
+           
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 string query = "INSERT INTO [Order] ([CustomerId], [BookId], [Quantity], [Price], [Subtotal], [DeliveryType], [Status], [OrderDate]) " +
                                "VALUES (@CustomerId, @BookId, @Quantity, @Price, @Subtotal, @DeliveryType, @Status, @OrderDate); " +
-                               "SELECT SCOPE_IDENTITY();"; // Get the inserted Order ID
+                               "SELECT SCOPE_IDENTITY();";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -116,6 +125,10 @@ namespace BookHaven.Data.Repositories.OrderManagementRepositories
             }
         }
 
+        /// <summary>
+        /// Get all orders
+        /// </summary>
+        /// <returns></returns>
         public List<Order> GetAllOrders()
         {
             List<Order> orders = new List<Order>();
@@ -149,7 +162,11 @@ namespace BookHaven.Data.Repositories.OrderManagementRepositories
 
             return orders;
         }
-
+        /// <summary>
+        /// Get order by id
+        /// </summary>
+        /// <param name="orderId"></param>
+        /// <returns></returns>
         public Order GetOrderById(int orderId)
         {
             Order order = null;
@@ -185,6 +202,11 @@ namespace BookHaven.Data.Repositories.OrderManagementRepositories
 
             return order;
         }
+        /// <summary>
+        /// Update order status
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
         public bool UpdateOrderStatus(Order order)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -203,7 +225,12 @@ namespace BookHaven.Data.Repositories.OrderManagementRepositories
                 }
             }
         }
-
+        /// <summary>
+        ///     Update book stock
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
         public bool UpdateBookStock(int bookId, int quantity)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))

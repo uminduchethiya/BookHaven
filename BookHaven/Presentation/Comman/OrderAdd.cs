@@ -57,8 +57,8 @@ namespace BookHaven.Presentation.Comman
                 if (customers != null && customers.Count > 0)
                 {
                     cmbsearchphone.DataSource = customers;
-                    cmbsearchphone.DisplayMember = "PhoneNumber"; // Ensure PhoneNumber exists in Customer model
-                    cmbsearchphone.ValueMember = "CustomerId"; // Ensure CustomerId exists
+                    cmbsearchphone.DisplayMember = "PhoneNumber"; 
+                    cmbsearchphone.ValueMember = "CustomerId"; 
                 }
                 else
                 {
@@ -81,7 +81,6 @@ namespace BookHaven.Presentation.Comman
         }
         private void cmbsearchphone_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Ensure there's a valid item selected
             if (cmbsearchphone.SelectedItem != null)
             {
                 // Cast the selected item to Customer object
@@ -107,8 +106,7 @@ namespace BookHaven.Presentation.Comman
 
         private void cmbsearchbook_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Ensure there's a valid item selected
-            // Ensure there's a valid item selected
+         
             if (cmbsearchbook.SelectedItem != null)
             {
                 // Cast the selected item to a Book object
@@ -141,9 +139,9 @@ namespace BookHaven.Presentation.Comman
         {
             if (e.RowIndex >= 0)
             {
-                // Optionally, retrieve the CustomerId or other data from the clicked row
+               //retrieve the CustomerId or other data from the clicked row
                 var customerId = dtgcustomerdeatils.Rows[e.RowIndex].Cells[0].Value;
-                // Perform any actions needed when a row is clicked, such as opening a customer details form
+               
             }
         }
 
@@ -152,17 +150,16 @@ namespace BookHaven.Presentation.Comman
 
             if (e.RowIndex >= 0)
             {
-                // Get the BookId from the selected row (assuming it's in the first column)
+                // Get the BookId from the selected row
                 var bookId = dtgsearchbook.Rows[e.RowIndex].Cells[0].Value;
 
-                // Use the bookId to fetch the book details (you can query your repository or service)
+                // Use the bookId to fetch the book details
                 OrderManageRepositories repository = new OrderManageRepositories();
                 Book selectedBook = repository.GetBooks().FirstOrDefault(b => b.BookId == (int)bookId);
 
                 if (selectedBook != null)
                 {
-                    // Optionally, you can open a form or display the details in another control, e.g., a separate details panel.
-                    // For example:
+                    
                     MessageBox.Show($"Title: {selectedBook.Title}\nAuthor: {selectedBook.Author}\nGenre: {selectedBook.Genre}\nPrice: {selectedBook.Price}",
                                     "Book Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -237,7 +234,7 @@ namespace BookHaven.Presentation.Comman
                 selectedDeliveryTypes.Add(item.ToString());
             }
 
-            return string.Join(", ", selectedDeliveryTypes); // Combine selected delivery types into a string
+            return string.Join(", ", selectedDeliveryTypes);
         }
 
         // Save order to database

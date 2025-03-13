@@ -9,6 +9,12 @@ namespace BookHaven.Business.Interfaces
 {
     public interface IAuthService
     {
+        /// <summary>
+        /// Authenticate the user using the provided email and password
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         UserModel AuthenticateUser(string email, string password);
     }
 }

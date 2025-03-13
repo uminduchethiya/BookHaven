@@ -41,7 +41,7 @@ namespace BookHaven.Presentation.Admin
         private void LoadSupplierOrders()
         {
             dtgorderreq.Columns.Clear(); // Clear existing columns (if any)
-            dtgorderreq.Rows.Clear(); // Clear existing rows
+            dtgorderreq.Rows.Clear();
 
             // Define Columns
             dtgorderreq.Columns.Add("SupplierOrderID", "Order ID");
@@ -50,7 +50,6 @@ namespace BookHaven.Presentation.Admin
             dtgorderreq.Columns.Add("Quantity", "Quantity");
             dtgorderreq.Columns.Add("OrderDate", "Order Date");
             dtgorderreq.Columns.Add("Status", "Status");
-            // Fix: Make BookID column visible
             dtgorderreq.Columns.Add(new DataGridViewTextBoxColumn { Name = "BookID", HeaderText = "Book ID", Visible = true });
 
 
@@ -66,7 +65,7 @@ namespace BookHaven.Presentation.Admin
                     order.Quantity,
                     order.OrderDate.ToString("yyyy-MM-dd"),
                     order.Status,
-                     order.BookID // ✅ Fix: Add BookID to the row
+                     order.BookID
                 );
             }
         }
@@ -74,8 +73,8 @@ namespace BookHaven.Presentation.Admin
 
         private void LoadLowStockBooks()
         {
-            dtgsupplierorder.Columns.Clear(); // Clear existing columns (if any)
-            dtgsupplierorder.Rows.Clear(); // Clear existing rows
+            dtgsupplierorder.Columns.Clear(); 
+            dtgsupplierorder.Rows.Clear();
 
             // Define Columns
             dtgsupplierorder.Columns.Add("BookId", "Book ID");
@@ -95,7 +94,6 @@ namespace BookHaven.Presentation.Admin
 
         private void cmbsupplier_TextChanged(object sender, EventArgs e)
         {
-            // Trigger the search whenever the text changes
             SearchSupplier();
         }
 
@@ -193,8 +191,8 @@ namespace BookHaven.Presentation.Admin
             {
                 _supplierOrderService.SaveSupplierOrder(order);
                 MessageBox.Show("Order placed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadLowStockBooks(); // Refresh the list
-                LoadSupplierOrders(); // Refresh supplier orders table
+                LoadLowStockBooks(); 
+                LoadSupplierOrders();
             }
             catch (Exception ex)
             {
@@ -212,7 +210,7 @@ namespace BookHaven.Presentation.Admin
 
             var selectedRow = dtgorderreq.SelectedRows[0];
             int supplierOrderID = Convert.ToInt32(selectedRow.Cells["SupplierOrderID"].Value);
-            int bookID = Convert.ToInt32(selectedRow.Cells["BookID"].Value); // ✅ Fix: Get the correct BookID
+            int bookID = Convert.ToInt32(selectedRow.Cells["BookID"].Value);
             int quantity = Convert.ToInt32(selectedRow.Cells["Quantity"].Value);
 
             string newStatus = comboBox1.SelectedItem?.ToString();
@@ -224,7 +222,6 @@ namespace BookHaven.Presentation.Admin
 
             if (newStatus == "Delivered")
             {
-                // Debugging message to check if this line is reached
                 MessageBox.Show("Updating stock for BookID: " + bookID + " with Quantity: " + quantity, "Debug", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 _supplierOrderService.UpdateBookStock(bookID, quantity);

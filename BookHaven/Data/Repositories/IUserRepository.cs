@@ -11,10 +11,6 @@ namespace BookHaven.Data.Repositories
     {
         UserModel GetUserByEmailAndPassword(string email, string password);
 
-
     }
-
-
-
 }
 

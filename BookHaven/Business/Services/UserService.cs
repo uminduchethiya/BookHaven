@@ -106,7 +106,6 @@ namespace BookHaven.Business.Services
         {
             try
             {
-                // Assuming the repository handles the actual database operation
                 _userRepo.DeleteUser(userId);
             }
             catch (Exception ex)

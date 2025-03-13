@@ -12,7 +12,6 @@ namespace BookHaven.Data.Repositories.ReportManagementRepository
         Task<List<SalesSummery>> FetchSalesSummary(DateTime startDate, DateTime endDate);
         Task<List<Book>> FetchBestSellingBooks();
         Task<List<InventoryStatus>> FetchInventoryStatus();
-
         Task<List<SalesSummery>> GetSalesSummaryByCurrentDate();
     }
 }

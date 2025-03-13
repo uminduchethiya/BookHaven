@@ -17,7 +17,12 @@ namespace BookHaven.Data.Repositories.ReportManagementRepository
         {
             _connectionString = ConfigurationManager.ConnectionStrings["BookHavenDB"]?.ConnectionString ?? throw new InvalidOperationException("Connection string 'BookHavenDB' not found.");
         }
-
+        /// <summary>
+        /// Fetch Sales Summary between a date range
+        /// </summary>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
         public async Task<List<SalesSummery>> FetchSalesSummary(DateTime startDate, DateTime endDate)
         {
             var salesSummary = new List<SalesSummery>();
@@ -74,7 +79,10 @@ namespace BookHaven.Data.Repositories.ReportManagementRepository
             return salesSummary;
         }
 
-        // Fetch Best Selling Books without any date range
+        /// <summary>
+        /// Fetch Best Selling Books
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<Book>> FetchBestSellingBooks()
         {
             var bestSellingBooks = new List<Book>();
@@ -113,7 +121,10 @@ namespace BookHaven.Data.Repositories.ReportManagementRepository
             return bestSellingBooks;
         }
 
-        // Fetch Inventory Status (Current stock of all books)
+        /// <summary>
+        /// Fetch Inventory Status
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<InventoryStatus>> FetchInventoryStatus()
         {
             var inventoryStatus = new List<InventoryStatus>();
@@ -139,7 +150,10 @@ namespace BookHaven.Data.Repositories.ReportManagementRepository
 
             return inventoryStatus;
         }
-
+        /// <summary>
+        ///     Fetch Sales Summary by Current Date
+        /// </summary>
+        /// <returns></returns>
         public Task<List<SalesSummery>> GetSalesSummaryByCurrentDate()
         {
             var salesSummary = new List<SalesSummery>();

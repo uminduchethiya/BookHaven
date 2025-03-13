@@ -19,7 +19,10 @@ namespace BookHaven.Data.Repositories
                 throw new Exception("Connection string 'BookHavenDB' not found in App.config.");
             }
         }
-
+        /// <summary>
+        /// Add a new user
+        /// </summary>
+        /// <param name="user"></param>
         public void AddUser(UserModel user)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -49,7 +52,10 @@ namespace BookHaven.Data.Repositories
                 conn.Close();
             }
         }
-
+        /// <summary>
+        /// Fetch all users
+        /// </summary>
+        /// <returns></returns>
         public List<KeyValuePair<int, string>> GetUserRoles()
         {
             List<KeyValuePair<int, string>> roles = new List<KeyValuePair<int, string>>();
@@ -69,7 +75,10 @@ namespace BookHaven.Data.Repositories
 
             return roles;
         }
-
+        /// <summary>
+        /// Get All Users
+        /// </summary>
+        /// <returns></returns>
         public List<UserModel> GetAllUsers()
         {
             List<UserModel> users = new List<UserModel>();
@@ -92,9 +101,9 @@ namespace BookHaven.Data.Repositories
                                     LastName = reader["LastName"].ToString(),
                                     Address = reader["Address"].ToString(),
                                     Phone = reader["Phone"].ToString(),
-                                    Idnumber = reader["Idnumber"].ToString(), // Added Idnumber
-                                    Gender = reader["Gender"].ToString(), // Added Gender
-                                    Dob = Convert.ToDateTime(reader["Dob"]) // Added Date of Birth (Dob)
+                                    Idnumber = reader["Idnumber"].ToString(),
+                                    Gender = reader["Gender"].ToString(),
+                                    Dob = Convert.ToDateTime(reader["Dob"]) 
                                 });
                             }
                         }
@@ -108,7 +117,10 @@ namespace BookHaven.Data.Repositories
 
             return users;
         }
-
+        /// <summary>
+        /// Update User
+        /// </summary>
+        /// <param name="user"></param>
         public void UpdateUser(UserModel user)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -127,7 +139,7 @@ namespace BookHaven.Data.Repositories
                 cmd.Parameters.AddWithValue("@FirstName", user.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", user.LastName);
                 cmd.Parameters.AddWithValue("@Phone", user.Phone);
-                cmd.Parameters.AddWithValue("@IdNumber", user.Idnumber); // Ensure correct column name
+                cmd.Parameters.AddWithValue("@IdNumber", user.Idnumber);
                 cmd.Parameters.AddWithValue("@Gender", user.Gender);
                 cmd.Parameters.AddWithValue("@Dob", user.Dob);
 
@@ -136,7 +148,10 @@ namespace BookHaven.Data.Repositories
                 conn.Close();
             }
         }
-
+        /// <summary>
+        /// Delete User
+        /// </summary>
+        /// <param name="userId"></param>
         public void DeleteUser(int userId)
         {
             try
@@ -144,7 +159,7 @@ namespace BookHaven.Data.Repositories
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
                     conn.Open();
-                    string query = "UPDATE Users SET IsDeleted = 1 WHERE Id = @Id AND IsDeleted = 0"; // Mark the user as deleted
+                    string query = "UPDATE Users SET IsDeleted = 1 WHERE Id = @Id AND IsDeleted = 0";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Id", userId);
@@ -158,7 +173,6 @@ namespace BookHaven.Data.Repositories
                 throw;
             }
         }
-
 
     }
 }

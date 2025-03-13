@@ -58,14 +58,13 @@ namespace BookHaven.Presentation.Admin
                 // Get the selected row
                 DataGridViewRow selectedRow = datagridviewuser.Rows[e.RowIndex];
 
-                // Populate text fields from the selected row
+              
                 txtfirstname.Text = selectedRow.Cells["FirstName"].Value?.ToString() ?? string.Empty;
                 txtlastname.Text = selectedRow.Cells["LastName"].Value?.ToString() ?? string.Empty;
                 txtphone.Text = selectedRow.Cells["Phone"].Value?.ToString() ?? string.Empty;
                 txtidnum.Text = selectedRow.Cells["Idnumber"].Value?.ToString() ?? string.Empty;
                 txtaddress.Text = selectedRow.Cells["Address"].Value?.ToString() ?? string.Empty;
 
-                // Set the gender combo box selection
                 string gender = selectedRow.Cells["Gender"].Value?.ToString();
                 if (gender != null && cmbgender.Items.Contains(gender))
                 {
@@ -118,10 +117,8 @@ namespace BookHaven.Presentation.Admin
                         Dob = dobpicker.Value
                     };
 
-                    // Call the service to update user details
                     _userService.UpdateUser(updatedUser);
 
-                    // Refresh the DataGridView
                     LoadUsers();
 
                     MessageBox.Show("User updated successfully.");
@@ -141,8 +138,8 @@ namespace BookHaven.Presentation.Admin
         private void button1_Click(object sender, EventArgs e)
         {
             AddnewUser addNewUsersForm = new AddnewUser();
-            addNewUsersForm.Show();  // To show the new form
-            this.Hide();  // Optionally hide the current form
+            addNewUsersForm.Show();
+            this.Hide(); 
         }
 
         private void btndelete_Click(object sender, EventArgs e)
@@ -182,8 +179,8 @@ namespace BookHaven.Presentation.Admin
         private void backpic_Click(object sender, EventArgs e)
         {
             AdminDashboard adminDashboard = new AdminDashboard();
-            adminDashboard.Show();  // To show the AdminDashboard form
-            this.Hide();  // Optionally hide the current form
+            adminDashboard.Show(); 
+            this.Hide();  
         }
     }
 }

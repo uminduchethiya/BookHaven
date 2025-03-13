@@ -13,7 +13,7 @@ namespace BookHaven.Business.Interfaces
         void UpdateSupplier(Supplier supplier);
         List<Supplier> GetAllSuppliers();
         Supplier GetSupplierByName(string supplierName);
-        void DeactivateSupplier(int supplierId); // New method for deactivating supplier
-        List<Supplier> GetActiveSuppliers(); // New method for getting active suppliers
+        void DeactivateSupplier(int supplierId); 
+        List<Supplier> GetActiveSuppliers();
     }
 }

@@ -20,7 +20,7 @@ namespace BookHaven.Presentation.Admin
         public AddnewUser()
         {
             InitializeComponent();
-            _userService = new UserService(new UserManageRepository()); // Fixed Repository Reference
+            _userService = new UserService(new UserManageRepository());
             LoadUserRoles();
         }
 
@@ -74,9 +74,9 @@ namespace BookHaven.Presentation.Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserManagement userManagementForm = new UserManagement(_userService); // Pass _userService
-            this.Hide();  // Optionally hide the current form
-            userManagementForm.Show(); // Opens the form
+            UserManagement userManagementForm = new UserManagement(_userService);
+            this.Hide();  
+            userManagementForm.Show(); 
         }
     }
 

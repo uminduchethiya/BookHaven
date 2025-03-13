@@ -20,7 +20,6 @@ namespace BookHaven.Business.Services
         {
             _customerRepository =customerRepository;
         }
-
         public Customer AddCustomer(Customer customer)
         {
 
@@ -38,6 +37,5 @@ namespace BookHaven.Business.Services
         {
             return _customerRepository.DeleteCustomer(customerId);
         }
-       
     }
 }

@@ -12,10 +12,9 @@ namespace BookHaven.Data.Repositories.OrderManagementRepositories
         List<Customer> GetCustomers();
         List<Book> GetBooks();
         void SaveOrder(Order order);
-        List<Order> GetAllOrders();  // Ensure this exists
+        List<Order> GetAllOrders(); 
         Order GetOrderById(int orderId);
-        bool UpdateOrderStatus(Order order); // Add this line
-
-        bool UpdateBookStock(int bookId, int quantity);  // New method
+        bool UpdateOrderStatus(Order order); 
+        bool UpdateBookStock(int bookId, int quantity); 
     }
 }

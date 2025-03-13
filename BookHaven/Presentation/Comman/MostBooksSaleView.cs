@@ -25,7 +25,7 @@ namespace BookHaven.Presentation.Comman
 
         private async void btnGenarate_Click(object sender, EventArgs e)
         {
-            // Call the service to get the most sold books
+          
             var mostSoldBooks = await _reportManagementService.GetBestSellingBooks();
 
             // Check if data is returned
@@ -42,7 +42,7 @@ namespace BookHaven.Presentation.Comman
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            // Open a SaveFileDialog to allow the user to choose the location and file name for the export
+            
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
                 Filter = "Excel Files|*.xls;*.xlsx",
@@ -59,7 +59,11 @@ namespace BookHaven.Presentation.Comman
                 MessageBox.Show("Report exported successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        // Method to export DataGridView data to Excel
+        /// <summary>
+        /// Export the DataGridView data to an Excel file
+        /// </summary>
+        /// <param name="dataGridView"></param>
+        /// <param name="filePath"></param>
         private void ExportDataGridViewToExcel(DataGridView dataGridView, string filePath)
         {
             // Set the license context

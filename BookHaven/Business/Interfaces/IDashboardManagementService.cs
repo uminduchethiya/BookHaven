@@ -12,19 +12,15 @@ namespace BookHaven.Business.Interfaces
         Task<int> GetDailySalesCount();
         Task<int> GetWeeklySalesCount();
         Task<int> GetMonthlySalesCount();
-
         Task<decimal> GetDailySalesAmount();
         Task<decimal> GetWeeklySalesAmount();
         Task<decimal> GetMonthlySalesAmount();
-
         Task<int> GetTotalOrdersCount();
         Task<int> GetPendingOrdersCount();
         Task<int> GetCompletedOrdersCount();
-
         Task<int> GetTotalCustomersCount();
         Task<int> GetTotalSuppliersCount();
         Task<int> GetTotalBooksCount();
-
         Task<Book> GetMostSellingBook();
     }
 }

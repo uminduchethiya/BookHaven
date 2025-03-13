@@ -55,7 +55,7 @@ namespace BookHaven.Presentation.Comman
 
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
-            string searchTerm = txtsearch.Text.Trim(); // Get the search term from the TextBox
+            string searchTerm = txtsearch.Text.Trim(); 
             LoadBooks(searchTerm); // Load the books filtered by the search term
         }
 
@@ -83,7 +83,7 @@ namespace BookHaven.Presentation.Comman
                 // Get the selected row
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
-                // Get the BookId (Primary Key) from the selected row
+                // Get the BookId from the selected row
                 int bookId = (int)selectedRow.Cells["BookId"].Value;
 
                 // Create a Book object with the updated data from the text boxes
@@ -99,7 +99,7 @@ namespace BookHaven.Presentation.Comman
                 };
 
                 // Update the book in the repository/database
-                var result = _bookRepository.EditBook(updatedBook); // Assuming UpdateBook is implemented in the service
+                var result = _bookRepository.EditBook(updatedBook); 
 
                 if (result)
                 {
@@ -134,7 +134,7 @@ namespace BookHaven.Presentation.Comman
                 if (result == DialogResult.Yes)
                 {
                     // Call the DeleteBook method to delete the book from the database
-                    var success = _bookRepository.DeleteBook(bookId); // Assuming DeleteBook is implemented in the service
+                    var success = _bookRepository.DeleteBook(bookId);
 
                     if (success)
                     {

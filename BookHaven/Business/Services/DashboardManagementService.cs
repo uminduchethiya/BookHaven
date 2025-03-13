@@ -16,7 +16,6 @@ namespace BookHaven.Business.Services
         {
             _dashboardRepository = dashboardRepository;
         }
-        // Sales Count Overview
         public async Task<int> GetDailySalesCount()
         {
             return await _dashboardRepository.FetchSalesCountByDate(DateTime.Now.Date);
@@ -33,8 +32,6 @@ namespace BookHaven.Business.Services
             var startOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             return await _dashboardRepository.FetchSalesCountByDateRange(startOfMonth, DateTime.Now);
         }
-
-        // Total Sales Amounts Overview
         public async Task<decimal> GetDailySalesAmount()
         {
             return await _dashboardRepository.FetchSalesAmountByDate(DateTime.Now.Date);
@@ -51,8 +48,6 @@ namespace BookHaven.Business.Services
             var startOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             return await _dashboardRepository.FetchSalesAmountByDateRange(startOfMonth, DateTime.Now);
         }
-
-        // Orders Overview
         public async Task<int> GetTotalOrdersCount()
         {
             return await _dashboardRepository.FetchTotalOrdersCount();
@@ -67,8 +62,6 @@ namespace BookHaven.Business.Services
         {
             return await _dashboardRepository.FetchOrdersCountByStatus("Completed");
         }
-
-        // System Overview
         public async Task<int> GetTotalCustomersCount()
         {
             return await _dashboardRepository.FetchTotalCustomersCount();

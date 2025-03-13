@@ -18,7 +18,6 @@ namespace BookHaven.Business.Services
         {
             _bookRepository = bookRepository;
         }
-
         public Book AddBook(Book book)
         {
             return _bookRepository.AddBook(book);

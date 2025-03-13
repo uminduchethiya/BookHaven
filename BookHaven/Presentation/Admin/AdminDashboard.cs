@@ -180,13 +180,13 @@ namespace BookHaven.Presentation.Admin
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                "Are you sure you want to log out?",  // Message
-                "Logout Confirmation",  // Title
-                MessageBoxButtons.YesNo,  // Yes/No buttons
-                MessageBoxIcon.Question  // Question icon
+                "Are you sure you want to log out?",  
+                "Logout Confirmation",  
+                MessageBoxButtons.YesNo,  
+                MessageBoxIcon.Question  
             );
 
-            if (result == DialogResult.Yes)  // Proceed only if the user confirms
+            if (result == DialogResult.Yes) 
             {
                 this.Hide();
                 LoginForm loginForm = new LoginForm();

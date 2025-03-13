@@ -13,6 +13,5 @@ namespace BookHaven.Business.Interfaces
         bool DeleteBook(int bookId);
         bool EditBook(Book book);
         List<Book> GetAllBooks(string searchTerm);
-        //Book GetBookById(int bookId);
     }
 }

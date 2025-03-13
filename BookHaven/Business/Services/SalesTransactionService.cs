@@ -103,13 +103,13 @@ namespace BookHaven.Business.Services
             try
             {
                 var fromAddress = new MailAddress("uminduchethiya@gmail.com", "BookHaven");
-                var toAddress = new MailAddress(customerEmail);  // Recipient email
+                var toAddress = new MailAddress(customerEmail);
                 const string subject = "Your Sales Transaction Bill";
                 const string body = "Please find attached your sales transaction bill.";
 
                 using (var smtp = new SmtpClient("smtp.gmail.com"))
                 {
-                    smtp.Credentials = new NetworkCredential("uminduchethiya@gmail.com", "bcgjguscujhvknor");  // Your email and password
+                    smtp.Credentials = new NetworkCredential("uminduchethiya@gmail.com", "bcgjguscujhvknor");  //Your email and password
                     smtp.EnableSsl = true;
                     smtp.Port = 587;  // SMTP port for Gmail
 
@@ -119,10 +119,10 @@ namespace BookHaven.Business.Services
                         Body = body
                     })
                     {
-                        // Attach the generated bill PDF
+                        // Attach  bill PDF
                         message.Attachments.Add(new Attachment(billFilePath));
 
-                        smtp.Send(message);  // Send the email
+                        smtp.Send(message);
                     }
                 }
 
@@ -142,7 +142,7 @@ namespace BookHaven.Business.Services
                 int bookId = Convert.ToInt32(row.Cells["BookId"].Value);
                 int quantitySold = Convert.ToInt32(row.Cells["Quantity"].Value);
 
-                // Update the stock in the Books table (assuming UpdateBookStock method is in the repository)
+                // Update the stock in the Books table
                 _bookRepository.UpdateStock(bookId, quantitySold);
             }
         }
@@ -152,7 +152,7 @@ namespace BookHaven.Business.Services
             decimal discountAmount = (discount / 100) * totalAmount;
             decimal finalAmount = totalAmount - discountAmount;
 
-            // Create a new transaction record in CustomerTransactions table
+            // Create a new transaction record
             var transaction = new CustomerTransactions
             {
                 CustomerId = customer.CustomerId,
@@ -165,7 +165,6 @@ namespace BookHaven.Business.Services
             // Insert the transaction record and get the generated CustomerTransactionId
             var customerTransactionId = _salesRepository.InsertTransactionRecord(transaction);
 
-            // Now that we have the CustomerTransactionId, we can use it in the details table
             foreach (var row in salesData)
             {
                 string bookTitle = row.Cells["Title"].Value.ToString();
@@ -176,23 +175,19 @@ namespace BookHaven.Business.Services
                 // Create the SalesTransactionDetails object
                 var transactionDetail = new SalesTransactionDetails
                 {
-                    CustomerTransactionId = customerTransactionId,  // Use the generated CustomerTransactionId
-                    BookId = Convert.ToInt32(row.Cells["BookId"].Value),  // Assuming the BookId is present in the DataGridView
+                    CustomerTransactionId = customerTransactionId,  
+                    BookId = Convert.ToInt32(row.Cells["BookId"].Value), 
                     BookTitle = bookTitle,
                     Quantity = quantity,
                     Price = price,
                     Subtotal = subtotal,
-                    CreatedAt = DateTime.Now  // Set the CreatedAt timestamp
+                    CreatedAt = DateTime.Now
                 };
 
                 Console.WriteLine(transactionDetail.CustomerTransactionId);
 
-                // Insert the transaction details into SalesTransactionDetails table
                 _salesRepository.InsertTransactionDetail(transactionDetail);
             }
         }
-
-
-
     }
 }

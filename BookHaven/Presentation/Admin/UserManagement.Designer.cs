@@ -35,7 +35,6 @@
             button1 = new Button();
             btndelete = new Button();
             btnupdate = new Button();
-            button4 = new Button();
             label2 = new Label();
             txtfirstname = new TextBox();
             txtlastname = new TextBox();
@@ -112,7 +111,7 @@
             // btndelete
             // 
             btndelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btndelete.Location = new Point(694, 633);
+            btndelete.Location = new Point(844, 633);
             btndelete.Name = "btndelete";
             btndelete.Size = new Size(115, 44);
             btndelete.TabIndex = 3;
@@ -123,23 +122,13 @@
             // btnupdate
             // 
             btnupdate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnupdate.Location = new Point(547, 633);
+            btnupdate.Location = new Point(680, 633);
             btnupdate.Name = "btnupdate";
             btnupdate.Size = new Size(115, 44);
             btnupdate.TabIndex = 4;
             btnupdate.Text = "Update";
             btnupdate.UseVisualStyleBackColor = true;
             btnupdate.Click += btnupdate_Click;
-            // 
-            // button4
-            // 
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(844, 633);
-            button4.Name = "button4";
-            button4.Size = new Size(115, 44);
-            button4.TabIndex = 5;
-            button4.Text = "Clear";
-            button4.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -297,7 +286,6 @@
             Controls.Add(label3);
             Controls.Add(txtfirstname);
             Controls.Add(label2);
-            Controls.Add(button4);
             Controls.Add(btnupdate);
             Controls.Add(btndelete);
             Controls.Add(button1);
@@ -323,7 +311,6 @@
         private Button button1;
         private Button btndelete;
         private Button btnupdate;
-        private Button button4;
         private Label label2;
         private TextBox txtfirstname;
         private TextBox txtlastname;

@@ -22,6 +22,10 @@ namespace BookHaven.Data.Repositories.SupplierManagementRepository
                 throw new Exception("Connection string 'BookHavenDB' not found in App.config.");
             }
         }
+        /// <summary>
+        /// Add a new supplier
+        /// </summary>
+        /// <param name="supplier"></param>
         public void AddSupplier(Supplier supplier)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -42,6 +46,10 @@ namespace BookHaven.Data.Repositories.SupplierManagementRepository
             }
         }
 
+        /// <summary>
+        /// Update supplier details
+        /// </summary>
+        /// <param name="supplier"></param>
         public void UpdateSupplier(Supplier supplier)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -62,7 +70,10 @@ namespace BookHaven.Data.Repositories.SupplierManagementRepository
                 }
             }
         }
-
+        /// <summary>
+        /// Get all suppliers
+        /// </summary>
+        /// <returns></returns>
         public List<Supplier> GetAllSuppliers()
         {
             List<Supplier> suppliers = new List<Supplier>();
@@ -94,6 +105,11 @@ namespace BookHaven.Data.Repositories.SupplierManagementRepository
             return suppliers;
         }
 
+        /// <summary>
+        /// Get supplier by name
+        /// </summary>
+        /// <param name="supplierName"></param>
+        /// <returns></returns>
         public Supplier GetSupplierByName(string supplierName)
         {
             Supplier supplier = null;
@@ -127,7 +143,10 @@ namespace BookHaven.Data.Repositories.SupplierManagementRepository
             return supplier;
         }
 
-        // Implement DeactivateSupplier
+        /// <summary>
+        /// Deactivate supplier
+        /// </summary>
+        /// <param name="supplierId"></param>
         public void DeactivateSupplier(int supplierId)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -142,7 +161,10 @@ namespace BookHaven.Data.Repositories.SupplierManagementRepository
             }
         }
 
-        // Implement GetActiveSuppliers
+        /// <summary>
+        /// Get all active suppliers
+        /// </summary>
+        /// <returns></returns>
         public List<Supplier> GetActiveSuppliers()
         {
             List<Supplier> suppliers = new List<Supplier>();

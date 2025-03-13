@@ -13,7 +13,7 @@ namespace BookHaven.Data.Repositories.SupplierManagementRepository
         void UpdateSupplier(Supplier supplier);
         List<Supplier> GetAllSuppliers();
         Supplier GetSupplierByName(string supplierName);
-        void DeactivateSupplier(int supplierId); // For deactivating a supplier
-        List<Supplier> GetActiveSuppliers(); // For fetching active suppliers
+        void DeactivateSupplier(int supplierId); 
+        List<Supplier> GetActiveSuppliers(); 
     }
 }

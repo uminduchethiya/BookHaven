@@ -23,7 +23,10 @@ namespace BookHaven.Data.Repositories.SupplierOrderManagementRepository
             }
         }
 
-
+        /// <summary>
+        /// Fetch all suppliers
+        /// </summary>
+        /// <returns></returns>
         public List<Supplier> GetAllSuppliers()
         {
             List<Supplier> suppliers = new List<Supplier>();
@@ -50,7 +53,10 @@ namespace BookHaven.Data.Repositories.SupplierOrderManagementRepository
             return suppliers;
         }
 
-
+        /// <summary>
+        ///     Fetch all books with low stock
+        /// </summary>
+        /// <returns></returns>
         public List<Book> GetLowStockBooks()
         {
             List<Book> books = new List<Book>();
@@ -77,26 +83,28 @@ namespace BookHaven.Data.Repositories.SupplierOrderManagementRepository
 
             return books;
         }
-        // Method to save a new SupplierOrder into the database
+        /// <summary>
+        /// Save Supplier Order
+        /// </summary>
+        /// <param name="order"></param>
+        /// <exception cref="Exception"></exception>
         public void SaveSupplierOrder(SupplierOrder order)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
-                    // SQL query to insert SupplierOrder
+                
                     string query = "INSERT INTO SupplierOrder (SupplierID, BookID, Quantity, OrderDate, Status) " +
                                    "VALUES (@SupplierID, @BookID, @Quantity, @OrderDate, @Status)";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
-                    // Adding parameters to prevent SQL injection
                     cmd.Parameters.AddWithValue("@SupplierID", order.SupplierID);
                     cmd.Parameters.AddWithValue("@BookID", order.BookID);
                     cmd.Parameters.AddWithValue("@Quantity", order.Quantity);
                     cmd.Parameters.AddWithValue("@OrderDate", order.OrderDate);
                     cmd.Parameters.AddWithValue("@Status", order.Status);
 
-                    // Open connection and execute the query
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -107,7 +115,10 @@ namespace BookHaven.Data.Repositories.SupplierOrderManagementRepository
                 throw new Exception("Error saving SupplierOrder: " + ex.Message);
             }
         }
-
+        /// <summary>
+        /// Fetch all supplier orders with details
+        /// </summary>
+        /// <returns></returns>
         public List<SupplierOrder> GetSupplierOrdersWithDetails()
         {
             List<SupplierOrder> orders = new List<SupplierOrder>();
@@ -146,6 +157,11 @@ namespace BookHaven.Data.Repositories.SupplierOrderManagementRepository
 
             return orders;
         }
+        /// <summary>
+        /// Update book stock
+        /// </summary>
+        /// <param name="bookID"></param>
+        /// <param name="addedQuantity"></param>
         public void UpdateBookStock(int bookID, int addedQuantity)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -165,7 +181,11 @@ namespace BookHaven.Data.Repositories.SupplierOrderManagementRepository
             }
         }
 
-
+        /// <summary>
+        ///     Update order status
+        /// </summary>
+        /// <param name="orderID"></param>
+        /// <param name="status"></param>
         public void UpdateOrderStatus(int orderID, string status)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -181,6 +201,12 @@ namespace BookHaven.Data.Repositories.SupplierOrderManagementRepository
                 }
             }
         }
+
+        /// <summary>
+        ///    Get supplier email
+        /// </summary>
+        /// <param name="orderID"></param>
+        /// <returns></returns>
         public string GetSupplierEmail(int orderID)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))

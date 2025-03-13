@@ -32,7 +32,7 @@ namespace BookHaven.Presentation.Admin
 
             // Load only active suppliers
             var activeSuppliers = _supplierService.GetActiveSuppliers();
-            dtgsupplier.DataSource = activeSuppliers;  // Load active suppliers in DataGridView
+            dtgsupplier.DataSource = activeSuppliers; 
 
             // Add active suppliers to combo box
             foreach (var supplier in activeSuppliers)
@@ -67,13 +67,12 @@ namespace BookHaven.Presentation.Admin
                     PhoneNumber = txtsupplierphonenumber.Text,
                     Email = txtsupplieremail.Text,
                     Address = txtsupplieraddress.Text,
-                    Status = "Active" // Default status
+                    Status = "Active" 
                 };
 
                 _supplierService.AddSupplier(supplier);
 
                 MessageBox.Show("Supplier added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Reload the ComboBox and DataGridView to show the newly added supplier
                 LoadSuppliers();
 
 
@@ -105,14 +104,13 @@ namespace BookHaven.Presentation.Admin
                                              .Where(s => s.SupplierName.StartsWith(searchText, StringComparison.OrdinalIgnoreCase))
                                              .ToList();
 
-            // Check if any suppliers match the search text
             if (suppliers.Any())
             {
                 dtgsupplier.DataSource = suppliers;
             }
             else
             {
-                dtgsupplier.DataSource = new List<Supplier>();  // Show empty grid if no matches
+                dtgsupplier.DataSource = new List<Supplier>();  //show empty grid
             }
         }
 
@@ -169,12 +167,12 @@ namespace BookHaven.Presentation.Admin
             _supplierService.DeactivateSupplier(_selectedSupplierID);
             MessageBox.Show("Supplier deactivated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            LoadActiveSuppliers(); // Refresh DataGridView to hide deactivated suppliers
+            LoadActiveSuppliers();
         }
 
         private void LoadActiveSuppliers()
         {
-            dtgsupplier.DataSource = _supplierService.GetActiveSuppliers();  // Fetch only active suppliers
+            dtgsupplier.DataSource = _supplierService.GetActiveSuppliers();
         }
 
         private void label5_Click(object sender, EventArgs e)

@@ -16,7 +16,7 @@ namespace BookHaven.Presentation.Comman
     public partial class OrderManage : Form
     {
         private readonly IOrderManagementService _orderService;
-        private int? _selectedOrderId;  // Store the selected order ID for updating
+        private int? _selectedOrderId;  // Store the selected order ID 
         public OrderManage(IOrderManagementService orderService)
         {
             InitializeComponent();
@@ -28,13 +28,13 @@ namespace BookHaven.Presentation.Comman
         private void LoadOrderIds()
         {
             cmbsearchorder.Items.Clear();
-            List<Order> orders = _orderService.GetAllOrders();  // Fetch all orders
+            List<Order> orders = _orderService.GetAllOrders();
 
             if (orders != null && orders.Count > 0)
             {
                 foreach (var order in orders)
                 {
-                    cmbsearchorder.Items.Add(order.OrderId);  // Populate combobox
+                    cmbsearchorder.Items.Add(order.OrderId);
                 }
             }
         }

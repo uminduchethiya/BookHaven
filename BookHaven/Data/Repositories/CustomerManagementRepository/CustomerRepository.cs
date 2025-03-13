@@ -23,7 +23,12 @@ namespace BookHaven.Data.Repositories.CustomerManagementRepository
                 throw new Exception("Connection string 'BookHavenDB' not found in App.config.");
             }
         }
-
+        /// <summary>
+        /// Add a new customer to the database
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public Customer AddCustomer(Customer customer)
         {
             Customer addedCustomer = null;
@@ -58,7 +63,7 @@ namespace BookHaven.Data.Repositories.CustomerManagementRepository
                             addedCustomer.CustomerId = Convert.ToInt32(result);
                             if (!string.IsNullOrEmpty(customer.Email))
                             {
-                                SendEmail(customer.Email); // Send email to the customer
+                                SendEmail(customer.Email);
                             }
                         }
                     }
@@ -77,7 +82,12 @@ namespace BookHaven.Data.Repositories.CustomerManagementRepository
 
             return addedCustomer;
         }
-
+        /// <summary>
+        /// Delete a customer from the database
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool DeleteCustomer(int customerId)
         {
             bool isDeleted = false;
@@ -109,8 +119,12 @@ namespace BookHaven.Data.Repositories.CustomerManagementRepository
             return isDeleted;
         }
 
-
-
+        /// <summary>
+        /// Edit a customer in the database
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool EditCustomer(Customer customer)
         {
             bool isUpdated = false;
@@ -144,7 +158,7 @@ namespace BookHaven.Data.Repositories.CustomerManagementRepository
                         cmd.Parameters.AddWithValue("@Address", customer.Address);
                         cmd.Parameters.AddWithValue("@City", customer.City);
                         cmd.Parameters.AddWithValue("@ZipCode", customer.ZipCode);
-                        cmd.Parameters.AddWithValue("@IsDeleted", customer.IsDeleted); // Ensure you handle IsDeleted properly
+                        cmd.Parameters.AddWithValue("@IsDeleted", customer.IsDeleted); 
                         cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Now);
                         cmd.Parameters.AddWithValue("@CustomerId", customer.CustomerId);
 
@@ -171,8 +185,13 @@ namespace BookHaven.Data.Repositories.CustomerManagementRepository
             return isUpdated;
 
      }
-
-    public List<Customer> GetAllCustomers(string searchparam)
+        /// <summary>
+        /// Get all customers from the database
+        /// </summary>
+        /// <param name="searchparam"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public List<Customer> GetAllCustomers(string searchparam)
         {
             List<Customer> customers = new List<Customer>();
 
@@ -180,7 +199,7 @@ namespace BookHaven.Data.Repositories.CustomerManagementRepository
             {
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
-                    // SQL query to fetch customers with search functionality
+                  
                     string query = @"
                 SELECT CustomerId, FirstName, LastName, Email, PhoneNumber, DateOfBirth, Gender, Address, City, ZipCode
                 FROM Customer
@@ -189,7 +208,7 @@ namespace BookHaven.Data.Repositories.CustomerManagementRepository
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        // Set the value of the @SearchParam parameter
+                       
                         cmd.Parameters.AddWithValue("@SearchParam", "%" + searchparam + "%");
 
                         conn.Open();
@@ -197,7 +216,7 @@ namespace BookHaven.Data.Repositories.CustomerManagementRepository
                         {
                             while (reader.Read())
                             {
-                                // Mapping data from the database to the Customer model
+                              
                                 Customer customer = new Customer
                                 {
                                     CustomerId = reader.GetInt32(reader.GetOrdinal("CustomerId")),
@@ -230,7 +249,10 @@ namespace BookHaven.Data.Repositories.CustomerManagementRepository
 
             return customers;
         }
-
+        /// <summary>
+        /// Send an email to the customer
+        /// </summary>
+        /// <param name="recipientEmail"></param>
         private void SendEmail(string recipientEmail)
         {
             try

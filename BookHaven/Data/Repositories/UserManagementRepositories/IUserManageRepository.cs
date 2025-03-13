@@ -7,9 +7,8 @@ namespace BookHaven.Data.Repositories
     {
         void AddUser(UserModel user);
         List<KeyValuePair<int, string>> GetUserRoles();
-
         List<UserModel> GetAllUsers();
         void UpdateUser(UserModel user);
-        void DeleteUser(int userId); // Add this method signature
+        void DeleteUser(int userId); 
     }
 }

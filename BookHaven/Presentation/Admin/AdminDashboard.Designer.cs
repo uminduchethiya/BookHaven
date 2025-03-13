@@ -829,6 +829,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
             Controls.Add(panel20);
             Controls.Add(panel15);
@@ -836,6 +838,7 @@
             Controls.Add(panel7);
             Controls.Add(panel3);
             Controls.Add(sidebar);
+            DoubleBuffered = true;
             Name = "AdminDashboard";
             Text = "AdminDashboard";
             Load += AdminDashboard_Load;

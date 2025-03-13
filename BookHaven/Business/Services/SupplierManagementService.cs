@@ -17,8 +17,6 @@ namespace BookHaven.Business.Services
         {
             _supplierRepository = new SupplierManageRepository();
         }
-
-      
         public void AddSupplier(Supplier supplier) => _supplierRepository.AddSupplier(supplier);
         public void UpdateSupplier(Supplier supplier) => _supplierRepository.UpdateSupplier(supplier);
         public List<Supplier> GetAllSuppliers() => _supplierRepository.GetAllSuppliers();
@@ -28,7 +26,6 @@ namespace BookHaven.Business.Services
         {
             _supplierRepository.DeactivateSupplier(supplierId);
         }
-
         public List<Supplier> GetActiveSuppliers() 
         {
             return _supplierRepository.GetActiveSuppliers();

@@ -25,7 +25,7 @@ namespace BookHaven.Presentation.Comman
 
         private async void btnGenarate_Click(object sender, EventArgs e)
         {
-            // Call the service to get the inventory status
+           
             var inventoryStatus = await _reportManagementService.GetInventoryStatus();
 
             // Check if data is returned

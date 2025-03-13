@@ -18,7 +18,12 @@ namespace BookHaven.Data.Repositories.BookManagementRepository
                 throw new Exception("Connection string 'BookHavenDB' not found in App.config.");
             }
         }
-
+        /// <summary>
+        /// Add a new book to the database
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public Book AddBook(Book book)
         {
             Book addedBook = null;
@@ -67,6 +72,12 @@ namespace BookHaven.Data.Repositories.BookManagementRepository
 
             return addedBook;
         }
+        /// <summary>
+        /// Get all books from the database
+        /// </summary>
+        /// <param name="searchparm"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public List<Book> GetAllBooks(string searchparm)
         {
             List<Book> books = new List<Book>();
@@ -78,7 +89,7 @@ namespace BookHaven.Data.Repositories.BookManagementRepository
                     SELECT * FROM Book WHERE IsDeleted = 0 AND (Title LIKE @SearchTerm OR Author LIKE @SearchTerm OR ISBN LIKE @SearchTerm);";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        // Set the value of the @SearchTerm parameter
+                      
                         cmd.Parameters.AddWithValue("@SearchTerm", "%" + searchparm + "%");
 
                         conn.Open();
@@ -94,7 +105,7 @@ namespace BookHaven.Data.Repositories.BookManagementRepository
                                     ISBN = reader.GetString(reader.GetOrdinal("ISBN")),
                                     Price = reader.GetDecimal(reader.GetOrdinal("Price")),
                                     StockQuantity = reader.GetInt32(reader.GetOrdinal("StockQuantity")),
-                                    Genre = reader.GetString(reader.GetOrdinal("Genere"))  // Fixed typo from "Genere" to "Genre"
+                                    Genre = reader.GetString(reader.GetOrdinal("Genere"))  
                                 };
                                 books.Add(book);
                             }
@@ -114,6 +125,12 @@ namespace BookHaven.Data.Repositories.BookManagementRepository
             }
             return books;
         }
+        /// <summary>
+        /// Get a book by its ID
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool EditBook(Book book)
         {
             bool isEdited = false;
@@ -153,6 +170,12 @@ namespace BookHaven.Data.Repositories.BookManagementRepository
             }
             return isEdited;
         }
+        /// <summary>
+        /// Delete a book by its ID
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool DeleteBook(int bookId)
         {
             bool isDeleted = false;
@@ -186,7 +209,13 @@ namespace BookHaven.Data.Repositories.BookManagementRepository
             }
             return isDeleted;
         }
-
+        /// <summary>
+        /// Update the stock quantity of a book
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool UpdateStock(int bookId, int quantity)
         {
             bool isUpdated = false;

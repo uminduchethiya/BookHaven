@@ -40,17 +40,15 @@ namespace BookHaven.Presentation.Admin
             // Show the dialog and check if the user selected a location
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Call the ExportDataGridViewToExcel method to export the data
+                // Call the method to export the data to Excel
                 ExportDataGridViewToExcel(dataGridView1, saveFileDialog.FileName);
 
-                // Show a message that the export was successful
                 MessageBox.Show("Report exported successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private async void btnGenarate_Click(object sender, EventArgs e)
         {
-            // Get the selected start and end dates from the DateTimePickers
             DateTime startDate = dtpStartDate.Value;
             DateTime endDate = dtpEndDate.Value;
 
@@ -60,12 +58,10 @@ namespace BookHaven.Presentation.Admin
             // Check if data is returned
             if (salesSummary != null && salesSummary.Count > 0)
             {
-                // Bind the data to the DataGridView
                 dataGridView1.DataSource = salesSummary;
             }
             else
             {
-                // If no data found, show a message
                 MessageBox.Show("No sales data found for the selected date range.", "No Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

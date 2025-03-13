@@ -29,11 +29,8 @@ namespace BookHaven.Business.Services
         {
             return _supplierOrderRepository.GetLowStockBooks();
         }
-        // Method to save the SupplierOrder
-        // Method to save the SupplierOrder
         public void SaveSupplierOrder(SupplierOrder order)
         {
-            // Call the repository method to save the order
             _supplierOrderRepository.SaveSupplierOrder(order);
         }
 
@@ -41,9 +38,6 @@ namespace BookHaven.Business.Services
         {
             return _supplierOrderRepository.GetSupplierOrdersWithDetails();
         }
-
-        
-
         public void UpdateBookStock(int bookId, int quantity)
         {
             _supplierOrderRepository.UpdateBookStock(bookId, quantity);
@@ -52,9 +46,5 @@ namespace BookHaven.Business.Services
         {
             _supplierOrderRepository.UpdateOrderStatus(orderID, status);
         }
-
-
-
-
     }
 }

@@ -108,17 +108,17 @@ namespace BookHaven.Presentation.Comman
         private void LoadAllBooks()
         {
             // Fetch all books from the database
-            var allBooks = _bookRepository.GetAllBooks(string.Empty);  // Assuming you want to fetch all books without any search parameter
+            var allBooks = _bookRepository.GetAllBooks(string.Empty);  
 
             // Set the ComboBox data source to the list of all books
             cmbSearchBooks.DataSource = allBooks;
-            cmbSearchBooks.DisplayMember = "Title";  // Set the display member to book title
+            cmbSearchBooks.DisplayMember = "Title";  
             cmbSearchBooks.ValueMember = "BookId";  // Set the value member to the BookId (for selection purposes)
         }
         private void LoadAllCustomers()
         {
             // Fetch all books from the database
-            var allCustomers = _customerRepository.GetAllCustomers(string.Empty);  // Assuming you want to fetch all books without any search parameter
+            var allCustomers = _customerRepository.GetAllCustomers(string.Empty);
 
             // Set the ComboBox data source to the list of all books
             cmbsearchcustomers.DataSource = allCustomers;
@@ -144,10 +144,9 @@ namespace BookHaven.Presentation.Comman
 
                 if (!bookExists)
                 {
-                    // Add the selected book to the DataGridView
                     dataGridView1.Rows.Add(selectedBook.BookId, selectedBook.Title, selectedBook.Price, 1, selectedBook.Price);
 
-                    // Recalculate the total after adding the book
+                 
                     RecalculateTotal();
                 }
                 else
@@ -158,15 +157,15 @@ namespace BookHaven.Presentation.Comman
         }
         private void cmbSearchBooks_TextChanged(object sender, EventArgs e)
         {
-            string searchTerm = cmbSearchBooks.Text; // Get the text entered by the user in the ComboBox
+            string searchTerm = cmbSearchBooks.Text;
 
             // Filter the books based on the search term
-            var filteredBooks = _bookRepository.GetAllBooks(searchTerm);  // Use the same method, but search within the loaded books
+            var filteredBooks = _bookRepository.GetAllBooks(searchTerm);
 
             // Update ComboBox with the filtered books
             cmbSearchBooks.DataSource = filteredBooks;
-            cmbSearchBooks.DisplayMember = "Title";  // Set the display member to book title
-            cmbSearchBooks.ValueMember = "BookId";  // Set the value member to the BookId (for selection purposes)
+            cmbSearchBooks.DisplayMember = "Title"; 
+            cmbSearchBooks.ValueMember = "BookId"; 
         }
         private void RecalculateTotal()
         {
@@ -208,10 +207,10 @@ namespace BookHaven.Presentation.Comman
                 decimal price = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells["Price"].Value);
                 decimal subtotal = quantity * price;
 
-                // Update the subtotal column (ensure it's available in your DataGridView)
+                // Update the subtotal column
                 dataGridView1.Rows[e.RowIndex].Cells["Subtotal"].Value = subtotal;
 
-                // Recalculate the total amount after quantity change
+              
                 RecalculateTotal();
             }
         }
@@ -220,14 +219,9 @@ namespace BookHaven.Presentation.Comman
         {
             // Ensure that a row is selected before trying to delete
             if (dataGridView1.SelectedRows.Count > 0)
-            {
-                // Get the selected row
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-
-                // Remove the selected row from the DataGridView
+            {             
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];             
                 dataGridView1.Rows.Remove(selectedRow);
-
-                // Recalculate the total after deletion
                 RecalculateTotal();
             }
             else
@@ -243,7 +237,6 @@ namespace BookHaven.Presentation.Comman
 
         private void cmbsearchcustomers_TextChanged(object sender, EventArgs e)
         {
-            // Get the search term from the text box (txtSearchCustomer)
             string searchTerm = cmbsearchcustomers.Text;
 
             // Call GetAllCustomers with the search term
@@ -251,8 +244,8 @@ namespace BookHaven.Presentation.Comman
 
             // Set the data source for the ComboBox
             cmbsearchcustomers.DataSource = customers;
-            cmbsearchcustomers.DisplayMember = "Email";  // Display the email in the ComboBox
-            cmbsearchcustomers.ValueMember = "CustomerId";  // Value member for backend reference
+            cmbsearchcustomers.DisplayMember = "Email";  
+            cmbsearchcustomers.ValueMember = "CustomerId";  
         }
 
         private void cmbsearchcustomers_SelectedIndexChanged(object sender, EventArgs e)
@@ -262,8 +255,7 @@ namespace BookHaven.Presentation.Comman
             {
                 // Cast the selected item to a Customer
                 selectedCustomer = (Customer)cmbsearchcustomers.SelectedItem;
-
-                // Populate the labels with the selected customer's information
+            
                 lblEmail.Text = selectedCustomer.Email;
                 lblName.Text = selectedCustomer.FirstName + " " + selectedCustomer.LastName;
                 lblPhone.Text = selectedCustomer.PhoneNumber;

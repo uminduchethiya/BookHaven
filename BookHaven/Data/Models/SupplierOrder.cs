@@ -8,13 +8,13 @@ namespace BookHaven.Data.Models
 {
     public class SupplierOrder
     {
-        public int SupplierOrderID { get; set; } // Primary Key, Auto Increment
-        public int SupplierID { get; set; } // Foreign Key to Supplier table
-        public int BookID { get; set; } // Foreign Key to Book table
-        public int Quantity { get; set; } // Quantity of the order
-        public DateTime OrderDate { get; set; } // Order Date
-        public string Status { get; set; } // Order Status (e.g., Pending, Completed)
-        public Supplier Supplier { get; set; } // Reference to Supplier entity
-        public Book Book { get; set; } // Reference to Book entity
+        public int SupplierOrderID { get; set; }
+        public int SupplierID { get; set; } 
+        public int BookID { get; set; } 
+        public int Quantity { get; set; } 
+        public DateTime OrderDate { get; set; } 
+        public string Status { get; set; } 
+        public Supplier Supplier { get; set; } 
+        public Book Book { get; set; } 
     }
 }

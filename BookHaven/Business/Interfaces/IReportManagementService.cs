@@ -12,7 +12,6 @@ namespace BookHaven.Business.Interfaces
         Task<List<SalesSummery>> GetSalesSummary(DateTime startDate, DateTime endDate);
         Task<List<Book>> GetBestSellingBooks();
         Task<List<InventoryStatus>> GetInventoryStatus();
-
         Task<List<SalesSummery>> GetSalesSummaryByCurrentDate();
     }
 }
