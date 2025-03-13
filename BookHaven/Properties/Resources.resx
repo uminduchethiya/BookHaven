@@ -124,28 +124,28 @@
   <data name="menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="142-1429304_library-management-library-management-system-png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\142-1429304_library-management-library-management-system-png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user-with-gear-sign-dark-background-3d-render-concept-project-manager_492780-4629" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-with-gear-sign-dark-background-3d-render-concept-project-manager_492780-4629.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
-	<data name="4288270" type="System.Resources.ResXFileRef, System.Windows.Forms">
-		<value>..\Resources\4288270.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-	</data>
-
+  <data name="left-arrow_10117838" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left-arrow_10117838.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-admin-panel-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-admin-panel-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="4288270" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4288270.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="142-1429304_library-management-library-management-system-png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\142-1429304_library-management-library-management-system-png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pngtree-open-book-icon-for-library-and-studying-in-head-vector-png-image_15477299" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngtree-open-book-icon-for-library-and-studying-in-head-vector-png-image_15477299.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
   <data name="20945504" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\20945504.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="left-arrow_10117838" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\left-arrow_10117838.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

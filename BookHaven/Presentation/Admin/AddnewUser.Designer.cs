@@ -59,7 +59,9 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
             label8.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.Control;
             label8.Location = new Point(556, 512);
             label8.Name = "label8";
             label8.Size = new Size(39, 16);
@@ -70,7 +72,7 @@
             // 
             cmbgender.FormattingEnabled = true;
             cmbgender.Items.AddRange(new object[] { "Male", "Female" });
-            cmbgender.Location = new Point(712, 445);
+            cmbgender.Location = new Point(712, 455);
             cmbgender.Name = "cmbgender";
             cmbgender.Size = new Size(284, 23);
             cmbgender.TabIndex = 38;
@@ -78,8 +80,10 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
             label7.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(556, 452);
+            label7.ForeColor = SystemColors.Control;
+            label7.Location = new Point(556, 457);
             label7.Name = "label7";
             label7.Size = new Size(58, 16);
             label7.TabIndex = 37;
@@ -95,7 +99,9 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
             label6.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.Control;
             label6.Location = new Point(557, 357);
             label6.Name = "label6";
             label6.Size = new Size(61, 16);
@@ -112,7 +118,9 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Control;
             label5.Location = new Point(556, 313);
             label5.Name = "label5";
             label5.Size = new Size(112, 16);
@@ -129,7 +137,9 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(556, 266);
             label4.Name = "label4";
             label4.Size = new Size(106, 16);
@@ -139,7 +149,9 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(556, 166);
             label3.Name = "label3";
             label3.Size = new Size(78, 16);
@@ -149,7 +161,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(556, 115);
             label2.Name = "label2";
             label2.Size = new Size(79, 16);
@@ -159,11 +173,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(414, 27);
+            label1.Font = new Font("Cambria", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(11, 21);
             label1.Name = "label1";
-            label1.Size = new Size(219, 29);
+            label1.Size = new Size(245, 41);
             label1.TabIndex = 0;
-            label1.Text = "User Management";
+            label1.Text = "Add New User";
             // 
             // txtfirstname
             // 
@@ -174,7 +189,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.MenuHighlight;
+            panel1.BackColor = SystemColors.MenuText;
             panel1.Controls.Add(label1);
             panel1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             panel1.ForeColor = Color.White;
@@ -185,17 +200,19 @@
             // 
             // btnadd
             // 
-            btnadd.Location = new Point(712, 680);
+            btnadd.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnadd.Location = new Point(721, 585);
             btnadd.Name = "btnadd";
             btnadd.Size = new Size(115, 44);
             btnadd.TabIndex = 24;
-            btnadd.Text = "Add";
+            btnadd.Text = "Save";
             btnadd.UseVisualStyleBackColor = true;
             btnadd.Click += btnadd_Click_1;
             // 
             // btnclear
             // 
-            btnclear.Location = new Point(881, 680);
+            btnclear.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnclear.Location = new Point(864, 585);
             btnclear.Name = "btnclear";
             btnclear.Size = new Size(115, 44);
             btnclear.TabIndex = 26;
@@ -212,7 +229,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._20945504;
+            pictureBox1.Image = Properties.Resources.user_with_gear_sign_dark_background_3d_render_concept_project_manager_492780_4629;
             pictureBox1.Location = new Point(-6, 88);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(539, 646);
@@ -230,7 +247,9 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
             label9.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.Control;
             label9.Location = new Point(556, 217);
             label9.Name = "label9";
             label9.Size = new Size(47, 16);
@@ -241,7 +260,7 @@
             // 
             cmbuserrole.FormattingEnabled = true;
             cmbuserrole.Items.AddRange(new object[] { "Male", "Female" });
-            cmbuserrole.Location = new Point(712, 398);
+            cmbuserrole.Location = new Point(712, 403);
             cmbuserrole.Name = "cmbuserrole";
             cmbuserrole.Size = new Size(284, 23);
             cmbuserrole.TabIndex = 46;
@@ -249,7 +268,9 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
             label10.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = SystemColors.Control;
             label10.Location = new Point(557, 405);
             label10.Name = "label10";
             label10.Size = new Size(40, 16);
@@ -258,16 +279,17 @@
             // 
             // dobpicker
             // 
-            dobpicker.Location = new Point(712, 505);
+            dobpicker.Location = new Point(712, 507);
             dobpicker.Name = "dobpicker";
-            dobpicker.Size = new Size(200, 23);
+            dobpicker.Size = new Size(284, 23);
             dobpicker.TabIndex = 47;
             // 
             // button1
             // 
-            button1.Location = new Point(557, 680);
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(754, 663);
             button1.Name = "button1";
-            button1.Size = new Size(115, 44);
+            button1.Size = new Size(194, 44);
             button1.TabIndex = 48;
             button1.Text = "User Page";
             button1.UseVisualStyleBackColor = true;
@@ -277,6 +299,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
             Controls.Add(button1);
             Controls.Add(dobpicker);
@@ -301,6 +325,7 @@
             Controls.Add(btnadd);
             Controls.Add(txtfirstname);
             Controls.Add(panel1);
+            DoubleBuffered = true;
             Name = "AddnewUser";
             Text = "AddnewUser";
             panel1.ResumeLayout(false);
