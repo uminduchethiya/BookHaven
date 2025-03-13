@@ -38,25 +38,89 @@ namespace BookHaven.Presentation.Admin
             cmbuserrole.ValueMember = "Key";
         }
 
-
-
         private void btnadd_Click_1(object sender, EventArgs e)
         {
+            // Validate First Name
+            if (string.IsNullOrWhiteSpace(txtfirstname.Text))
+            {
+                MessageBox.Show("First Name is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate Last Name
+            if (string.IsNullOrWhiteSpace(txtname.Text))
+            {
+                MessageBox.Show("Last Name is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate Email
+            if (string.IsNullOrWhiteSpace(txtemail.Text) || !IsValidEmail(txtemail.Text))
+            {
+                MessageBox.Show("Enter a valid email address.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate Address
+            if (string.IsNullOrWhiteSpace(txtaddress.Text))
+            {
+                MessageBox.Show("Address is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate Phone Number (Must be 10 digits)
+            if (string.IsNullOrWhiteSpace(txtphone.Text) || !System.Text.RegularExpressions.Regex.IsMatch(txtphone.Text, @"^\d{10}$"))
+            {
+                MessageBox.Show("Enter a valid 10-digit phone number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate Role Selection
+            if (cmbuserrole.SelectedValue == null)
+            {
+                MessageBox.Show("Please select a user role.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate ID Number
+            if (string.IsNullOrWhiteSpace(txtidnum.Text))
+            {
+                MessageBox.Show("ID Number is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate Gender
+            if (cmbgender.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a gender.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate Date of Birth (Must be in the past)
+            if (dobpicker.Value.Date >= DateTime.Today)
+            {
+                MessageBox.Show("Date of Birth must be in the past.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Create the user object
             UserModel newUser = new UserModel
             {
-                FirstName = txtfirstname.Text,
-                LastName = txtname.Text,
-                Email = txtemail.Text,
-                Address = txtaddress.Text,
-                Phone = txtphone.Text,
+                FirstName = txtfirstname.Text.Trim(),
+                LastName = txtname.Text.Trim(),
+                Email = txtemail.Text.Trim(),
+                Address = txtaddress.Text.Trim(),
+                Phone = txtphone.Text.Trim(),
                 RoleID = (int)cmbuserrole.SelectedValue,
-                Idnumber = txtidnum.Text,
-                Gender = cmbgender.SelectedItem?.ToString(),
+                Idnumber = txtidnum.Text.Trim(),
+                Gender = cmbgender.SelectedItem.ToString(),
                 Dob = dobpicker.Value
             };
 
+            // Add user via service
             _userService.AddUser(newUser);
-            MessageBox.Show("User added successfully!");
+
+            MessageBox.Show("User added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnclear_Click(object sender, EventArgs e)
@@ -77,6 +141,19 @@ namespace BookHaven.Presentation.Admin
             UserManagement userManagementForm = new UserManagement(_userService);
             this.Hide();  
             userManagementForm.Show(); 
+        }
+        // Email validation method
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 

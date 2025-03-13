@@ -177,51 +177,81 @@ namespace BookHaven.Presentation.Comman
 
         private void btnorder_Click(object sender, EventArgs e)
         {
-            if (cmbsearchphone.SelectedItem != null && cmbsearchbook.SelectedItem != null)
+            // Validate Customer Selection
+            if (cmbsearchphone.SelectedItem == null)
             {
-                Customer selectedCustomer = cmbsearchphone.SelectedItem as Customer;
-                Book selectedBook = cmbsearchbook.SelectedItem as Book;
-
-                int quantity = int.Parse(txtbookqunity.Text);
-                decimal price = decimal.Parse(txtbookprice.Text);
-                decimal subtotal = quantity * price;
-                string deliveryType = GetDeliveryType();
-
-                if (quantity > selectedBook.StockQuantity)
-                {
-                    MessageBox.Show($"Quantity exceeds available stock. Only {selectedBook.StockQuantity} books are available.",
-                                    "Quantity Not Available", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                var order = new Order
-                {
-                    CustomerId = selectedCustomer.CustomerId,
-                    BookId = selectedBook.BookId,
-                    Quantity = quantity,
-                    Price = price,
-                    Subtotal = subtotal,
-                    Status = "Pending",
-                    DeliveryType = deliveryType,
-                    OrderDate = DateTime.Now
-                };
-
-                try
-                {
-                    _orderService.SaveOrder(order);
-                    MessageBox.Show("Order placed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Send confirmation email
-                    SendOrderConfirmationEmail(selectedCustomer.Email, order);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error placing order: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Please select a customer.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else
+
+            // Validate Book Selection
+            if (cmbsearchbook.SelectedItem == null)
             {
-                MessageBox.Show("Please select a customer and a book.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a book.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Cast selected items
+            Customer selectedCustomer = cmbsearchphone.SelectedItem as Customer;
+            Book selectedBook = cmbsearchbook.SelectedItem as Book;
+
+            // Validate Quantity Input
+            if (string.IsNullOrWhiteSpace(txtbookqunity.Text) || !int.TryParse(txtbookqunity.Text, out int quantity) || quantity <= 0)
+            {
+                MessageBox.Show("Enter a valid quantity (positive number).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate Price Input
+            if (string.IsNullOrWhiteSpace(txtbookprice.Text) || !decimal.TryParse(txtbookprice.Text, out decimal price) || price <= 0)
+            {
+                MessageBox.Show("Enter a valid price (positive number).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Check if stock is available
+            if (quantity > selectedBook.StockQuantity)
+            {
+                MessageBox.Show($"Quantity exceeds available stock. Only {selectedBook.StockQuantity} books are available.",
+                                "Quantity Not Available", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate Delivery Type
+            string deliveryType = GetDeliveryType();
+            if (string.IsNullOrWhiteSpace(deliveryType))
+            {
+                MessageBox.Show("Please select a delivery type.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Calculate subtotal
+            decimal subtotal = quantity * price;
+
+            // Create Order Object
+            var order = new Order
+            {
+                CustomerId = selectedCustomer.CustomerId,
+                BookId = selectedBook.BookId,
+                Quantity = quantity,
+                Price = price,
+                Subtotal = subtotal,
+                Status = "Pending",
+                DeliveryType = deliveryType,
+                OrderDate = DateTime.Now
+            };
+
+            try
+            {
+                _orderService.SaveOrder(order);
+                MessageBox.Show("Order placed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Send confirmation email
+                SendOrderConfirmationEmail(selectedCustomer.Email, order);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error placing order: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
