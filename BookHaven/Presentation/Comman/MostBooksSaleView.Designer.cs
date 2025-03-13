@@ -33,6 +33,7 @@
             dataGridView1 = new DataGridView();
             btnExport = new Button();
             panel1 = new Panel();
+            btnBack = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -88,6 +89,16 @@
             panel1.Size = new Size(1007, 64);
             panel1.TabIndex = 4;
             // 
+            // btnBack
+            // 
+            btnBack.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.Location = new Point(412, 637);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(147, 28);
+            btnBack.TabIndex = 5;
+            btnBack.Text = "Back To Dashboard";
+            btnBack.UseVisualStyleBackColor = true;
+            // 
             // MostBooksSaleView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -95,6 +106,7 @@
             BackgroundImage = Properties.Resources.normal;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
+            Controls.Add(btnBack);
             Controls.Add(panel1);
             Controls.Add(btnExport);
             Controls.Add(dataGridView1);
@@ -116,5 +128,6 @@
         private DataGridView dataGridView1;
         private Button btnExport;
         private Panel panel1;
+        private Button btnBack;
     }
 }

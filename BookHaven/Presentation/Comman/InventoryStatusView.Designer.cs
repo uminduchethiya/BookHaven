@@ -33,24 +33,28 @@
             dataGridView1 = new DataGridView();
             btnexport = new Button();
             btnBack = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(366, 9);
+            label1.Font = new Font("Cambria", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(15, 16);
             label1.Name = "label1";
-            label1.Size = new Size(244, 40);
+            label1.Size = new Size(284, 41);
             label1.TabIndex = 0;
             label1.Text = "Inventory Status";
             // 
             // btnGenarate
             // 
-            btnGenarate.Location = new Point(805, 70);
+            btnGenarate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGenarate.Location = new Point(401, 610);
             btnGenarate.Name = "btnGenarate";
-            btnGenarate.Size = new Size(75, 23);
+            btnGenarate.Size = new Size(105, 37);
             btnGenarate.TabIndex = 1;
             btnGenarate.Text = "Genarate";
             btnGenarate.UseVisualStyleBackColor = true;
@@ -58,15 +62,17 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(58, 114);
+            dataGridView1.Location = new Point(401, 116);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(822, 471);
+            dataGridView1.Size = new Size(229, 471);
             dataGridView1.TabIndex = 2;
             // 
             // btnexport
             // 
-            btnexport.Location = new Point(769, 621);
+            btnexport.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnexport.Location = new Point(519, 610);
             btnexport.Name = "btnexport";
             btnexport.Size = new Size(111, 37);
             btnexport.TabIndex = 3;
@@ -76,7 +82,8 @@
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(296, 598);
+            btnBack.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.Location = new Point(438, 673);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(138, 23);
             btnBack.TabIndex = 4;
@@ -84,21 +91,34 @@
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ActiveCaptionText;
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(-3, 1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1012, 75);
+            panel1.TabIndex = 5;
+            // 
             // InventoryStatusView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
+            Controls.Add(panel1);
             Controls.Add(btnBack);
             Controls.Add(btnexport);
             Controls.Add(dataGridView1);
             Controls.Add(btnGenarate);
-            Controls.Add(label1);
+            DoubleBuffered = true;
             Name = "InventoryStatusView";
             Text = "InventoryStatusView";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -108,5 +128,6 @@
         private DataGridView dataGridView1;
         private Button btnexport;
         private Button btnBack;
+        private Panel panel1;
     }
 }
