@@ -93,6 +93,7 @@ namespace BookHaven.Presentation.Staff
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            this.Hide();
             SalesClerkDashboard salesClerkDashboard = new SalesClerkDashboard();
             salesClerkDashboard.ShowDialog();
             this.Close();

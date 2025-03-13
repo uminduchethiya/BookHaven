@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BookHaven.Data.Models;
 using BookHaven.Data.Repositories.BookManagementRepository;
 using BookHaven.Data.Repositories.CustomerManagementRepository;
+using BookHaven.Presentation.Admin;
 
 namespace BookHaven.Presentation.Comman
 {
@@ -66,7 +67,7 @@ namespace BookHaven.Presentation.Comman
                 // Get the selected row
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
-                // Get the CustomerId (Primary Key) from the selected row
+                // Get the CustomerId
                 int customerId = (int)selectedRow.Cells["CustomerId"].Value;
 
                 // Validate required fields
@@ -89,14 +90,14 @@ namespace BookHaven.Presentation.Comman
                     return;
                 }
 
-                // Validate phone number (for simplicity, checking for digits and length)
+                // Validate phone number
                 if (!txtPhoneNumber.Text.All(char.IsDigit) || txtPhoneNumber.Text.Length != 10)
                 {
                     MessageBox.Show("Please enter a valid phone number with 10 digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Validate date of birth (ensure it's a valid date)
+                // Validate date of birth
                 DateTime dob;
                 if (!DateTime.TryParse(dateTimePicker1.Text, out dob))
                 {
@@ -104,7 +105,6 @@ namespace BookHaven.Presentation.Comman
                     return;
                 }
 
-                // Create a Customer object with the updated data from the text boxes
                 Customer updatedCustomer = new Customer
                 {
                     CustomerId = customerId,
@@ -203,14 +203,23 @@ namespace BookHaven.Presentation.Comman
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            AddCustomer addCustomer = new AddCustomer();
-            addCustomer.Show();
             this.Hide();
+            AddCustomer addCustomer = new AddCustomer();
+            addCustomer.ShowDialog();
+            this.Close();
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.ShowDialog();
+            this.Close();
         }
     }
 }

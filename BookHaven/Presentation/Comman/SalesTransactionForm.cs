@@ -12,6 +12,7 @@ using BookHaven.Data.Models;
 using BookHaven.Data.Repositories.BookManagementRepository;
 using BookHaven.Data.Repositories.CustomerManagementRepository;
 using BookHaven.Data.Repositories.SalesTransactionRepository;
+using BookHaven.Presentation.Admin;
 
 namespace BookHaven.Presentation.Comman
 {
@@ -287,6 +288,14 @@ namespace BookHaven.Presentation.Comman
             this.Hide();
             AddCustomer addCustomer = new AddCustomer();
             addCustomer.ShowDialog();
+            this.Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.ShowDialog();
             this.Close();
         }
     }

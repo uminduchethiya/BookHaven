@@ -51,6 +51,7 @@
             btnmanageorder = new Button();
             label8 = new Label();
             label9 = new Label();
+            btnback = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgcustomerdeatils).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgsearchbook).BeginInit();
@@ -298,6 +299,17 @@
             label9.TabIndex = 21;
             label9.Text = "Enter Address and the Type";
             // 
+            // btnback
+            // 
+            btnback.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnback.Location = new Point(745, 647);
+            btnback.Name = "btnback";
+            btnback.Size = new Size(171, 34);
+            btnback.TabIndex = 22;
+            btnback.Text = "Dashboard";
+            btnback.UseVisualStyleBackColor = true;
+            btnback.Click += btnback_Click;
+            // 
             // OrderAdd
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -305,6 +317,7 @@
             BackgroundImage = Properties.Resources.normal;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
+            Controls.Add(btnback);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(btnmanageorder);
@@ -364,5 +377,6 @@
         private Button btnmanageorder;
         private Label label8;
         private Label label9;
+        private Button btnback;
     }
 }

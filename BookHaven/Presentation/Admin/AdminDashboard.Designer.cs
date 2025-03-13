@@ -223,6 +223,7 @@
             btncustomers.Text = "                     Customers";
             btncustomers.TextAlign = ContentAlignment.MiddleLeft;
             btncustomers.UseVisualStyleBackColor = false;
+            btncustomers.Click += btncustomers_Click;
             // 
             // btnsalestransaction
             // 
@@ -239,6 +240,7 @@
             btnsalestransaction.Text = "                     Sales Transaction";
             btnsalestransaction.TextAlign = ContentAlignment.MiddleLeft;
             btnsalestransaction.UseVisualStyleBackColor = false;
+            btnsalestransaction.Click += btnsalestransaction_Click;
             // 
             // btnordermanagement
             // 
@@ -306,6 +308,7 @@
             btnreporting.Text = "                     Reporting and Analytics";
             btnreporting.TextAlign = ContentAlignment.MiddleLeft;
             btnreporting.UseVisualStyleBackColor = false;
+            btnreporting.Click += btnreporting_Click;
             // 
             // button1
             // 

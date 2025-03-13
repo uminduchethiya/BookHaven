@@ -56,6 +56,7 @@
             txtEmail = new TextBox();
             label2 = new Label();
             label11 = new Label();
+            btnBack = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
@@ -113,6 +114,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(btnBack);
             panel1.Controls.Add(dateTimePicker1);
             panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(btnUpdate);
@@ -351,6 +353,17 @@
             label11.TabIndex = 15;
             label11.Text = "Search";
             // 
+            // btnBack
+            // 
+            btnBack.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.Location = new Point(554, 273);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(113, 38);
+            btnBack.TabIndex = 23;
+            btnBack.Text = "Dashboard";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // CustomerManagementViewForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -409,5 +422,6 @@
         private DateTimePicker dateTimePicker1;
         private Label label2;
         private Label label11;
+        private Button btnBack;
     }
 }

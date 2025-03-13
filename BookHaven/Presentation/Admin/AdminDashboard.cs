@@ -27,7 +27,7 @@ namespace BookHaven.Presentation.Admin
         public AdminDashboard()
         {
             _dashboardManagementService = new DashboardManagementService(new DashboardRepository());
-            _userService = new UserService(new UserManageRepository()); // Fixed Repository Reference
+            _userService = new UserService(new UserManageRepository());
             InitializeComponent();
         }
 
@@ -93,14 +93,14 @@ namespace BookHaven.Presentation.Admin
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
-            int stepSize = 30; // Increase speed by changing the step size
+            int stepSize = 30; // Increase speed
 
             if (isSidebarExpanded)
             {
-                // Collapse Sidebar Faster
+                // Collapse Sidebar 
                 if (sidebar.Width > sidebarCollapsedWidth)
                 {
-                    sidebar.Width -= stepSize; // ✅ Faster collapse
+                    sidebar.Width -= stepSize; // Faster collapse
                 }
                 else
                 {
@@ -110,10 +110,10 @@ namespace BookHaven.Presentation.Admin
             }
             else
             {
-                // Expand Sidebar Faster
+                // Expand Sidebar 
                 if (sidebar.Width < sidebarExpandedWidth)
                 {
-                    sidebar.Width += stepSize; // ✅ Faster expand
+                    sidebar.Width += stepSize; // Faster expand
                 }
                 else
                 {
@@ -125,51 +125,37 @@ namespace BookHaven.Presentation.Admin
 
         private void menupicbox_Click(object sender, EventArgs e)
         {
-            sidebartimer.Start(); // ✅ Correct timer reference
+            sidebartimer.Start(); //Correct timer reference
         }
 
         private void btnusers_Click(object sender, EventArgs e)
         {
-            UserManagement userManagementForm = new UserManagement(_userService); // Pass _userService
             this.Hide();
-            userManagementForm.Show(); // Opens the form
+            UserManagement userManagementForm = new UserManagement(_userService); 
+            userManagementForm.Show(); 
         }
 
         private void btnsuppliers_Click(object sender, EventArgs e)
         {
-            // Create an instance of the AddSupplier form
+            this.Hide();
             AddSupplier addSupplierForm = new AddSupplier();
-
-            // Show the AddSupplier form (this opens the form as a new window)
             addSupplierForm.Show();
         }
 
         private void btnorderrequest_Click(object sender, EventArgs e)
         {
-            // Create an instance of ISupplierOrderManagementService
             ISupplierOrderManagementService supplierOrderService = new SupplierOrderManagementService();
-
-            // Create an instance of SupplierOrderForm and pass the service
             SupplierOrderForm supplierOrderForm = new SupplierOrderForm(supplierOrderService);
-
-
-            // Hide the AdminDashboard form
             this.Hide();
-
-
-            // Show the SupplierOrderForm (non-blocking, new window)
             supplierOrderForm.Show();
         }
 
         private void btnordermanagement_Click(object sender, EventArgs e)
         {
-            // Create an instance of the OrderAdd form
-            OrderAdd orderAddForm = new OrderAdd();
-            // Hide the AdminDashboard form
             this.Hide();
-
-            // Show the OrderAdd form (non-blocking, new window)
+            OrderAdd orderAddForm = new OrderAdd();
             orderAddForm.Show();
+           
         }
 
         private void Overview_Click(object sender, EventArgs e)
@@ -195,6 +181,30 @@ namespace BookHaven.Presentation.Admin
         private void panel15_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btncustomers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CustomerManagementViewForm customerManagement = new CustomerManagementViewForm();
+            customerManagement.ShowDialog();
+            this.Close();
+        }
+
+        private void btnsalestransaction_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SalesTransactionForm salesTransactios = new SalesTransactionForm();
+            salesTransactios.ShowDialog();
+            this.Close();
+        }
+
+        private void btnreporting_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportDashboard reportDashboard = new ReportDashboard();
+            reportDashboard.ShowDialog();
+            this.Close();
         }
     }
 }

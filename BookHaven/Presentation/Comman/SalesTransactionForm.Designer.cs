@@ -60,6 +60,7 @@
             lblEmail = new Label();
             lblPhone = new Label();
             panel2 = new Panel();
+            btnBack = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -386,6 +387,17 @@
             panel2.Size = new Size(309, 160);
             panel2.TabIndex = 30;
             // 
+            // btnBack
+            // 
+            btnBack.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.Location = new Point(818, 659);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(138, 37);
+            btnBack.TabIndex = 31;
+            btnBack.Text = "Dashboard";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // SalesTransactionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -393,6 +405,7 @@
             BackgroundImage = Properties.Resources.normal;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
+            Controls.Add(btnBack);
             Controls.Add(cmbSearchBooks);
             Controls.Add(lblFinalAamount);
             Controls.Add(showamout);
@@ -460,5 +473,6 @@
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Subtotal;
+        private Button btnBack;
     }
 }

@@ -20,14 +20,16 @@ namespace BookHaven.Presentation.Comman
 
         private void btnSalesReport_Click(object sender, EventArgs e)
         {
-            SalesReportView salesReportDaily = new SalesReportView();
-            salesReportDaily.ShowDialog();
+            this.Hide();
+            SalesReportView salesReportView = new SalesReportView();
+            salesReportView.ShowDialog();
             this.Close();
 
         }
 
         private void btnBestBooksSelling_Click(object sender, EventArgs e)
         {
+            this.Hide();
             MostBooksSaleView mostBooksSaleView = new MostBooksSaleView();
             mostBooksSaleView.ShowDialog();
             this.Close();
@@ -35,6 +37,7 @@ namespace BookHaven.Presentation.Comman
 
         private void btnInventoryStatus_Click(object sender, EventArgs e)
         {
+            this.Hide();
             BookInventoryViewForm bookInventoryViewForm = new BookInventoryViewForm();
             bookInventoryViewForm.ShowDialog();
             this.Close();

@@ -13,6 +13,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookHaven.Presentation.Admin;
 
 namespace BookHaven.Presentation.Comman
 {
@@ -346,6 +347,14 @@ namespace BookHaven.Presentation.Comman
             this.Hide();
             AddCustomer addCustomer = new AddCustomer();
             addCustomer.ShowDialog();
+            this.Close();
+        }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.ShowDialog();
             this.Close();
         }
     }
