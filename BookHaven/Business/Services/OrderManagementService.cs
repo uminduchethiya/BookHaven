@@ -63,6 +63,9 @@ namespace BookHaven.Business.Services
             return _orderRepo.UpdateOrderStatus(order);  // Call the repository method to update the status
         }
 
-
+        public bool UpdateBookStock(int bookId, int quantity)
+        {
+            return _orderRepo.UpdateBookStock(bookId, quantity);
+        }
     }
 }

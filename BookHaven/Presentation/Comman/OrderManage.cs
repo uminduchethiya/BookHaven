@@ -140,14 +140,12 @@ namespace BookHaven.Presentation.Comman
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            // Check if an order is selected
             if (_selectedOrderId == null)
             {
                 MessageBox.Show("Please select an order to update.");
                 return;
             }
 
-            // Get the selected status from the ComboBox
             var selectedStatus = cmborderstatus.SelectedItem?.ToString();
             if (string.IsNullOrEmpty(selectedStatus))
             {
@@ -155,10 +153,12 @@ namespace BookHaven.Presentation.Comman
                 return;
             }
 
-            // Get the selected order from the service
             Order selectedOrder = _orderService.GetOrderById((int)_selectedOrderId);
             if (selectedOrder != null)
             {
+                // Check if the new status is "Completed"
+                bool isCompleted = selectedStatus == "Completed";
+
                 // Update the status
                 selectedOrder.Status = selectedStatus;
 
@@ -167,10 +167,20 @@ namespace BookHaven.Presentation.Comman
 
                 if (updateSuccess)
                 {
+                    if (isCompleted)
+                    {
+                        // Reduce stock quantity
+                        bool stockUpdated = _orderService.UpdateBookStock(selectedOrder.BookId, selectedOrder.Quantity);
+                        if (!stockUpdated)
+                        {
+                            MessageBox.Show("Warning: Unable to reduce stock quantity.");
+                        }
+                    }
+
                     MessageBox.Show("Order status updated successfully.");
-                    LoadOrderIds();  // Reload the order IDs after update
-                    cmbsearchorder.SelectedIndex = -1;  // Clear the combobox selection
-                    dtgorder.Rows.Clear();  // Clear the DataGridView
+                    LoadOrderIds();  // Reload order IDs
+                    cmbsearchorder.SelectedIndex = -1;
+                    dtgorder.Rows.Clear();
                 }
                 else
                 {
@@ -182,6 +192,11 @@ namespace BookHaven.Presentation.Comman
                 MessageBox.Show("Order not found.");
             }
         }
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-    
+
 }

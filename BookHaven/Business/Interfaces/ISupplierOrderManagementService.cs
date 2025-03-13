@@ -12,5 +12,12 @@ namespace BookHaven.Business.Interfaces
         List<Supplier> GetAllSuppliers();
         List<Book> GetLowStockBooks();
         void SaveSupplierOrder(SupplierOrder order);
+
+        List<SupplierOrder> GetSupplierOrdersWithDetails();
+
+        // Add this method
+        // Add this method to fix the error
+        void UpdateBookStock(int bookId, int quantity);
+        void UpdateOrderStatus(int orderID, string status);
     }
 }
