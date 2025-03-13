@@ -281,5 +281,13 @@ namespace BookHaven.Presentation.Comman
             lblName.Text = string.Empty;
             lblPhone.Text = string.Empty;
         }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddCustomer addCustomer = new AddCustomer();
+            addCustomer.ShowDialog();
+            this.Close();
+        }
     }
 }

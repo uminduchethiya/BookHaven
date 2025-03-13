@@ -68,42 +68,50 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(43, 147);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(44, 144);
             label1.Name = "label1";
-            label1.Size = new Size(72, 15);
+            label1.Size = new Size(77, 15);
             label1.TabIndex = 1;
             label1.Text = "Search Book";
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.BackColor = SystemColors.ActiveCaptionText;
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(3, -2);
+            panel1.Location = new Point(0, -2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1003, 61);
+            panel1.Size = new Size(1008, 61);
             panel1.TabIndex = 4;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(395, 11);
+            label2.Font = new Font("Cambria", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(3, 11);
             label2.Name = "label2";
-            label2.Size = new Size(266, 40);
+            label2.Size = new Size(317, 41);
             label2.TabIndex = 5;
             label2.Text = "Sales Transactions";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(517, 145);
             label3.Name = "label3";
-            label3.Size = new Size(97, 15);
+            label3.Size = new Size(102, 15);
             label3.TabIndex = 5;
             label3.Text = "Search Customer";
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { BookId, Title, Price, Quantity, Subtotal });
             dataGridView1.Location = new Point(43, 180);
@@ -147,11 +155,14 @@
             btnAddCustomer.Size = new Size(76, 46);
             btnAddCustomer.TabIndex = 8;
             btnAddCustomer.UseVisualStyleBackColor = true;
+            btnAddCustomer.Click += btnAddCustomer_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(670, 425);
             label4.Name = "label4";
             label4.Size = new Size(93, 17);
@@ -161,6 +172,7 @@
             // lblTotalAmount
             // 
             lblTotalAmount.AutoSize = true;
+            lblTotalAmount.BackColor = Color.Transparent;
             lblTotalAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalAmount.ForeColor = Color.Blue;
             lblTotalAmount.Location = new Point(832, 421);
@@ -172,7 +184,9 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.Control;
             label6.Location = new Point(669, 461);
             label6.Name = "label6";
             label6.Size = new Size(94, 17);
@@ -191,7 +205,9 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Control;
             label5.Location = new Point(670, 498);
             label5.Name = "label5";
             label5.Size = new Size(132, 17);
@@ -201,6 +217,7 @@
             // lblDiscountedAmount
             // 
             lblDiscountedAmount.AutoSize = true;
+            lblDiscountedAmount.BackColor = Color.Transparent;
             lblDiscountedAmount.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDiscountedAmount.ForeColor = Color.IndianRed;
             lblDiscountedAmount.Location = new Point(832, 498);
@@ -248,6 +265,9 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.Control;
             label7.Location = new Point(932, 463);
             label7.Name = "label7";
             label7.Size = new Size(17, 15);
@@ -267,7 +287,9 @@
             // showamout
             // 
             showamout.AutoSize = true;
+            showamout.BackColor = Color.Transparent;
             showamout.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            showamout.ForeColor = SystemColors.Control;
             showamout.Location = new Point(670, 542);
             showamout.Name = "showamout";
             showamout.Size = new Size(132, 17);
@@ -277,6 +299,7 @@
             // lblFinalAamount
             // 
             lblFinalAamount.AutoSize = true;
+            lblFinalAamount.BackColor = Color.Transparent;
             lblFinalAamount.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFinalAamount.ForeColor = Color.Red;
             lblFinalAamount.Location = new Point(857, 542);
@@ -351,6 +374,7 @@
             // 
             // panel2
             // 
+            panel2.BackColor = SystemColors.ControlLightLight;
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label10);
@@ -366,6 +390,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
             Controls.Add(cmbSearchBooks);
             Controls.Add(lblFinalAamount);
@@ -387,6 +413,7 @@
             Controls.Add(label1);
             Controls.Add(panel1);
             Controls.Add(panel2);
+            DoubleBuffered = true;
             MaximizeBox = false;
             Name = "SalesTransactionForm";
             Text = "SalesTransactionForm";
