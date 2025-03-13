@@ -58,17 +58,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(274, 9);
+            label1.Font = new Font("Cambria", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(3, 11);
             label1.Name = "label1";
-            label1.Size = new Size(480, 45);
+            label1.Size = new Size(486, 41);
             label1.TabIndex = 0;
             label1.Text = "Book Inventory Management";
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(103, 167);
+            dataGridView1.Location = new Point(125, 167);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(742, 286);
             dataGridView1.TabIndex = 1;
@@ -77,9 +79,9 @@
             // 
             // txtsearch
             // 
-            txtsearch.Location = new Point(700, 138);
+            txtsearch.Location = new Point(599, 131);
             txtsearch.Name = "txtsearch";
-            txtsearch.Size = new Size(262, 23);
+            txtsearch.Size = new Size(265, 23);
             txtsearch.TabIndex = 2;
             txtsearch.TextChanged += txtsearch_TextChanged;
             // 
@@ -93,14 +95,17 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(56, 23);
             label2.Name = "label2";
-            label2.Size = new Size(30, 15);
+            label2.Size = new Size(32, 15);
             label2.TabIndex = 4;
             label2.Text = "Title";
             // 
             // panel1
             // 
+            panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(btnUpdate);
             panel1.Controls.Add(label7);
@@ -115,14 +120,15 @@
             panel1.Controls.Add(txtAuthor);
             panel1.Controls.Add(txtTitle);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(38, 471);
+            panel1.Location = new Point(66, 471);
             panel1.Name = "panel1";
             panel1.Size = new Size(914, 246);
             panel1.TabIndex = 5;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(809, 184);
+            btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDelete.Location = new Point(696, 184);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(102, 41);
             btnDelete.TabIndex = 16;
@@ -132,7 +138,8 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(681, 184);
+            btnUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdate.Location = new Point(565, 184);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(102, 41);
             btnUpdate.TabIndex = 15;
@@ -143,45 +150,55 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.Control;
             label7.Location = new Point(479, 23);
             label7.Name = "label7";
-            label7.Size = new Size(44, 15);
+            label7.Size = new Size(46, 15);
             label7.TabIndex = 14;
             label7.Text = "Author";
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.Control;
             label6.Location = new Point(479, 76);
             label6.Name = "label6";
-            label6.Size = new Size(32, 15);
+            label6.Size = new Size(35, 15);
             label6.TabIndex = 13;
             label6.Text = "ISBN";
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Control;
             label5.Location = new Point(479, 129);
             label5.Name = "label5";
-            label5.Size = new Size(53, 15);
+            label5.Size = new Size(55, 15);
             label5.TabIndex = 12;
             label5.Text = "Quantity";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(56, 129);
             label4.Name = "label4";
-            label4.Size = new Size(33, 15);
+            label4.Size = new Size(35, 15);
             label4.TabIndex = 11;
             label4.Text = "Price";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(56, 71);
             label3.Name = "label3";
-            label3.Size = new Size(55, 15);
+            label3.Size = new Size(57, 15);
             label3.TabIndex = 10;
             label3.Text = "Category";
             // 
@@ -227,7 +244,7 @@
             btnAddBook.BackColor = Color.Transparent;
             btnAddBook.BackgroundImage = (Image)resources.GetObject("btnAddBook.BackgroundImage");
             btnAddBook.BackgroundImageLayout = ImageLayout.Zoom;
-            btnAddBook.Location = new Point(917, 94);
+            btnAddBook.Location = new Point(817, 76);
             btnAddBook.Name = "btnAddBook";
             btnAddBook.Size = new Size(45, 38);
             btnAddBook.TabIndex = 6;
@@ -237,16 +254,19 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(631, 146);
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.Control;
+            label8.Location = new Point(522, 134);
             label8.Name = "label8";
-            label8.Size = new Size(42, 15);
+            label8.Size = new Size(48, 17);
             label8.TabIndex = 7;
             label8.Text = "Search";
             label8.Click += label8_Click;
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.BackColor = SystemColors.ActiveCaptionText;
             panel2.Controls.Add(label1);
             panel2.Location = new Point(1, 0);
             panel2.Name = "panel2";
@@ -257,6 +277,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
             Controls.Add(label8);
             Controls.Add(btnAddBook);
@@ -264,6 +286,7 @@
             Controls.Add(txtsearch);
             Controls.Add(dataGridView1);
             Controls.Add(panel2);
+            DoubleBuffered = true;
             MaximizeBox = false;
             Name = "BookInventoryViewForm";
             Text = "BookInventoryViewForm";
