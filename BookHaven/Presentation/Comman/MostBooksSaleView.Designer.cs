@@ -32,24 +32,28 @@
             btnGenarate = new Button();
             dataGridView1 = new DataGridView();
             btnExport = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(400, 9);
+            label1.Font = new Font("Cambria", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(11, 13);
             label1.Name = "label1";
-            label1.Size = new Size(243, 40);
+            label1.Size = new Size(283, 41);
             label1.TabIndex = 0;
-            label1.Text = "Most Sale Books";
+            label1.Text = "Most Sold Books";
             // 
             // btnGenarate
             // 
-            btnGenarate.Location = new Point(832, 63);
+            btnGenarate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGenarate.Location = new Point(683, 632);
             btnGenarate.Name = "btnGenarate";
-            btnGenarate.Size = new Size(100, 47);
+            btnGenarate.Size = new Size(113, 33);
             btnGenarate.TabIndex = 1;
             btnGenarate.Text = "Genarate";
             btnGenarate.UseVisualStyleBackColor = true;
@@ -57,6 +61,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(71, 127);
             dataGridView1.Name = "dataGridView1";
@@ -65,6 +70,7 @@
             // 
             // btnExport
             // 
+            btnExport.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExport.Location = new Point(818, 632);
             btnExport.Name = "btnExport";
             btnExport.Size = new Size(114, 33);
@@ -73,21 +79,34 @@
             btnExport.UseVisualStyleBackColor = true;
             btnExport.Click += btnExport_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ActiveCaptionText;
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1007, 64);
+            panel1.TabIndex = 4;
+            // 
             // MostBooksSaleView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
+            Controls.Add(panel1);
             Controls.Add(btnExport);
             Controls.Add(dataGridView1);
             Controls.Add(btnGenarate);
-            Controls.Add(label1);
+            DoubleBuffered = true;
             Name = "MostBooksSaleView";
             Text = "MostBooksSaleView";
             Load += MostBooksSaleView_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -96,5 +115,6 @@
         private Button btnGenarate;
         private DataGridView dataGridView1;
         private Button btnExport;
+        private Panel panel1;
     }
 }
