@@ -17,5 +17,7 @@ namespace BookHaven.Business.Interfaces
         Order GetOrderById(int orderId);  // Ensure this method exists
 
         bool UpdateOrderStatus(Order order);
+
+        bool UpdateBookStock(int bookId, int quantity); // New method
     }
 }

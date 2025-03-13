@@ -204,6 +204,24 @@ namespace BookHaven.Data.Repositories.OrderManagementRepositories
             }
         }
 
+        public bool UpdateBookStock(int bookId, int quantity)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "UPDATE Book SET StockQuantity = StockQuantity - @Quantity WHERE BookId = @BookId AND StockQuantity >= @Quantity";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@BookId", bookId);
+                    command.Parameters.AddWithValue("@Quantity", quantity);
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    return rowsAffected > 0; // Return true if the stock was updated
+                }
+            }
+        }
 
     }
 }
