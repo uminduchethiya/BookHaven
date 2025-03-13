@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            backpic = new PictureBox();
             label1 = new Label();
             datagridviewuser = new DataGridView();
             button1 = new Button();
@@ -49,55 +50,69 @@
             cmbgender = new ComboBox();
             label8 = new Label();
             dobpicker = new DateTimePicker();
-            backpic = new PictureBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)datagridviewuser).BeginInit();
             ((System.ComponentModel.ISupportInitialize)backpic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)datagridviewuser).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.MenuHighlight;
+            panel1.BackColor = SystemColors.ActiveCaptionText;
             panel1.Controls.Add(backpic);
             panel1.Controls.Add(label1);
             panel1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             panel1.ForeColor = Color.White;
-            panel1.Location = new Point(1, 2);
+            panel1.Location = new Point(1, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(1006, 87);
             panel1.TabIndex = 0;
             // 
+            // backpic
+            // 
+            backpic.Image = Properties.Resources.left_arrow_10117838;
+            backpic.Location = new Point(886, 27);
+            backpic.Name = "backpic";
+            backpic.Size = new Size(72, 33);
+            backpic.SizeMode = PictureBoxSizeMode.Zoom;
+            backpic.TabIndex = 1;
+            backpic.TabStop = false;
+            backpic.Click += backpic_Click;
+            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(414, 27);
+            label1.Font = new Font("Cambria", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(11, 19);
             label1.Name = "label1";
-            label1.Size = new Size(219, 29);
+            label1.Size = new Size(311, 41);
             label1.TabIndex = 0;
             label1.Text = "User Management";
             // 
             // datagridviewuser
             // 
+            datagridviewuser.BackgroundColor = SystemColors.ControlLightLight;
             datagridviewuser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            datagridviewuser.Location = new Point(387, 161);
+            datagridviewuser.Location = new Point(35, 155);
             datagridviewuser.Name = "datagridviewuser";
-            datagridviewuser.Size = new Size(609, 443);
+            datagridviewuser.Size = new Size(929, 236);
             datagridviewuser.TabIndex = 1;
             datagridviewuser.CellContentClick += datagridviewuser_CellContentClick;
             // 
             // button1
             // 
-            button1.Location = new Point(881, 111);
+            button1.BackgroundImage = Properties.Resources._4288270;
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.Location = new Point(849, 105);
             button1.Name = "button1";
             button1.Size = new Size(115, 44);
             button1.TabIndex = 2;
-            button1.Text = "Add New";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // btndelete
             // 
-            btndelete.Location = new Point(881, 645);
+            btndelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btndelete.Location = new Point(694, 633);
             btndelete.Name = "btndelete";
             btndelete.Size = new Size(115, 44);
             btndelete.TabIndex = 3;
@@ -107,7 +122,8 @@
             // 
             // btnupdate
             // 
-            btnupdate.Location = new Point(634, 645);
+            btnupdate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnupdate.Location = new Point(547, 633);
             btnupdate.Name = "btnupdate";
             btnupdate.Size = new Size(115, 44);
             btnupdate.TabIndex = 4;
@@ -117,7 +133,8 @@
             // 
             // button4
             // 
-            button4.Location = new Point(387, 645);
+            button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.Location = new Point(844, 633);
             button4.Name = "button4";
             button4.Size = new Size(115, 44);
             button4.TabIndex = 5;
@@ -127,8 +144,10 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(12, 112);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(35, 420);
             label2.Name = "label2";
             label2.Size = new Size(79, 16);
             label2.TabIndex = 6;
@@ -136,14 +155,14 @@
             // 
             // txtfirstname
             // 
-            txtfirstname.Location = new Point(12, 147);
+            txtfirstname.Location = new Point(35, 455);
             txtfirstname.Name = "txtfirstname";
             txtfirstname.Size = new Size(284, 23);
             txtfirstname.TabIndex = 7;
             // 
             // txtlastname
             // 
-            txtlastname.Location = new Point(12, 222);
+            txtlastname.Location = new Point(356, 455);
             txtlastname.Name = "txtlastname";
             txtlastname.Size = new Size(284, 23);
             txtlastname.TabIndex = 9;
@@ -151,8 +170,10 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(12, 187);
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(356, 420);
             label3.Name = "label3";
             label3.Size = new Size(78, 16);
             label3.TabIndex = 8;
@@ -160,7 +181,7 @@
             // 
             // txtphone
             // 
-            txtphone.Location = new Point(12, 302);
+            txtphone.Location = new Point(35, 523);
             txtphone.Name = "txtphone";
             txtphone.Size = new Size(284, 23);
             txtphone.TabIndex = 11;
@@ -168,8 +189,10 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(12, 267);
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(35, 488);
             label4.Name = "label4";
             label4.Size = new Size(106, 16);
             label4.TabIndex = 10;
@@ -177,7 +200,7 @@
             // 
             // txtidnum
             // 
-            txtidnum.Location = new Point(12, 377);
+            txtidnum.Location = new Point(35, 591);
             txtidnum.Name = "txtidnum";
             txtidnum.Size = new Size(284, 23);
             txtidnum.TabIndex = 13;
@@ -185,8 +208,10 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(12, 342);
+            label5.ForeColor = SystemColors.Control;
+            label5.Location = new Point(35, 556);
             label5.Name = "label5";
             label5.Size = new Size(112, 16);
             label5.TabIndex = 12;
@@ -194,7 +219,7 @@
             // 
             // txtaddress
             // 
-            txtaddress.Location = new Point(12, 454);
+            txtaddress.Location = new Point(680, 455);
             txtaddress.Name = "txtaddress";
             txtaddress.Size = new Size(284, 23);
             txtaddress.TabIndex = 15;
@@ -202,8 +227,10 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
             label6.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(12, 419);
+            label6.ForeColor = SystemColors.Control;
+            label6.Location = new Point(680, 420);
             label6.Name = "label6";
             label6.Size = new Size(61, 16);
             label6.TabIndex = 14;
@@ -212,8 +239,10 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
             label7.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(12, 493);
+            label7.ForeColor = SystemColors.Control;
+            label7.Location = new Point(680, 490);
             label7.Name = "label7";
             label7.Size = new Size(58, 16);
             label7.TabIndex = 16;
@@ -223,7 +252,7 @@
             // 
             cmbgender.FormattingEnabled = true;
             cmbgender.Items.AddRange(new object[] { "Male", "Female" });
-            cmbgender.Location = new Point(12, 523);
+            cmbgender.Location = new Point(680, 520);
             cmbgender.Name = "cmbgender";
             cmbgender.Size = new Size(284, 23);
             cmbgender.TabIndex = 17;
@@ -231,8 +260,10 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
             label8.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(12, 568);
+            label8.ForeColor = SystemColors.Control;
+            label8.Location = new Point(356, 488);
             label8.Name = "label8";
             label8.Size = new Size(39, 16);
             label8.TabIndex = 18;
@@ -240,26 +271,17 @@
             // 
             // dobpicker
             // 
-            dobpicker.Location = new Point(12, 596);
+            dobpicker.Location = new Point(356, 520);
             dobpicker.Name = "dobpicker";
             dobpicker.Size = new Size(284, 23);
             dobpicker.TabIndex = 19;
-            // 
-            // backpic
-            // 
-            backpic.Image = Properties.Resources.left_arrow_10117838;
-            backpic.Location = new Point(11, 23);
-            backpic.Name = "backpic";
-            backpic.Size = new Size(72, 33);
-            backpic.SizeMode = PictureBoxSizeMode.Zoom;
-            backpic.TabIndex = 1;
-            backpic.TabStop = false;
-            backpic.Click += backpic_Click;
             // 
             // UserManagement
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
             Controls.Add(dobpicker);
             Controls.Add(label8);
@@ -281,13 +303,14 @@
             Controls.Add(button1);
             Controls.Add(datagridviewuser);
             Controls.Add(panel1);
+            DoubleBuffered = true;
             Name = "UserManagement";
             Text = "UserManagement";
             Load += UserManagement_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)datagridviewuser).EndInit();
             ((System.ComponentModel.ISupportInitialize)backpic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)datagridviewuser).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
