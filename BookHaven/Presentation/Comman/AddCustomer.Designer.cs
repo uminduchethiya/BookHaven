@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             txtPhoneNumber = new TextBox();
             cmbGender = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
@@ -52,14 +53,14 @@
             btnCancel = new Button();
             btnSave = new Button();
             txtFirstName = new TextBox();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(txtPhoneNumber);
             panel1.Controls.Add(cmbGender);
@@ -83,6 +84,18 @@
             panel1.Size = new Size(948, 548);
             panel1.TabIndex = 35;
             panel1.Paint += panel1_Paint;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources._4288270;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Image = Properties.Resources.pngtree_open_book_icon_for_library_and_studying_in_head_vector_png_image_15477299;
+            pictureBox1.Location = new Point(36, 34);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(401, 396);
+            pictureBox1.TabIndex = 43;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // txtPhoneNumber
             // 
@@ -111,6 +124,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = SystemColors.Control;
             label10.Location = new Point(485, 360);
             label10.Name = "label10";
             label10.Size = new Size(28, 15);
@@ -122,6 +136,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.Control;
             label9.Location = new Point(485, 315);
             label9.Name = "label9";
             label9.Size = new Size(51, 15);
@@ -132,6 +147,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.Control;
             label8.Location = new Point(485, 267);
             label8.Name = "label8";
             label8.Size = new Size(49, 15);
@@ -149,6 +165,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.Control;
             label7.Location = new Point(485, 407);
             label7.Name = "label7";
             label7.Size = new Size(55, 15);
@@ -181,6 +198,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.Control;
             label6.Location = new Point(485, 222);
             label6.Name = "label6";
             label6.Size = new Size(82, 15);
@@ -198,6 +216,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Control;
             label5.Location = new Point(485, 179);
             label5.Name = "label5";
             label5.Size = new Size(91, 15);
@@ -208,6 +227,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(485, 135);
             label4.Name = "label4";
             label4.Size = new Size(36, 15);
@@ -218,6 +238,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(485, 89);
             label3.Name = "label3";
             label3.Size = new Size(62, 15);
@@ -228,6 +249,7 @@
             // 
             lblFirstName.AutoSize = true;
             lblFirstName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFirstName.ForeColor = SystemColors.Control;
             lblFirstName.Location = new Point(485, 42);
             lblFirstName.Name = "lblFirstName";
             lblFirstName.Size = new Size(64, 15);
@@ -236,26 +258,28 @@
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.BackColor = SystemColors.ActiveCaptionText;
             panel2.Controls.Add(label1);
-            panel2.Location = new Point(0, 3);
+            panel2.Location = new Point(-3, 1);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1008, 70);
+            panel2.Size = new Size(1014, 70);
             panel2.TabIndex = 36;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(436, 19);
+            label1.Font = new Font("Cambria", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(3, 14);
             label1.Name = "label1";
-            label1.Size = new Size(207, 37);
+            label1.Size = new Size(247, 41);
             label1.TabIndex = 0;
             label1.Text = "Add Customer";
             // 
             // btnBacktoCustomerManagement
             // 
-            btnBacktoCustomerManagement.Location = new Point(703, 670);
+            btnBacktoCustomerManagement.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBacktoCustomerManagement.Location = new Point(661, 670);
             btnBacktoCustomerManagement.Name = "btnBacktoCustomerManagement";
             btnBacktoCustomerManagement.Size = new Size(274, 36);
             btnBacktoCustomerManagement.TabIndex = 19;
@@ -265,16 +289,18 @@
             // 
             // btnCancel
             // 
+            btnCancel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancel.Location = new Point(834, 597);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(100, 37);
             btnCancel.TabIndex = 32;
-            btnCancel.Text = "Cancel";
+            btnCancel.Text = "Clear";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
             // btnSave
             // 
+            btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.Location = new Point(703, 597);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(100, 37);
@@ -290,22 +316,12 @@
             txtFirstName.Size = new Size(309, 23);
             txtFirstName.TabIndex = 26;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = Properties.Resources._4288270;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Image = Properties.Resources.pngtree_open_book_icon_for_library_and_studying_in_head_vector_png_image_15477299;
-            pictureBox1.Location = new Point(36, 34);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(401, 396);
-            pictureBox1.TabIndex = 43;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
-            // 
             // AddCustomer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
             Controls.Add(btnBacktoCustomerManagement);
             Controls.Add(btnCancel);
@@ -313,13 +329,14 @@
             Controls.Add(txtFirstName);
             Controls.Add(panel1);
             Controls.Add(panel2);
+            DoubleBuffered = true;
             Name = "AddCustomer";
             Text = "AddCustomer";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
