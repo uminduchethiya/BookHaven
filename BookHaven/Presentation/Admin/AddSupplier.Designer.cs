@@ -52,7 +52,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.MenuHighlight;
+            panel1.BackColor = SystemColors.InactiveCaptionText;
             panel1.Controls.Add(label1);
             panel1.Location = new Point(-1, 1);
             panel1.Name = "panel1";
@@ -62,14 +62,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(447, 28);
+            label1.Font = new Font("Cambria", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(13, 18);
             label1.Name = "label1";
-            label1.Size = new Size(96, 15);
+            label1.Size = new Size(374, 41);
             label1.TabIndex = 0;
-            label1.Text = "Manage Supplier";
+            label1.Text = "Supplier Management";
+            label1.Click += label1_Click;
             // 
             // dtgsupplier
             // 
+            dtgsupplier.BackgroundColor = SystemColors.ControlLightLight;
             dtgsupplier.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgsupplier.Location = new Point(29, 156);
             dtgsupplier.Name = "dtgsupplier";
@@ -80,111 +84,133 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(429, 402);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Transparent;
+            label2.Location = new Point(452, 397);
             label2.Name = "label2";
-            label2.Size = new Size(75, 15);
+            label2.Size = new Size(163, 30);
             label2.TabIndex = 2;
-            label2.Text = "Add Supplier";
+            label2.Text = "Create Supplier";
             // 
             // txtsuppliername
             // 
-            txtsuppliername.Location = new Point(132, 480);
+            txtsuppliername.Location = new Point(402, 451);
             txtsuppliername.Name = "txtsuppliername";
-            txtsuppliername.Size = new Size(219, 23);
+            txtsuppliername.Size = new Size(322, 23);
             txtsuppliername.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(41, 483);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(286, 454);
             label3.Name = "label3";
-            label3.Size = new Size(85, 15);
+            label3.Size = new Size(44, 17);
             label3.TabIndex = 4;
-            label3.Text = "Supplier Name";
+            label3.Text = "Name";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(611, 486);
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(286, 557);
             label4.Name = "label4";
-            label4.Size = new Size(131, 15);
+            label4.Size = new Size(97, 17);
             label4.TabIndex = 6;
-            label4.Text = "Supplier PhoneNumber";
+            label4.Text = "PhoneNumber";
             // 
             // txtsupplierphonenumber
             // 
-            txtsupplierphonenumber.Location = new Point(773, 483);
+            txtsupplierphonenumber.Location = new Point(402, 549);
             txtsupplierphonenumber.Name = "txtsupplierphonenumber";
-            txtsupplierphonenumber.Size = new Size(219, 23);
+            txtsupplierphonenumber.Size = new Size(322, 23);
             txtsupplierphonenumber.TabIndex = 5;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(41, 542);
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Control;
+            label5.Location = new Point(286, 508);
             label5.Name = "label5";
-            label5.Size = new Size(82, 15);
+            label5.Size = new Size(42, 17);
             label5.TabIndex = 8;
-            label5.Text = "Supplier Email";
+            label5.Text = "Email";
+            label5.Click += label5_Click;
             // 
             // txtsupplieremail
             // 
-            txtsupplieremail.Location = new Point(132, 539);
+            txtsupplieremail.Location = new Point(402, 500);
             txtsupplieremail.Name = "txtsupplieremail";
-            txtsupplieremail.Size = new Size(219, 23);
+            txtsupplieremail.Size = new Size(322, 23);
             txtsupplieremail.TabIndex = 7;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(611, 542);
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Transparent;
+            label6.Location = new Point(286, 606);
             label6.Name = "label6";
-            label6.Size = new Size(95, 15);
+            label6.Size = new Size(57, 17);
             label6.TabIndex = 10;
-            label6.Text = "Supplier Address";
+            label6.Text = "Address";
             // 
             // txtsupplieraddress
             // 
-            txtsupplieraddress.Location = new Point(773, 539);
+            txtsupplieraddress.Location = new Point(402, 598);
             txtsupplieraddress.Name = "txtsupplieraddress";
-            txtsupplieraddress.Size = new Size(219, 23);
+            txtsupplieraddress.Size = new Size(322, 23);
             txtsupplieraddress.TabIndex = 9;
             // 
             // btnaddsupplier
             // 
-            btnaddsupplier.Location = new Point(80, 654);
+            btnaddsupplier.BackgroundImageLayout = ImageLayout.Zoom;
+            btnaddsupplier.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnaddsupplier.Location = new Point(402, 657);
             btnaddsupplier.Name = "btnaddsupplier";
-            btnaddsupplier.Size = new Size(128, 53);
+            btnaddsupplier.Size = new Size(117, 41);
             btnaddsupplier.TabIndex = 11;
-            btnaddsupplier.Text = "Add Supplier";
+            btnaddsupplier.Text = "Save";
             btnaddsupplier.UseVisualStyleBackColor = true;
             btnaddsupplier.Click += btnaddsupplier_Click;
             // 
             // btnupdatesupplier
             // 
-            btnupdatesupplier.Location = new Point(355, 654);
+            btnupdatesupplier.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnupdatesupplier.Location = new Point(566, 657);
             btnupdatesupplier.Name = "btnupdatesupplier";
-            btnupdatesupplier.Size = new Size(116, 53);
+            btnupdatesupplier.Size = new Size(116, 41);
             btnupdatesupplier.TabIndex = 12;
-            btnupdatesupplier.Text = "Update Supplier";
+            btnupdatesupplier.Text = "Update";
             btnupdatesupplier.UseVisualStyleBackColor = true;
             btnupdatesupplier.Click += btnupdatesupplier_Click;
             // 
             // btndelete
             // 
-            btndelete.Location = new Point(611, 654);
+            btndelete.BackColor = Color.Red;
+            btndelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btndelete.Location = new Point(713, 657);
             btndelete.Name = "btndelete";
-            btndelete.Size = new Size(113, 53);
+            btndelete.Size = new Size(113, 41);
             btndelete.TabIndex = 13;
-            btndelete.Text = "Delete Supplier";
-            btndelete.UseVisualStyleBackColor = true;
+            btndelete.Text = "Delete";
+            btndelete.UseVisualStyleBackColor = false;
             btndelete.Click += btndelete_Click;
             // 
             // btnclear
             // 
-            btnclear.Location = new Point(880, 654);
+            btnclear.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnclear.Location = new Point(859, 657);
             btnclear.Name = "btnclear";
-            btnclear.Size = new Size(112, 53);
+            btnclear.Size = new Size(112, 41);
             btnclear.TabIndex = 14;
             btnclear.Text = "Clear";
             btnclear.UseVisualStyleBackColor = true;
@@ -202,16 +228,22 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(550, 109);
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.Control;
+            label7.Location = new Point(646, 111);
             label7.Name = "label7";
-            label7.Size = new Size(91, 15);
+            label7.Size = new Size(48, 17);
             label7.TabIndex = 16;
-            label7.Text = "Search Supplier ";
+            label7.Text = "Search";
+            label7.Click += label7_Click;
             // 
             // AddSupplier
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.normal;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
             Controls.Add(label7);
             Controls.Add(cmbsupplier);
@@ -230,6 +262,7 @@
             Controls.Add(label2);
             Controls.Add(dtgsupplier);
             Controls.Add(panel1);
+            DoubleBuffered = true;
             Name = "AddSupplier";
             Text = "AddSupplier";
             panel1.ResumeLayout(false);

@@ -87,7 +87,7 @@ namespace BookHaven.Presentation.Admin
                 MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
 
         private void cmbsupplier_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -174,6 +174,21 @@ namespace BookHaven.Presentation.Admin
         private void LoadActiveSuppliers()
         {
             dtgsupplier.DataSource = _supplierService.GetActiveSuppliers();  // Fetch only active suppliers
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
