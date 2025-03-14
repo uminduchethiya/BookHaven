@@ -239,18 +239,54 @@ namespace BookHaven.Presentation.Admin
         {
             try
             {
-                string subject = "Order Delivered Notification";
-                string body = $"Dear {supplierName},\n\nYour order for Book ID: {bookId} (Quantity: {quantity}) has been successfully delivered.\n\nThank you for your business!";
+                string subject = "📦 Order Delivered Successfully - BookHaven";
+
+                string body = $@"
+        <html>
+        <head>
+            <style>
+                body {{ font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }}
+                .container {{ max-width: 600px; background: #ffffff; padding: 20px; border-radius: 10px;
+                             box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }}
+                .header {{ background: #3498db; color: white; padding: 15px; font-size: 22px;
+                           border-radius: 10px 10px 0 0; }}
+                .content {{ padding: 20px; font-size: 16px; color: #333; }}
+                .footer {{ margin-top: 20px; text-align: center; font-size: 14px; color: #777; }}
+                .button {{ display: inline-block; padding: 12px 20px; background-color: #3498db; color: white;
+                           text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; }}
+                .button:hover {{ background-color: #2980b9; }}
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <div class='header'>📢 Order Delivered Notification</div>
+                <div class='content'>
+                    <p>Dear <strong>{supplierName}</strong>,</p>
+                    <p>Your order has been successfully delivered.</p>
+                    <p><strong>Order Details:</strong></p>
+                    <p>📘 <strong>Book ID:</strong> {bookId}</p>
+                    <p>📦 <strong>Quantity:</strong> {quantity}</p>
+                    <p>Thank you for your business and trust in <strong>BookHaven</strong>.</p>
+                    <a class='button' href='#'>View Order Details</a>
+                </div>
+                <div class='footer'>
+                    <p>Best Regards,</p>
+                    <p><strong>BookHaven Team</strong></p>
+                    <p>&copy; 2025 BookHaven. All Rights Reserved.</p>
+                </div>
+            </div>
+        </body>
+        </html>";
 
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("uminduchethiya@gmail.com");
+                mail.From = new MailAddress("dinethjayanga37@gmail.com", "BookHaven");
                 mail.To.Add(supplierEmail);
                 mail.Subject = subject;
                 mail.Body = body;
+                mail.IsBodyHtml = true; // Enable HTML formatting
 
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                smtp.Port = 587;
-                smtp.Credentials = new NetworkCredential("uminduchethiya@gmail.com", "bcgjguscujhvknor");
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.Credentials = new NetworkCredential("dinethjayanga37@gmail.com", "aeljetiqkxabowfr");
                 smtp.EnableSsl = true;
 
                 smtp.Send(mail);
@@ -261,6 +297,7 @@ namespace BookHaven.Presentation.Admin
                 MessageBox.Show("Error sending email: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private void dtgorderreq_CellContentClick(object sender, DataGridViewCellEventArgs e)

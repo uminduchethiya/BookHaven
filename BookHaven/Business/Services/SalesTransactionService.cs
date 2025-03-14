@@ -96,30 +96,63 @@ namespace BookHaven.Business.Services
 
             return billFilePath;
         }
-        
+
 
         public void SendBillEmail(string customerEmail, string billFilePath)
         {
             try
             {
-                var fromAddress = new MailAddress("uminduchethiya@gmail.com", "BookHaven");
+                var fromAddress = new MailAddress("dinethjayanga37@gmail.com", "BookHaven");
                 var toAddress = new MailAddress(customerEmail);
-                const string subject = "Your Sales Transaction Bill";
-                const string body = "Please find attached your sales transaction bill.";
+                const string subject = "📄 Your Sales Transaction Bill - BookHaven";
 
-                using (var smtp = new SmtpClient("smtp.gmail.com"))
+                string body = $@"
+        <html>
+        <head>
+            <style>
+                body {{ font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }}
+                .container {{ max-width: 600px; background: #ffffff; padding: 20px; border-radius: 10px;
+                             box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }}
+                .header {{ background: #4CAF50; color: white; padding: 15px; font-size: 22px;
+                           border-radius: 10px 10px 0 0; }}
+                .content {{ padding: 20px; font-size: 16px; color: #333; }}
+                .footer {{ margin-top: 20px; text-align: center; font-size: 14px; color: #777; }}
+                .button {{ display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white;
+                           text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; }}
+                .button:hover {{ background-color: #45a049; }}
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <div class='header'>📢 Your Sales Transaction Bill</div>
+                <div class='content'>
+                    <p>Dear Customer,</p>
+                    <p>Thank you for your purchase at <strong>BookHaven</strong>. Your sales transaction bill is attached.</p>
+                    <p>If you have any questions, feel free to reach out to us.</p>
+                    <a class='button' href='#'>Visit BookHaven</a>
+                </div>
+                <div class='footer'>
+                    <p>Best Regards,</p>
+                    <p><strong>BookHaven Team</strong></p>
+                    <p>&copy; 2025 BookHaven. All Rights Reserved.</p>
+                </div>
+            </div>
+        </body>
+        </html>";
+
+                using (var smtp = new SmtpClient("smtp.gmail.com", 587))
                 {
-                    smtp.Credentials = new NetworkCredential("uminduchethiya@gmail.com", "bcgjguscujhvknor");  //Your email and password
+                    smtp.Credentials = new NetworkCredential("dinethjayanga37@gmail.com", "aeljetiqkxabowfr"); // Your email and password
                     smtp.EnableSsl = true;
-                    smtp.Port = 587;  // SMTP port for Gmail
 
                     using (var message = new MailMessage(fromAddress, toAddress)
                     {
                         Subject = subject,
-                        Body = body
+                        Body = body,
+                        IsBodyHtml = true
                     })
                     {
-                        // Attach  bill PDF
+                        // Attach bill PDF
                         message.Attachments.Add(new Attachment(billFilePath));
 
                         smtp.Send(message);
@@ -132,8 +165,8 @@ namespace BookHaven.Business.Services
             {
                 Console.WriteLine($"Error sending email: {ex.Message}");
             }
-        
         }
+
 
         public void ReduceStock(List<DataGridViewRow> salesData)
         {

@@ -257,18 +257,49 @@ namespace BookHaven.Data.Repositories.CustomerManagementRepository
         {
             try
             {
-                string senderEmail = "uminduchethiya@gmail.com"; // Change to your email
-                string senderPassword = "bcgjguscujhvknor"; // Change to your email password
+                string senderEmail = "dinethjayanga37@gmail.com"; // Change to your email
+                string senderPassword = "aeljetiqkxabowfr"; // Change to your email password
                 string smtpServer = "smtp.gmail.com"; // Change to your SMTP server
                 int smtpPort = 587; // Change to the correct SMTP port
+
+                string emailBody = @"
+        <html>
+        <head>
+            <style>
+                body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+                .container { max-width: 600px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+                .header { background: #4CAF50; color: white; text-align: center; padding: 10px; font-size: 22px; border-radius: 10px 10px 0 0; }
+                .content { padding: 20px; text-align: center; font-size: 16px; color: #333; }
+                .footer { margin-top: 20px; text-align: center; font-size: 14px; color: #777; }
+                .button { display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+                .button:hover { background-color: #45a049; }
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <div class='header'>🎉 Welcome to Book Heaven! 📚</div>
+                <div class='content'>
+                    <p>Dear Customer,</p>
+                    <p>We are thrilled to welcome you to <strong>Book Heaven</strong>! 📖✨</p>
+                    <p>Explore a world of amazing books and exclusive content just for you.</p>
+                    <p>Click the button below to start your journey:</p>
+                    <a class='button' href='#'>Explore Now</a>
+                </div>
+                <div class='footer'>
+                    <p>Happy Reading! 📚</p>
+                    <p>&copy; 2025 Book Heaven. All Rights Reserved.</p>
+                </div>
+            </div>
+        </body>
+        </html>";
 
                 using (MailMessage mail = new MailMessage())
                 {
                     mail.From = new MailAddress(senderEmail);
                     mail.To.Add(recipientEmail);
-                    mail.Subject = "Congratulation";
-                    mail.Body = $"Dear Customer, You are successfully Added to the Book Heaven !";
-                    mail.IsBodyHtml = false;
+                    mail.Subject = "🎉 Welcome to Book Heaven!";
+                    mail.Body = emailBody;
+                    mail.IsBodyHtml = true;
 
                     using (SmtpClient smtp = new SmtpClient(smtpServer, smtpPort))
                     {
@@ -283,5 +314,6 @@ namespace BookHaven.Data.Repositories.CustomerManagementRepository
                 Console.WriteLine($"Error sending email: {ex.Message}");
             }
         }
+
     }
 }

@@ -66,18 +66,55 @@ namespace BookHaven.Business.Services
         {
             try
             {
-                string senderEmail = "uminduchethiya@gmail.com"; // Change to your email
-                string senderPassword = "bcgjguscujhvknor"; // Change to your email password
+                string senderEmail = "dinethjayanga37@gmail.com"; // Change to your email
+                string senderPassword = "aeljetiqkxabowfr"; // Change to your email password
                 string smtpServer = "smtp.gmail.com"; // Change to your SMTP server
                 int smtpPort = 587; // Change to the correct SMTP port
+
+                string emailBody = $@"
+        <html>
+        <head>
+            <style>
+                body {{ font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }}
+                .container {{ max-width: 600px; background: #ffffff; padding: 20px; border-radius: 10px; 
+                             box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }}
+                .header {{ background: #4CAF50; color: white; padding: 15px; font-size: 22px; 
+                           border-radius: 10px 10px 0 0; }}
+                .content {{ padding: 20px; font-size: 16px; color: #333; }}
+                .password-box {{ background: #eee; padding: 10px; font-size: 18px; font-weight: bold; 
+                                border-radius: 5px; display: inline-block; margin-top: 10px; }}
+                .footer {{ margin-top: 20px; text-align: center; font-size: 14px; color: #777; }}
+                .button {{ display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white;
+                           text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; }}
+                .button:hover {{ background-color: #45a049; }}
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <div class='header'>🎉 Welcome to BookHaven! 📚</div>
+                <div class='content'>
+                    <p>Dear User,</p>
+                    <p>Your account has been created successfully. Below is your login password:</p>
+                    <div class='password-box'>{generatedPassword}</div>
+                    <p>Please change your password after logging in for security reasons.</p>
+                    <a class='button' href='#'>Login Now</a>
+                </div>
+                <div class='footer'>
+                    <p>Best Regards,</p>
+                    <p><strong>BookHaven Team</strong></p>
+                    <p>&copy; 2025 BookHaven. All Rights Reserved.</p>
+                </div>
+            </div>
+        </body>
+        </html>";
 
                 using (MailMessage mail = new MailMessage())
                 {
                     mail.From = new MailAddress(senderEmail);
                     mail.To.Add(recipientEmail);
-                    mail.Subject = "Your BookHaven Account Password";
-                    mail.Body = $"Dear User,\n\nYour account has been created successfully.\nYour login password is: {generatedPassword}\n\nPlease change your password after logging in.\n\nBest Regards,\nBookHaven Team";
-                    mail.IsBodyHtml = false;
+                    mail.Subject = "📌 Your BookHaven Account Password";
+                    mail.Body = emailBody;
+                    mail.IsBodyHtml = true;
 
                     using (SmtpClient smtp = new SmtpClient(smtpServer, smtpPort))
                     {
@@ -92,6 +129,7 @@ namespace BookHaven.Business.Services
                 Console.WriteLine($"Error sending email: {ex.Message}");
             }
         }
+
 
         public List<UserModel> GetAllUsers()
         {

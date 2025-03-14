@@ -314,29 +314,61 @@ namespace BookHaven.Presentation.Comman
         {
             try
             {
+                string senderEmail = "dinethjayanga37@gmail.com"; // Your email
+                string senderPassword = "aeljetiqkxabowfr"; // Your email password
+                string smtpServer = "smtp.gmail.com"; // Gmail SMTP server
+                int smtpPort = 587; // Gmail SMTP port
 
-                string senderEmail = "uminduchethiya@gmail.com"; // Change to your email
-                string senderPassword = "bcgjguscujhvknor"; // Change to your email password
-                string smtpServer = "smtp.gmail.com"; // Change to your SMTP server
-                int smtpPort = 587; // Change to the correct SMTP port
+                string subject = $"Order Confirmation - Order ID: {order.OrderId}";
 
+                // Email body with UI improvements (HTML)
+                string body = $@"
+        <html>
+        <head>
+            <style>
+                body {{ font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }}
+                .container {{ max-width: 600px; background: #ffffff; padding: 20px; border-radius: 10px;
+                             box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: left; }}
+                .header {{ background: #0073e6; color: white; padding: 15px; font-size: 22px;
+                           border-radius: 10px 10px 0 0; text-align: center; }}
+                .content {{ padding: 20px; font-size: 16px; color: #333; }}
+                .footer {{ margin-top: 20px; text-align: center; font-size: 14px; color: #777; }}
+                .button {{ display: inline-block; padding: 12px 20px; background-color: #0073e6; color: white;
+                           text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; }}
+                .button:hover {{ background-color: #005bb5; }}
+                .info-box {{ background: #f8f9fa; padding: 10px; border-left: 4px solid #0073e6; margin: 10px 0; }}
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <div class='header'>📢 Order Confirmation</div>
+                <div class='content'>
+                    <p>Thank you for your order! Below are your order details:</p>
+                    <div class='info-box'>
+                        <p><strong>Order ID:</strong> {order.OrderId}</p>
+                        <p><strong>Book Title:</strong> {_orderService.GetBookByTitle("").FirstOrDefault(b => b.BookId == order.BookId)?.Title}</p>
+                        <p><strong>Quantity:</strong> {order.Quantity}</p>
+                        <p><strong>Total Price:</strong> {order.Subtotal:C}</p>
+                        <p><strong>Delivery Type:</strong> {order.DeliveryType}</p>
+                    </div>
+                    <p>Your order is currently <strong>PENDING</strong>. We will notify you once it is shipped.</p>
+                    <a class='button' href='#'>Track Your Order</a>
+                </div>
+                <div class='footer'>
+                    <p>Best Regards,</p>
+                    <p><strong>BookHaven Team</strong></p>
+                </div>
+            </div>
+        </body>
+        </html>";
 
                 using (MailMessage mail = new MailMessage())
                 {
                     mail.From = new MailAddress(senderEmail);
                     mail.To.Add(recipientEmail);
-                    mail.Subject = $"Order Confirmation - Order ID: {order.OrderId}";
-                    mail.Body =
-                                $"Thank you for your order! Below are the details:\n\n" +
-                                $"Order ID: {order.OrderId}\n" +
-                                $"Book Title: {_orderService.GetBookByTitle("").FirstOrDefault(b => b.BookId == order.BookId)?.Title}\n" +
-                                $"Quantity: {order.Quantity}\n" +
-                                $"Total Price: {order.Subtotal:C}\n" +
-                                $"Delivery Type: {order.DeliveryType}\n\n" +
-                                $"Your order is currently pending. We will notify you once it is shipped.\n\n" +
-                                $"Best Regards,\nBookHaven Team";
-
-                    mail.IsBodyHtml = false;
+                    mail.Subject = subject;
+                    mail.Body = body;
+                    mail.IsBodyHtml = true; // Enable HTML formatting
 
                     using (SmtpClient smtp = new SmtpClient(smtpServer, smtpPort))
                     {
@@ -353,6 +385,7 @@ namespace BookHaven.Presentation.Comman
                 MessageBox.Show($"Error sending email: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnmanageorder_Click(object sender, EventArgs e)
         {
