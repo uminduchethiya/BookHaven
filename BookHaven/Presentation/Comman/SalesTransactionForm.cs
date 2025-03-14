@@ -12,6 +12,7 @@ using BookHaven.Data.Models;
 using BookHaven.Data.Repositories.BookManagementRepository;
 using BookHaven.Data.Repositories.CustomerManagementRepository;
 using BookHaven.Data.Repositories.SalesTransactionRepository;
+using BookHaven.Presentation.Admin;
 
 namespace BookHaven.Presentation.Comman
 {
@@ -280,6 +281,14 @@ namespace BookHaven.Presentation.Comman
             lblEmail.Text = string.Empty;
             lblName.Text = string.Empty;
             lblPhone.Text = string.Empty;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.Show();  // To show the AdminDashboard form
+            this.Hide();  // Optionally hide the current form
+
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             cmbsearchorder = new ComboBox();
@@ -40,39 +41,56 @@
             cmborderstatus = new ComboBox();
             label3 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgorder).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.BackColor = SystemColors.MenuHighlight;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(2, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1007, 64);
+            panel1.Size = new Size(1009, 69);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.left_arrow_10117838;
+            pictureBox1.Location = new Point(10, 16);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(46, 29);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(454, 18);
+            label1.Font = new Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(403, 16);
             label1.Name = "label1";
-            label1.Size = new Size(83, 15);
+            label1.Size = new Size(232, 37);
             label1.TabIndex = 0;
             label1.Text = "Manage Order";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 100);
+            label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(56, 117);
             label2.Name = "label2";
-            label2.Size = new Size(88, 15);
+            label2.Size = new Size(116, 16);
             label2.TabIndex = 1;
-            label2.Text = "Order Id Search";
+            label2.Text = "Order Id Search :";
             // 
             // cmbsearchorder
             // 
             cmbsearchorder.FormattingEnabled = true;
-            cmbsearchorder.Location = new Point(116, 97);
+            cmbsearchorder.Location = new Point(206, 115);
             cmbsearchorder.Name = "cmbsearchorder";
             cmbsearchorder.Size = new Size(205, 23);
             cmbsearchorder.TabIndex = 2;
@@ -80,56 +98,70 @@
             // 
             // btnaddneworder
             // 
-            btnaddneworder.Location = new Point(524, 93);
+            btnaddneworder.BackColor = SystemColors.ActiveCaption;
+            btnaddneworder.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnaddneworder.Location = new Point(667, 105);
             btnaddneworder.Name = "btnaddneworder";
-            btnaddneworder.Size = new Size(133, 28);
+            btnaddneworder.Size = new Size(133, 40);
             btnaddneworder.TabIndex = 3;
             btnaddneworder.Text = "Add New Order";
-            btnaddneworder.UseVisualStyleBackColor = true;
+            btnaddneworder.UseVisualStyleBackColor = false;
+            btnaddneworder.Click += btnaddneworder_Click;
             // 
             // btnaddnewcustomer
             // 
-            btnaddnewcustomer.Location = new Point(847, 97);
+            btnaddnewcustomer.BackColor = SystemColors.ActiveCaption;
+            btnaddnewcustomer.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnaddnewcustomer.Location = new Point(833, 105);
             btnaddnewcustomer.Name = "btnaddnewcustomer";
-            btnaddnewcustomer.Size = new Size(126, 28);
+            btnaddnewcustomer.Size = new Size(138, 40);
             btnaddnewcustomer.TabIndex = 4;
             btnaddnewcustomer.Text = "Add New Customer";
-            btnaddnewcustomer.UseVisualStyleBackColor = true;
+            btnaddnewcustomer.UseVisualStyleBackColor = false;
+            btnaddnewcustomer.Click += btnaddnewcustomer_Click;
             // 
             // dtgorder
             // 
             dtgorder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgorder.Location = new Point(12, 169);
+            dtgorder.Location = new Point(56, 208);
             dtgorder.Name = "dtgorder";
-            dtgorder.Size = new Size(984, 219);
+            dtgorder.Size = new Size(915, 219);
             dtgorder.TabIndex = 5;
             dtgorder.CellContentClick += dtgorder_CellContentClick;
             // 
             // btndelete
             // 
-            btndelete.Location = new Point(582, 540);
+            btndelete.BackColor = Color.Red;
+            btndelete.FlatStyle = FlatStyle.Flat;
+            btndelete.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btndelete.ForeColor = Color.White;
+            btndelete.Location = new Point(604, 609);
             btndelete.Name = "btndelete";
-            btndelete.Size = new Size(75, 23);
+            btndelete.Size = new Size(100, 40);
             btndelete.TabIndex = 6;
             btndelete.Text = "Delete";
-            btndelete.UseVisualStyleBackColor = true;
+            btndelete.UseVisualStyleBackColor = false;
             btndelete.Click += btndelete_Click;
             // 
             // btnupdate
             // 
-            btnupdate.Location = new Point(339, 540);
+            btnupdate.BackColor = SystemColors.MenuHighlight;
+            btnupdate.FlatStyle = FlatStyle.Flat;
+            btnupdate.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnupdate.ForeColor = Color.White;
+            btnupdate.Location = new Point(332, 609);
             btnupdate.Name = "btnupdate";
-            btnupdate.Size = new Size(75, 23);
+            btnupdate.Size = new Size(100, 40);
             btnupdate.TabIndex = 7;
             btnupdate.Text = "Update";
-            btnupdate.UseVisualStyleBackColor = true;
+            btnupdate.UseVisualStyleBackColor = false;
             btnupdate.Click += btnupdate_Click;
             // 
             // cmborderstatus
             // 
             cmborderstatus.FormattingEnabled = true;
             cmborderstatus.Items.AddRange(new object[] { "Pending", "Completed", "Canceled" });
-            cmborderstatus.Location = new Point(116, 421);
+            cmborderstatus.Location = new Point(160, 495);
             cmborderstatus.Name = "cmborderstatus";
             cmborderstatus.Size = new Size(205, 23);
             cmborderstatus.TabIndex = 8;
@@ -138,11 +170,12 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 424);
+            label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(56, 497);
             label3.Name = "label3";
-            label3.Size = new Size(72, 15);
+            label3.Size = new Size(98, 16);
             label3.TabIndex = 9;
-            label3.Text = "Order Status";
+            label3.Text = "Order Status  :";
             // 
             // OrderManage
             // 
@@ -160,9 +193,12 @@
             Controls.Add(label2);
             Controls.Add(panel1);
             Name = "OrderManage";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "OrderManage";
+            Load += OrderManage_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtgorder).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -181,5 +217,6 @@
         private Button btnupdate;
         private ComboBox cmborderstatus;
         private Label label3;
+        private PictureBox pictureBox1;
     }
 }

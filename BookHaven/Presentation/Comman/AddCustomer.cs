@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BookHaven.Data.Models;
 using BookHaven.Data.Repositories.BookManagementRepository;
 using BookHaven.Data.Repositories.CustomerManagementRepository;
+using BookHaven.Presentation.Admin;
 
 namespace BookHaven.Presentation.Comman
 {
@@ -144,6 +145,13 @@ namespace BookHaven.Presentation.Comman
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.Show();  // To show the AdminDashboard form
+            this.Hide();  // Optionally hide the current form
         }
     }
 }

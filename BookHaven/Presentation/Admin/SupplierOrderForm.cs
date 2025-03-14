@@ -281,5 +281,12 @@ namespace BookHaven.Presentation.Admin
                 comboBox1.SelectedItem = status;
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.Show();  // To show the AdminDashboard form
+            this.Hide();  // Optionally hide the current form
+        }
     }
 }

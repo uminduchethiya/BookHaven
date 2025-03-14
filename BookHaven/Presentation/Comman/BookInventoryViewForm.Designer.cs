@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookInventoryViewForm));
             label1 = new Label();
             dataGridView1 = new DataGridView();
             txtsearch = new TextBox();
@@ -50,18 +49,20 @@
             btnAddBook = new Button();
             label8 = new Label();
             panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(274, 9);
+            label1.Font = new Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(303, 12);
             label1.Name = "label1";
-            label1.Size = new Size(480, 45);
+            label1.Size = new Size(449, 37);
             label1.TabIndex = 0;
             label1.Text = "Book Inventory Management";
             // 
@@ -93,11 +94,12 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(56, 23);
             label2.Name = "label2";
-            label2.Size = new Size(30, 15);
+            label2.Size = new Size(37, 15);
             label2.TabIndex = 4;
-            label2.Text = "Title";
+            label2.Text = "Title :";
             // 
             // panel1
             // 
@@ -122,68 +124,79 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(809, 184);
+            btnDelete.BackColor = Color.Red;
+            btnDelete.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(565, 193);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(102, 41);
+            btnDelete.Size = new Size(100, 40);
             btnDelete.TabIndex = 16;
             btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(681, 184);
+            btnUpdate.BackColor = SystemColors.MenuHighlight;
+            btnUpdate.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(275, 193);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(102, 41);
+            btnUpdate.Size = new Size(100, 40);
             btnUpdate.TabIndex = 15;
             btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
             // 
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.Location = new Point(479, 23);
             label7.Name = "label7";
-            label7.Size = new Size(44, 15);
+            label7.Size = new Size(51, 15);
             label7.TabIndex = 14;
-            label7.Text = "Author";
+            label7.Text = "Author :";
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.Location = new Point(479, 76);
             label6.Name = "label6";
-            label6.Size = new Size(32, 15);
+            label6.Size = new Size(40, 15);
             label6.TabIndex = 13;
-            label6.Text = "ISBN";
+            label6.Text = "ISBN :";
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(479, 129);
             label5.Name = "label5";
-            label5.Size = new Size(53, 15);
+            label5.Size = new Size(60, 15);
             label5.TabIndex = 12;
-            label5.Text = "Quantity";
+            label5.Text = "Quantity :";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(56, 129);
             label4.Name = "label4";
-            label4.Size = new Size(33, 15);
+            label4.Size = new Size(43, 15);
             label4.TabIndex = 11;
-            label4.Text = "Price";
+            label4.Text = "Price :";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(56, 71);
             label3.Name = "label3";
-            label3.Size = new Size(55, 15);
+            label3.Size = new Size(64, 15);
             label3.TabIndex = 10;
-            label3.Text = "Category";
+            label3.Text = "Category :";
             // 
             // txtQuantity
             // 
@@ -224,34 +237,49 @@
             // 
             // btnAddBook
             // 
-            btnAddBook.BackColor = Color.Transparent;
-            btnAddBook.BackgroundImage = (Image)resources.GetObject("btnAddBook.BackgroundImage");
+            btnAddBook.BackColor = SystemColors.ActiveCaption;
             btnAddBook.BackgroundImageLayout = ImageLayout.Zoom;
-            btnAddBook.Location = new Point(917, 94);
+            btnAddBook.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddBook.Location = new Point(862, 76);
             btnAddBook.Name = "btnAddBook";
-            btnAddBook.Size = new Size(45, 38);
+            btnAddBook.Size = new Size(100, 40);
             btnAddBook.TabIndex = 6;
+            btnAddBook.Text = "Add Book";
             btnAddBook.UseVisualStyleBackColor = false;
             btnAddBook.Click += btnAddBook_Click;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(631, 146);
+            label8.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(603, 141);
             label8.Name = "label8";
-            label8.Size = new Size(42, 15);
+            label8.Size = new Size(88, 16);
             label8.TabIndex = 7;
-            label8.Text = "Search";
+            label8.Text = "Search Book";
             label8.Click += label8_Click;
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.BackColor = SystemColors.MenuHighlight;
+            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label1);
+            panel2.ForeColor = Color.White;
             panel2.Location = new Point(1, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1006, 70);
+            panel2.Size = new Size(1008, 70);
             panel2.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.left_arrow_10117838;
+            pictureBox1.Location = new Point(17, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(46, 29);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // BookInventoryViewForm
             // 
@@ -266,6 +294,7 @@
             Controls.Add(panel2);
             MaximizeBox = false;
             Name = "BookInventoryViewForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BookInventoryViewForm";
             Load += BookInventoryViewForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -273,6 +302,7 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -300,5 +330,6 @@
         private Button btnAddBook;
         private Label label8;
         private Panel panel2;
+        private PictureBox pictureBox1;
     }
 }

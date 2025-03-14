@@ -60,9 +60,11 @@
             lblEmail = new Label();
             lblPhone = new Label();
             panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -76,20 +78,22 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.BackColor = SystemColors.MenuHighlight;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(3, -2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1003, 61);
+            panel1.Size = new Size(1009, 69);
             panel1.TabIndex = 4;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(395, 11);
+            label2.Font = new Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(386, 17);
             label2.Name = "label2";
-            label2.Size = new Size(266, 40);
+            label2.Size = new Size(310, 37);
             label2.TabIndex = 5;
             label2.Text = "Sales Transactions";
             // 
@@ -362,6 +366,17 @@
             panel2.Size = new Size(309, 160);
             panel2.TabIndex = 30;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.left_arrow_10117838;
+            pictureBox1.Location = new Point(12, 17);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(46, 29);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // SalesTransactionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -396,6 +411,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -433,5 +449,6 @@
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Subtotal;
+        private PictureBox pictureBox1;
     }
 }

@@ -43,8 +43,8 @@
             btnsuppliers = new Button();
             btnorderrequest = new Button();
             btnreporting = new Button();
+            btnlogout = new Button();
             sidebartimer = new System.Windows.Forms.Timer(components);
-            button1 = new Button();
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)menupicbox).BeginInit();
@@ -63,8 +63,7 @@
             sidebar.Controls.Add(btnsuppliers);
             sidebar.Controls.Add(btnorderrequest);
             sidebar.Controls.Add(btnreporting);
-            sidebar.Controls.Add(button1);
-            sidebar.Dock = DockStyle.Left;
+            sidebar.Controls.Add(btnlogout);
             sidebar.Location = new Point(0, 0);
             sidebar.Name = "sidebar";
             sidebar.Size = new Size(258, 729);
@@ -122,7 +121,7 @@
             btndashboard.Padding = new Padding(30, 0, 0, 0);
             btndashboard.Size = new Size(252, 53);
             btndashboard.TabIndex = 3;
-            btndashboard.Text = "                     Dashboard";
+            btndashboard.Text = "                     Book Management";
             btndashboard.TextAlign = ContentAlignment.MiddleLeft;
             btndashboard.UseVisualStyleBackColor = false;
             btndashboard.Click += btndashboard_Click;
@@ -139,7 +138,7 @@
             btnusers.Padding = new Padding(30, 0, 0, 0);
             btnusers.Size = new Size(252, 53);
             btnusers.TabIndex = 4;
-            btnusers.Text = "                     Users";
+            btnusers.Text = "                     Users Management";
             btnusers.TextAlign = ContentAlignment.MiddleLeft;
             btnusers.UseVisualStyleBackColor = false;
             btnusers.Click += btnusers_Click;
@@ -159,6 +158,7 @@
             btncustomers.Text = "                     Customers";
             btncustomers.TextAlign = ContentAlignment.MiddleLeft;
             btncustomers.UseVisualStyleBackColor = false;
+            btncustomers.Click += btncustomers_Click;
             // 
             // btnsalestransaction
             // 
@@ -175,6 +175,7 @@
             btnsalestransaction.Text = "                     Sales Transaction";
             btnsalestransaction.TextAlign = ContentAlignment.MiddleLeft;
             btnsalestransaction.UseVisualStyleBackColor = false;
+            btnsalestransaction.Click += btnsalestransaction_Click;
             // 
             // btnordermanagement
             // 
@@ -205,7 +206,7 @@
             btnsuppliers.Padding = new Padding(30, 0, 0, 0);
             btnsuppliers.Size = new Size(252, 53);
             btnsuppliers.TabIndex = 4;
-            btnsuppliers.Text = "                    Suppliers";
+            btnsuppliers.Text = "                    Suppliers Management";
             btnsuppliers.TextAlign = ContentAlignment.MiddleLeft;
             btnsuppliers.UseVisualStyleBackColor = false;
             btnsuppliers.Click += btnsuppliers_Click;
@@ -242,26 +243,28 @@
             btnreporting.Text = "                     Reporting and Analytics";
             btnreporting.TextAlign = ContentAlignment.MiddleLeft;
             btnreporting.UseVisualStyleBackColor = false;
+            btnreporting.Click += btnreporting_Click;
+            // 
+            // btnlogout
+            // 
+            btnlogout.FlatAppearance.BorderSize = 0;
+            btnlogout.FlatStyle = FlatStyle.Flat;
+            btnlogout.ForeColor = Color.White;
+            btnlogout.Image = (Image)resources.GetObject("btnlogout.Image");
+            btnlogout.ImageAlign = ContentAlignment.MiddleLeft;
+            btnlogout.Location = new Point(3, 584);
+            btnlogout.Name = "btnlogout";
+            btnlogout.Padding = new Padding(30, 0, 0, 0);
+            btnlogout.Size = new Size(252, 53);
+            btnlogout.TabIndex = 7;
+            btnlogout.Text = "                     Logout";
+            btnlogout.TextAlign = ContentAlignment.MiddleLeft;
+            btnlogout.UseVisualStyleBackColor = false;
+            btnlogout.Click += btnlogout_Click;
             // 
             // sidebartimer
             // 
             sidebartimer.Tick += sidebarTimer_Tick;
-            // 
-            // button1
-            // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(3, 584);
-            button1.Name = "button1";
-            button1.Padding = new Padding(30, 0, 0, 0);
-            button1.Size = new Size(252, 53);
-            button1.TabIndex = 7;
-            button1.Text = "                     Setting";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = false;
             // 
             // AdminDashboard
             // 
@@ -270,6 +273,7 @@
             ClientSize = new Size(1008, 729);
             Controls.Add(sidebar);
             Name = "AdminDashboard";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminDashboard";
             Load += AdminDashboard_Load;
             sidebar.ResumeLayout(false);
@@ -296,6 +300,6 @@
         private PictureBox menupicbox;
         private Label Menu;
         private System.Windows.Forms.Timer sidebartimer;
-        private Button button1;
+        private Button btnlogout;
     }
 }

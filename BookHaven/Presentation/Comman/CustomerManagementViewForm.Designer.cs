@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             label1 = new Label();
             dataGridView1 = new DataGridView();
             textBox1 = new TextBox();
@@ -54,25 +55,40 @@
             txtLastName = new TextBox();
             txtAddress = new TextBox();
             txtEmail = new TextBox();
+            label2 = new Label();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.BackColor = SystemColors.MenuHighlight;
+            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label1);
             panel2.Location = new Point(2, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1006, 70);
+            panel2.Size = new Size(1008, 70);
             panel2.TabIndex = 9;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.left_arrow_10117838;
+            pictureBox1.Location = new Point(17, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(46, 29);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(284, 9);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(326, 9);
             label1.Name = "label1";
             label1.Size = new Size(387, 45);
             label1.TabIndex = 0;
@@ -89,7 +105,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(751, 111);
+            textBox1.Location = new Point(751, 93);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(245, 23);
             textBox1.TabIndex = 11;
@@ -97,13 +113,15 @@
             // 
             // btnAddCustomer
             // 
-            btnAddCustomer.BackgroundImage = Properties.Resources._4288270;
+            btnAddCustomer.BackColor = SystemColors.ActiveCaption;
             btnAddCustomer.BackgroundImageLayout = ImageLayout.Zoom;
+            btnAddCustomer.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddCustomer.Location = new Point(12, 76);
             btnAddCustomer.Name = "btnAddCustomer";
-            btnAddCustomer.Size = new Size(75, 45);
+            btnAddCustomer.Size = new Size(133, 40);
             btnAddCustomer.TabIndex = 12;
-            btnAddCustomer.UseVisualStyleBackColor = true;
+            btnAddCustomer.Text = "Add New Customer";
+            btnAddCustomer.UseVisualStyleBackColor = false;
             btnAddCustomer.Click += btnAddCustomer_Click;
             // 
             // panel1
@@ -136,36 +154,42 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(132, 128);
+            dateTimePicker1.Location = new Point(124, 120);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(240, 23);
+            dateTimePicker1.Size = new Size(248, 23);
             dateTimePicker1.TabIndex = 22;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(831, 272);
+            btnDelete.BackColor = Color.Red;
+            btnDelete.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(594, 272);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(85, 38);
             btnDelete.TabIndex = 21;
             btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(706, 272);
+            btnUpdate.BackColor = SystemColors.MenuHighlight;
+            btnUpdate.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(408, 272);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(85, 38);
             btnUpdate.TabIndex = 20;
             btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
             // 
             // cmbGender
             // 
             cmbGender.FormattingEnabled = true;
             cmbGender.Items.AddRange(new object[] { "Male", "Female" });
-            cmbGender.Location = new Point(668, 126);
+            cmbGender.Location = new Point(668, 118);
             cmbGender.Name = "cmbGender";
             cmbGender.Size = new Size(248, 23);
             cmbGender.TabIndex = 19;
@@ -180,88 +204,97 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.Location = new Point(554, 174);
             label10.Name = "label10";
-            label10.Size = new Size(28, 15);
+            label10.Size = new Size(34, 15);
             label10.TabIndex = 17;
-            label10.Text = "City";
+            label10.Text = "City :";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(554, 126);
+            label9.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(554, 121);
             label9.Name = "label9";
-            label9.Size = new Size(45, 15);
+            label9.Size = new Size(54, 15);
             label9.TabIndex = 16;
-            label9.Text = "Gender";
+            label9.Text = "Gender :";
             // 
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.Location = new Point(554, 77);
             label8.Name = "label8";
-            label8.Size = new Size(88, 15);
+            label8.Size = new Size(97, 15);
             label8.TabIndex = 15;
-            label8.Text = "Phone Number";
+            label8.Text = "Phone Number :";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(554, 36);
+            label7.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(554, 30);
             label7.Name = "label7";
-            label7.Size = new Size(63, 15);
+            label7.Size = new Size(82, 16);
             label7.TabIndex = 14;
-            label7.Text = "Last Name";
+            label7.Text = "Last Name :";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(51, 247);
+            label6.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(32, 224);
             label6.Name = "label6";
-            label6.Size = new Size(55, 15);
+            label6.Size = new Size(62, 15);
             label6.TabIndex = 13;
-            label6.Text = "Zip Code";
+            label6.Text = "Zip Code :";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(51, 190);
+            label5.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(32, 174);
             label5.Name = "label5";
-            label5.Size = new Size(49, 15);
+            label5.Size = new Size(61, 15);
             label5.TabIndex = 12;
-            label5.Text = "Address";
+            label5.Text = "Address :";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(51, 134);
+            label4.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(32, 126);
             label4.Name = "label4";
-            label4.Size = new Size(75, 15);
+            label4.Size = new Size(85, 15);
             label4.TabIndex = 11;
-            label4.Text = "Date Of Birth";
+            label4.Text = "Date Of Birth :";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(51, 77);
+            label3.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(32, 77);
             label3.Name = "label3";
-            label3.Size = new Size(36, 15);
+            label3.Size = new Size(44, 15);
             label3.TabIndex = 10;
-            label3.Text = "Email";
+            label3.Text = "Email :";
             // 
             // txtFirstName
             // 
             txtFirstName.AutoSize = true;
-            txtFirstName.Location = new Point(51, 31);
+            txtFirstName.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtFirstName.Location = new Point(32, 31);
             txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new Size(64, 15);
+            txtFirstName.Size = new Size(74, 15);
             txtFirstName.TabIndex = 9;
-            txtFirstName.Text = "First Name";
+            txtFirstName.Text = "First Name :";
             txtFirstName.Click += label2_Click;
             // 
             // txtZipcode
             // 
-            txtZipcode.Location = new Point(124, 239);
+            txtZipcode.Location = new Point(124, 221);
             txtZipcode.Name = "txtZipcode";
             txtZipcode.Size = new Size(248, 23);
             txtZipcode.TabIndex = 8;
@@ -289,7 +322,7 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(124, 182);
+            txtAddress.Location = new Point(124, 171);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(248, 23);
             txtAddress.TabIndex = 3;
@@ -302,21 +335,34 @@
             txtEmail.Size = new Size(248, 23);
             txtEmail.TabIndex = 1;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(628, 96);
+            label2.Name = "label2";
+            label2.Size = new Size(116, 16);
+            label2.TabIndex = 23;
+            label2.Text = "Search Customer";
+            // 
             // CustomerManagementViewForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 729);
+            Controls.Add(label2);
             Controls.Add(panel1);
             Controls.Add(btnAddCustomer);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
             Controls.Add(panel2);
             Name = "CustomerManagementViewForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CustomerManagementViewForm";
             Load += CustomerManagementViewForm_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -353,5 +399,7 @@
         private Button btnUpdate;
         private ComboBox cmbGender;
         private DateTimePicker dateTimePicker1;
+        private PictureBox pictureBox1;
+        private Label label2;
     }
 }

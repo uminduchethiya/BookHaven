@@ -4,6 +4,7 @@ using BookHaven.Data.Models;
 using BookHaven.Data.Repositories;
 using BookHaven.Presentation.Admin;
 using BookHaven.Presentation.Staff;
+using BookHaven.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,57 +48,31 @@ namespace BookHaven.Presentation
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            try
+            IAuthService authService = new AuthService(new UserRepository());
+            string email = txtemail.Text.Trim();
+            string password = txtpassword.Text.Trim();
+
+            UserModel authenticatedUser = authService.AuthenticateUser(email, password);
+
+            if (authenticatedUser != null)
             {
-                string email = txtemail.Text.Trim();
-                string password = txtpassword.Text.Trim();
-
-                // Validate email format using regular expression
-                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+                if (authenticatedUser.IsDeleted)
                 {
-                    MessageBox.Show("Please enter email and password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Your account is deactivated!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                if (!IsValidEmail(email))
-                {
-                    MessageBox.Show("Invalid email format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                // Store user in session
+                SessionManager.LoggedInUser = authenticatedUser;
 
-                if (password.Length < 8)
-                {
-                    MessageBox.Show("Password must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                UserModel user = _authService.AuthenticateUser(email, password);
-
-                if (user != null)
-                {
-                    MessageBox.Show($"Welcome, {user.FirstName}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    if (user.RoleID == 1)
-                    {
-                        AdminDashboard adminDashboard = new AdminDashboard();
-                        adminDashboard.Show();
-                    }
-                    else if (user.RoleID == 2)
-                    {
-                        SalesClerkDashboard salesDashboard = new SalesClerkDashboard();
-                        salesDashboard.Show();
-                    }
-
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid email or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Login successful!", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                AdminDashboard dashboard = new AdminDashboard();
+                dashboard.Show();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid email or password!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         // Email format validation method

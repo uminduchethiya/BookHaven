@@ -38,7 +38,7 @@ namespace BookHaven.Business.Services
 
         public string GenerateBill(List<DataGridViewRow> salesData, decimal discount, Customer customer)
         {
-            string billFilePath = @"C:\Users\Dineth Jayanga\Documents\Bills\GeneratedBill.pdf"; // Path for saving the bill PDF
+            string billFilePath = @"C:\Users\Umindu\Documents\Bills\GeneratedBill.pdf"; // Path for saving the bill PDF
 
             // Create a new PDF document
             PdfDocument document = new PdfDocument();

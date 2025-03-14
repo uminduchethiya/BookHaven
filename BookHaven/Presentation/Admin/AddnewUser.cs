@@ -78,6 +78,18 @@ namespace BookHaven.Presentation.Admin
             this.Hide();  // Optionally hide the current form
             userManagementForm.Show(); // Opens the form
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.Show();  // To show the AdminDashboard form
+            this.Hide();  // Optionally hide the current form
+        }
     }
 
 }

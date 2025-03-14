@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookHaven.Data.Models;
 using BookHaven.Data.Repositories.BookManagementRepository;
+using BookHaven.Presentation.Admin;
+using BookHaven.Utilities;
 
 namespace BookHaven.Presentation.Comman
 {
@@ -78,6 +80,20 @@ namespace BookHaven.Presentation.Comman
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            // Check if a user is logged in
+            if (SessionManager.LoggedInUser == null)
+            {
+                MessageBox.Show("Please log in first!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Restrict users with RoleID 2 from updating books
+            if (SessionManager.LoggedInUser.RoleID == 2)
+            {
+                MessageBox.Show("You do not have permission to update books!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 // Get the selected row
@@ -119,10 +135,23 @@ namespace BookHaven.Presentation.Comman
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            // Check if a user is logged in
+            if (SessionManager.LoggedInUser == null)
+            {
+                MessageBox.Show("Please log in first!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Restrict users with RoleID 2 from deleting books
+            if (SessionManager.LoggedInUser.RoleID == 2)
+            {
+                MessageBox.Show("You do not have permission to delete books!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             // Check if a row is selected
             if (dataGridView1.SelectedRows.Count > 0)
             {
-
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
                 // Get the BookId of the selected book
@@ -159,6 +188,14 @@ namespace BookHaven.Presentation.Comman
             addBookForm.Show();
             this.Hide();
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.Show();  // To show the AdminDashboard form
+            this.Hide();  // Optionally hide the current form
         }
     }
 }

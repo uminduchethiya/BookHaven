@@ -107,5 +107,13 @@ namespace BookHaven.Presentation.Admin
             reportDashboard.ShowDialog();
             this.Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            ReportDashboard reportDashboard = new ReportDashboard();
+            reportDashboard.Show();  // To show the AdminDashboard form
+            this.Hide();  // Optionally hide the current form
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookHaven.Data.Models;
 using BookHaven.Data.Repositories.BookManagementRepository;
+using BookHaven.Presentation.Admin;
 
 namespace BookHaven.Presentation.Comman
 {
@@ -136,6 +137,13 @@ namespace BookHaven.Presentation.Comman
         private void txtStock_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.Show();  // To show the AdminDashboard form
+            this.Hide();  // Optionally hide the current form
         }
     }
 }

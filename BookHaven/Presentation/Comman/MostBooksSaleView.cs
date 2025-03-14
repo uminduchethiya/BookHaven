@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BookHaven.Business.Interfaces;
 using BookHaven.Business.Services;
 using BookHaven.Data.Repositories.ReportManagementRepository;
+using BookHaven.Presentation.Admin;
 using OfficeOpenXml;
 
 namespace BookHaven.Presentation.Comman
@@ -92,5 +93,11 @@ namespace BookHaven.Presentation.Comman
             }
         }
 
-}
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            SalesReportView salesReportView = new SalesReportView();
+            salesReportView.Show();  // To show the AdminDashboard form
+            this.Hide();  // Optionally hide the current form
+        }
+    }
 }

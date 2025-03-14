@@ -1,5 +1,6 @@
 ﻿using BookHaven.Business.Interfaces;
 using BookHaven.Data.Models;
+using BookHaven.Presentation.Admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -196,6 +197,33 @@ namespace BookHaven.Presentation.Comman
         private void btndelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.Show();  // To show the AdminDashboard form
+            this.Hide();  // Optionally hide the current form
+        }
+
+        private void OrderManage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnaddnewcustomer_Click(object sender, EventArgs e)
+        {
+
+            AddCustomer addCustomerForm = new AddCustomer();
+            this.Hide();
+            addCustomerForm.Show();
+        }
+
+        private void btnaddneworder_Click(object sender, EventArgs e)
+        {
+            OrderAdd orderAdd = new OrderAdd();
+            orderAdd.Show();
+            this.Hide();
         }
     }
 

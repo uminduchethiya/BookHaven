@@ -2,6 +2,7 @@
 using BookHaven.Business.Services;
 using BookHaven.Data.Repositories;
 using BookHaven.Presentation.Comman;
+using BookHaven.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,9 @@ namespace BookHaven.Presentation.Admin
 
         private void btndashboard_Click(object sender, EventArgs e)
         {
+            AddBook addbook = new AddBook();
+            this.Hide();
+            addbook.Show();
 
         }
 
@@ -76,17 +80,48 @@ namespace BookHaven.Presentation.Admin
 
         private void btnusers_Click(object sender, EventArgs e)
         {
-            UserManagement userManagementForm = new UserManagement(_userService); // Pass _userService
-            this.Hide();
-            userManagementForm.Show(); // Opens the form
+            if (SessionManager.LoggedInUser == null)
+            {
+                MessageBox.Show("Please log in first!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (SessionManager.LoggedInUser.RoleID == 2)
+            {
+                MessageBox.Show("You have no permission to access this feature!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                AddnewUser addnewUserForm = new AddnewUser();
+                this.Hide();
+                addnewUserForm.Show();
+            }
+
         }
 
         private void btnsuppliers_Click(object sender, EventArgs e)
         {
+            // Check if the user is logged in
+            if (SessionManager.LoggedInUser == null)
+            {
+                MessageBox.Show("Please log in first!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Check if the user has RoleID 2 (restricted access)
+            if (SessionManager.LoggedInUser.RoleID == 2)
+            {
+                MessageBox.Show("You do not have permission to access this feature!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             // Create an instance of the AddSupplier form
             AddSupplier addSupplierForm = new AddSupplier();
 
-            // Show the AddSupplier form (this opens the form as a new window)
+            // Hide the AdminDashboard form
+            this.Hide();
+
+            // Show the AddSupplier form
             addSupplierForm.Show();
         }
 
@@ -116,6 +151,39 @@ namespace BookHaven.Presentation.Admin
 
             // Show the OrderAdd form (non-blocking, new window)
             orderAddForm.Show();
+        }
+
+        private void btncustomers_Click(object sender, EventArgs e)
+        {
+
+            AddCustomer addCustomerForm = new AddCustomer();
+
+            this.Hide();
+            addCustomerForm.Show();
+        }
+
+        private void btnsalestransaction_Click(object sender, EventArgs e)
+        {
+            SalesTransactionForm salesTransActionForm = new SalesTransactionForm();
+
+            this.Hide();
+            salesTransActionForm.Show();
+        }
+
+        private void btnreporting_Click(object sender, EventArgs e)
+        {
+            ReportDashboard reportDashboard = new ReportDashboard();
+
+            this.Hide();
+            reportDashboard.Show();
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            LoginForm  loginForm = new LoginForm();
+
+            this.Hide();
+            loginForm.Show();
         }
     }
 }

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using BookHaven.Data.Models;
 using BookHaven.Data.Repositories.BookManagementRepository;
 using BookHaven.Data.Repositories.CustomerManagementRepository;
+using BookHaven.Presentation.Admin;
+using BookHaven.Utilities;
 
 namespace BookHaven.Presentation.Comman
 {
@@ -179,11 +181,25 @@ namespace BookHaven.Presentation.Comman
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            // Check if a user is logged in
+            if (SessionManager.LoggedInUser == null)
+            {
+                MessageBox.Show("Please log in first!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Restrict users with RoleID 2 from deleting customers
+            if (SessionManager.LoggedInUser.RoleID == 2)
+            {
+                MessageBox.Show("You do not have permission to delete customers!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-
                 int customerId = (int)selectedRow.Cells["CustomerId"].Value;
+
                 var result = _customerRepository.DeleteCustomer(customerId);
                 if (result)
                 {
@@ -206,6 +222,14 @@ namespace BookHaven.Presentation.Comman
             AddCustomer addCustomer = new AddCustomer();
             addCustomer.Show();
             this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.Show();  // To show the AdminDashboard form
+            this.Hide();  // Optionally hide the current form
         }
     }
 }
